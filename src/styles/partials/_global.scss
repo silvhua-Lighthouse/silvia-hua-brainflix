@@ -7,7 +7,7 @@ html {
     font-size: 1rem;
     display: flex;
     background-color: pink;
-    // font-family: Mine, 'Avenir Next', 'Courier New', Courier, monospace, Arial, Helvetica, sans-serif;
+    font-family: $font-family;
 }
 
 header, footer {
@@ -21,6 +21,30 @@ header {
     width: 100%;
     top: 0;
     z-index: 3;
+}
+
+.header {
+    @include flex-mixin--column(100%);
+    @include set-section-margin;
+
+    @include tablet {
+        @include flex-mixin--row(100%);
+    }
+    
+
+    &__logo {
+        max-height: 1.5625rem;
+        max-width: 120px;
+    }
+    &__search-input {
+        background-image: none;
+    }
+
+    &__upload-button {
+        background-color: $brainflix-blue;
+        width: 100%;
+
+    }
 }
 
 main {
@@ -46,10 +70,14 @@ li {
 
 h2, h3, h4, h5 {
     @include heading-margin();
+    font-weight: 700;
 }
 p {
 }
 
 textarea {
     resize: none;
+    font-family: $font-family;
+    width: 100%;
+    box-sizing: border-box;
 }

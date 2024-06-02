@@ -1,22 +1,23 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
+  src: url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("./assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("./assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("./assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("./assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("./assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
 html {
   font-size: 1rem;
   display: flex;
   background-color: pink;
+  font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
 }
 
 header, footer {
@@ -35,6 +36,46 @@ header {
   z-index: 3;
 }
 
+.header {
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    max-width: 1208px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.header__logo {
+  max-height: 1.5625rem;
+  max-width: 120px;
+}
+.header__search-input {
+  background-image: none;
+}
+.header__upload-button {
+  background-color: #0095FF;
+  width: 100%;
+}
+
 main {
   margin-top: 5.75rem;
 }
@@ -50,13 +91,18 @@ div, section, article {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem;
   box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
   div, section, article {
     width: 100%;
-    padding: 0 1.5rem;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  div, section, article {
+    max-width: 1208px;
   }
 }
 
@@ -70,6 +116,7 @@ li {
 
 h2, h3, h4, h5 {
   margin: 1.5rem 0 1rem;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   h2, h3, h4, h5 {
@@ -79,17 +126,7 @@ h2, h3, h4, h5 {
 
 textarea {
   resize: none;
-}
-
-.logo {
-  max-height: 1.5625rem;
-  max-width: 120px;
-}
-
-header {
-  font-family: "Avenir Next", "Comic Sans MS";
-}
-
-.header__search-input {
-  background-color: aqua;
+  font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
 }/*# sourceMappingURL=App.css.map */

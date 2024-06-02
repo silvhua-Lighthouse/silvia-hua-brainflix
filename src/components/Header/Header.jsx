@@ -12,7 +12,6 @@ const searchProps = {
 function SearchInput(props) {
     return (
         <>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rerum sint quia velit consectetur, architecto illum ad officiis necessitatibus quisquam porro laborum cumque, quasi a soluta vitae sit. Similique, earum?</p>
         <FormField id="search-input" name="search-input" className={searchProps.className} placeholder={searchProps.placeholder} rows="1"/>
         </>
     )
@@ -23,8 +22,9 @@ function Header() {
         <>
         <header>
             <section>
-                <img src={brainflixLogo} />
+                <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <SearchInput/>
+                <button className="header__upload-button">Upload</button>
             </section>
         </header>
         </>

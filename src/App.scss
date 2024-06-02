@@ -1,18 +1,2 @@
 @use './styles/partials/global' as *;
 @use './styles/partials/fonts' as *;
-
-.logo {
-    max-height: 1.5625rem;
-    max-width: 120px;
-}
-
-header {
-    font-family: 'Avenir Next', 'Comic Sans MS';
-}
-
-.header {
-    
-    &__search-input {
-        background-color: aqua;
-    }
-}

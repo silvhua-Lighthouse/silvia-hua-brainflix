@@ -55,11 +55,15 @@
 
 @mixin set-section-margin() {
     margin: 0 auto;
-    padding: 0 $mobile-spacing;
+    padding: $mobile-spacing;
     box-sizing: border-box;
+
     @include tablet {
         width: 100%;
-        padding: 0 $tablet-spacing;
+        padding: $tablet-spacing;
+    }
+    @include desktop {
+        max-width: $max-content-width;
     }
 }
 
