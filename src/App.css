@@ -36,46 +36,6 @@ header {
   z-index: 3;
 }
 
-.header {
-  position: relative;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 768px) {
-  .header {
-    width: 100%;
-    padding: 1.5rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .header {
-    max-width: 1208px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .header {
-    position: relative;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-.header__logo {
-  max-height: 1.5625rem;
-  max-width: 120px;
-}
-.header__search-input {
-  background-image: none;
-}
-.header__upload-button {
-  background-color: #0095FF;
-  width: 100%;
-}
-
 main {
   margin-top: 5.75rem;
 }
@@ -129,4 +89,59 @@ textarea {
   font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
   width: 100%;
   box-sizing: border-box;
+  padding: 0.75rem;
+}
+@media screen and (min-width: 768px) {
+  textarea {
+    padding: 1rem;
+  }
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    max-width: 1208px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.header__logo {
+  max-height: 1.5625rem;
+  max-width: 7.5rem;
+}
+.header__search-input {
+  position: relative;
+  background-image: url("./assets/images/search.svg");
+  background-repeat: no-repeat;
+  background-position: 0.75rem center;
+  padding-left: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  .header__search-input {
+    background-position: 1rem center;
+  }
+}
+.header__upload-button {
+  background-color: #0095FF;
+  width: 100%;
 }/*# sourceMappingURL=App.css.map */
