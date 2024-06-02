@@ -63,6 +63,23 @@ textarea {
     }
 }
 
+button {
+    box-sizing: border-box;
+    color: white;
+    border-radius: .25rem;
+    height: 2.5rem;
+    width: 100%;
+    border: none;
+    @include set-font(.625rem, 1.25rem, .75rem, 1.25rem, 700);
+    text-transform: uppercase;
+    
+    @include tablet {
+        width: auto;
+        max-width: 9.375rem;
+        padding: 0 2rem;
+    }
+}
+
 .header {
     @include flex-mixin--column(100%);
     @include set-section-margin;
@@ -89,7 +106,7 @@ textarea {
 
     &__upload-button {
         background-color: $brainflix-blue;
-        width: 100%;
-
+        background-image: url('./assets/images/upload.svg');
+        background-repeat: no-repeat;
     }
 }

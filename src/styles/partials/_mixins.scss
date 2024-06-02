@@ -67,7 +67,7 @@
     }
 }
 
-@mixin set-font ($default-size, $default-height, $tablet-size, $tablet-height, $font-weight) {
+@mixin set-font($default-size, $default-height, $tablet-size, $tablet-height, $font-weight) {
     font-size: $default-size;
     line-height: $default-height;
     font-weight: $font-weight;

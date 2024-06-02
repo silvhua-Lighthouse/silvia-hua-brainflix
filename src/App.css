@@ -97,6 +97,33 @@ textarea {
   }
 }
 
+button {
+  box-sizing: border-box;
+  color: white;
+  border-radius: 0.25rem;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  button {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 768px) {
+  button {
+    width: auto;
+    max-width: 9.375rem;
+    padding: 0 2rem;
+  }
+}
+
 .header {
   position: relative;
   width: 100%;
@@ -143,5 +170,6 @@ textarea {
 }
 .header__upload-button {
   background-color: #0095FF;
-  width: 100%;
+  background-image: url("./assets/images/upload.svg");
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=App.css.map */
