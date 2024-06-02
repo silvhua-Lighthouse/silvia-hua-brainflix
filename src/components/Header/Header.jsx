@@ -1,12 +1,25 @@
 
 import { useState } from 'react'
 import brainflixLogo from '../../assets/images/BrainFlix-logo.svg'
+// import SearchInput from './SearchInput'
 
-function Header() {
-
+function SearchInput() {
     return (
         <>
-        <img src={brainflixLogo}/>
+        <input id="search-input" name="search-input" className="header__search-input" placeholder="Search"/>
+        </>
+    )
+}
+
+function Header() {
+    return (
+        <>
+        <header>
+            <section>
+                <img src={brainflixLogo} />
+                <SearchInput/>
+            </section>
+        </header>
         </>
     )
 }
