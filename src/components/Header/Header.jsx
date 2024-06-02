@@ -1,12 +1,19 @@
 
 import { useState } from 'react'
 import brainflixLogo from '../../assets/images/BrainFlix-logo.svg'
-// import SearchInput from './SearchInput'
+import FormField from '../FormField/FormField'
 
-function SearchInput() {
+const searchProps = {
+    className: "header__search-input",
+    placeholder: "Search",
+
+}
+
+function SearchInput(props) {
     return (
         <>
-        <input id="search-input" name="search-input" className="header__search-input" placeholder="Search"/>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rerum sint quia velit consectetur, architecto illum ad officiis necessitatibus quisquam porro laborum cumque, quasi a soluta vitae sit. Similique, earum?</p>
+        <FormField id="search-input" name="search-input" className={searchProps.className} placeholder={searchProps.placeholder} rows="1"/>
         </>
     )
 }

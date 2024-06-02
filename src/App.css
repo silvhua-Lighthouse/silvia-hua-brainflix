@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/font/Alternative files/AvenirNextLTPro.ttf") format("truetype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/font/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/font/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
 html {
@@ -75,4 +75,21 @@ h2, h3, h4, h5 {
   h2, h3, h4, h5 {
     margin: 2.25rem 0 1.5rem;
   }
+}
+
+textarea {
+  resize: none;
+}
+
+.logo {
+  max-height: 1.5625rem;
+  max-width: 120px;
+}
+
+header {
+  font-family: "Avenir Next", "Comic Sans MS";
+}
+
+.header__search-input {
+  background-color: aqua;
 }/*# sourceMappingURL=App.css.map */
