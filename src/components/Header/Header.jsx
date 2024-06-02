@@ -1,10 +1,13 @@
 
 import { useState } from 'react'
+import brainflixLogo from '../../assets/images/BrainFlix-logo.svg'
 
 function Header() {
 
     return (
-        <p>Header JSX</p>
+        <>
+        <img src={brainflixLogo}/>
+        </>
     )
 }
 

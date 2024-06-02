@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/font/Alternative files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/font/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/font/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+html {
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+  font-size: 1rem;
+  display: flex;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+header, footer {
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
+header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.6666666667));
+main {
+  margin-top: 5.75rem;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 768px) {
+  main {
+    margin-top: 3.25rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-.card {
-  padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+div, section, article {
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h2, h3, h4, h5 {
+  margin: 1.5rem 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  h2, h3, h4, h5 {
+    margin: 3rem 0 2.25rem;
+  }
 }/*# sourceMappingURL=App.css.map */
