@@ -76,7 +76,37 @@ button {
     @include tablet {
         width: auto;
         max-width: 9.375rem;
-        padding: 0 2rem;
+        padding: 0 3.5rem;
+    }
+}
+
+.responsive-container {
+    @include flex-mixin(100%);
+    margin: 0;
+    padding: 0;
+}
+
+.avatar-div {
+    border-radius: 50%;
+    background-color: $mercury;
+    width: 2.625rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+    margin-top: 1.375rem;
+    @include tablet {
+        /* avatar image placeholder size increased relative to what's in the style guide
+        to better match mockup */
+        width: 3.8rem;
+        margin-top: 1.5rem;
+    }
+
+    &--posted {
+        @extend .avatar-div;
+        margin-top: .25rem;
+
+        @include tablet {
+            margin-top: .5rem;
+        }
     }
 }
 
@@ -108,5 +138,6 @@ button {
         background-color: $brainflix-blue;
         background-image: url('./assets/images/upload.svg');
         background-repeat: no-repeat;
+        background-position: $form-padding--mobile center;
     }
 }

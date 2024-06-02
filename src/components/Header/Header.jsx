@@ -17,13 +17,24 @@ function SearchInput(props) {
     )
 }
 
+function AvatarDiv() {
+    return (
+        <>
+        <div className="avatar-div"></div>
+        </>
+    )
+}
+
 function Header() {
     return (
         <>
         <header>
             <section>
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
-                <SearchInput/>
+                <div className="responsive-container">
+                    <SearchInput/>
+                    <AvatarDiv/>
+                </div>
                 <button className="header__upload-button">Upload</button>
             </section>
         </header>

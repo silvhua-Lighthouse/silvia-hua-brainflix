@@ -120,7 +120,39 @@ button {
   button {
     width: auto;
     max-width: 9.375rem;
-    padding: 0 2rem;
+    padding: 0 3.5rem;
+  }
+}
+
+.responsive-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.avatar-div, .avatar-div--posted {
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  width: 2.625rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin-top: 1.375rem;
+}
+@media screen and (min-width: 768px) {
+  .avatar-div, .avatar-div--posted {
+    /* avatar image placeholder size increased relative to what's in the style guide
+    to better match mockup */
+    width: 3.8rem;
+    margin-top: 1.5rem;
+  }
+}
+.avatar-div--posted {
+  margin-top: 0.25rem;
+}
+@media screen and (min-width: 768px) {
+  .avatar-div--posted {
+    margin-top: 0.5rem;
   }
 }
 
@@ -172,4 +204,5 @@ button {
   background-color: #0095FF;
   background-image: url("./assets/images/upload.svg");
   background-repeat: no-repeat;
+  background-position: 0.75rem center;
 }/*# sourceMappingURL=App.css.map */
