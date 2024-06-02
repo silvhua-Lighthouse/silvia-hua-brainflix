@@ -32,8 +32,8 @@
 // this is a function called by `set-element-margin` mixin.
 @mixin element-margin($media) {
     @if $media == tablet {
-        padding-left: $tablet-spacing;
-        padding-right: $tablet-spacing;
+        padding-left: $spacing--tablet;
+        padding-right: $spacing--tablet;
         margin: 0 auto;
     } @else {
         margin: 0 auto;
@@ -56,12 +56,12 @@
 
 @mixin set-section-margin() {
     margin: 0 auto;
-    padding: $mobile-spacing;
+    padding: $spacing--mobile;
     box-sizing: border-box;
 
     @include tablet {
         width: 100%;
-        padding: $tablet-spacing;
+        padding: $spacing--tablet;
     }
     @include desktop {
         max-width: $max-content-width;
@@ -80,9 +80,9 @@
 }
 
 @mixin heading-margin() {
-    margin: 1.5rem 0 $mobile-spacing;
+    margin: 1.5rem 0 $spacing--mobile;
     @include tablet {
-        margin: 2.25rem 0 $tablet-spacing;
+        margin: 2.25rem 0 $spacing--tablet;
     }
 }
 

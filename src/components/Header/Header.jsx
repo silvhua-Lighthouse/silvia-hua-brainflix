@@ -20,7 +20,7 @@ function SearchInput(props) {
 function AvatarDiv() {
     return (
         <>
-        <div className="avatar-div"></div>
+        <div className="avatar-div header__avatar"></div>
         </>
     )
 }
@@ -31,11 +31,11 @@ function Header() {
         <header>
             <section className="header">
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
-                <div className="responsive-container">
+                <div className="header__search-container">
                     <SearchInput/>
                     <AvatarDiv/>
+                    <button className="header__upload-button">Upload</button>
                 </div>
-                <button className="header__upload-button">Upload</button>
             </section>
         </header>
         </>

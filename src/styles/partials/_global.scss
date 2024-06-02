@@ -108,23 +108,32 @@ button {
 .header {
     @include flex-mixin--column(100%);
     @include set-section-margin;
-    flex-direction: column;
     @include tablet {
-        @include flex-mixin--row(100%);
+        flex-direction: row;
     }
-    
 
     &__logo {
         max-height: 1.5625rem;
         max-width: 7.5rem;
     }
+    
+    &__search-container {
+        @include responsive-container(100%);
+        flex-direction: column;
+        height: 90px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        // justify-content: flex-start;
+
+    }
     &__search-input {
-        width: 75%;
+        width: calc(100% - $avatar-width--mobile - $spacing--mobile);
         position: relative;
         background-image: url('./assets/images/search.svg');
         background-repeat: no-repeat;
         background-position: $form-padding--mobile center;
         padding-left: 2.5rem;
+        order: 1;
         @include tablet {
             background-position: $form-padding--tablet center;
         }
@@ -135,5 +144,15 @@ button {
         background-image: url('./assets/images/upload.svg');
         background-repeat: no-repeat;
         background-position: $form-padding--mobile center;
+        order: 2;
+    }
+
+    &__avatar {
+        @extend .avatar-div;
+        order: 3;
+
+        @include tablet {
+            order: 3;
+        }
     }
 }

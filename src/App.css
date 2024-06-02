@@ -134,7 +134,7 @@ button {
   padding: 0;
 }
 
-.avatar-div, .avatar-div--posted {
+.avatar-div, .header__avatar, .avatar-div--posted {
   border-radius: 50%;
   background-color: #E1E1E1;
   width: 2.25rem;
@@ -142,7 +142,7 @@ button {
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
-  .avatar-div, .avatar-div--posted {
+  .avatar-div, .header__avatar, .avatar-div--posted {
     /* avatar image placeholder size increased relative to what's in the style guide
     to better match mockup */
     width: 2.5rem;
@@ -157,7 +157,6 @@ button {
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
-  flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -172,24 +171,32 @@ button {
 }
 @media screen and (min-width: 768px) {
   .header {
-    display: flex;
-    position: relative;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: row;
   }
 }
 .header__logo {
   max-height: 1.5625rem;
   max-width: 7.5rem;
 }
+.header__search-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  height: 90px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
 .header__search-input {
-  width: 75%;
+  width: calc(100% - 2.25rem - 1rem);
   position: relative;
   background-image: url("./assets/images/search.svg");
   background-repeat: no-repeat;
   background-position: 0.75rem center;
   padding-left: 2.5rem;
+  order: 1;
 }
 @media screen and (min-width: 768px) {
   .header__search-input {
@@ -201,4 +208,13 @@ button {
   background-image: url("./assets/images/upload.svg");
   background-repeat: no-repeat;
   background-position: 0.75rem center;
+  order: 2;
+}
+.header__avatar {
+  order: 3;
+}
+@media screen and (min-width: 768px) {
+  .header__avatar {
+    order: 3;
+  }
 }/*# sourceMappingURL=App.css.map */
