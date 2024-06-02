@@ -29,7 +29,7 @@ function Header() {
     return (
         <>
         <header>
-            <section>
+            <section className="header">
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <div className="responsive-container">
                     <SearchInput/>

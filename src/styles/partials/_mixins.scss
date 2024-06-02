@@ -13,6 +13,7 @@
 }
 
 @mixin flex-mixin($element-width) {
+    display: flex;
     position: relative;
     width: $element-width;
 }
@@ -89,4 +90,10 @@
     margin: 0;
     padding: 0;
     line-height: 100%;
+}
+
+@mixin responsive-container($width) {
+    @include flex-mixin($width);
+    margin: 0;
+    padding: 0;
 }

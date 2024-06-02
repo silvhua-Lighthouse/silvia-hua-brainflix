@@ -21,6 +21,7 @@ html {
 }
 
 header, footer {
+  display: flex;
   position: relative;
   width: 100%;
   align-items: center;
@@ -46,6 +47,7 @@ main {
 }
 
 div, section, article {
+  display: flex;
   position: relative;
   width: 100%;
   align-items: center;
@@ -125,6 +127,7 @@ button {
 }
 
 .responsive-container {
+  display: flex;
   position: relative;
   width: 100%;
   margin: 0;
@@ -134,29 +137,19 @@ button {
 .avatar-div, .avatar-div--posted {
   border-radius: 50%;
   background-color: #E1E1E1;
-  width: 2.625rem;
+  width: 2.25rem;
   aspect-ratio: 1;
   overflow: hidden;
-  margin-top: 1.375rem;
 }
 @media screen and (min-width: 768px) {
   .avatar-div, .avatar-div--posted {
     /* avatar image placeholder size increased relative to what's in the style guide
     to better match mockup */
-    width: 3.8rem;
-    margin-top: 1.5rem;
+    width: 2.5rem;
   }
 }
-.avatar-div--posted {
-  margin-top: 0.25rem;
-}
-@media screen and (min-width: 768px) {
-  .avatar-div--posted {
-    margin-top: 0.5rem;
-  }
-}
-
 .header {
+  display: flex;
   position: relative;
   width: 100%;
   flex-direction: column;
@@ -164,6 +157,7 @@ button {
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
+  flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -178,6 +172,7 @@ button {
 }
 @media screen and (min-width: 768px) {
   .header {
+    display: flex;
     position: relative;
     width: 100%;
     align-items: center;
@@ -189,6 +184,7 @@ button {
   max-width: 7.5rem;
 }
 .header__search-input {
+  width: 75%;
   position: relative;
   background-image: url("./assets/images/search.svg");
   background-repeat: no-repeat;
