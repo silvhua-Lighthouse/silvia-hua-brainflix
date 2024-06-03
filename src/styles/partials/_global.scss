@@ -2,11 +2,9 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-body {
+body, #root {
     @include zero-spacing;
     width: 100%;
-    top: -0.5rem;
-    left: -0.5rem;
 }
 
 html {
