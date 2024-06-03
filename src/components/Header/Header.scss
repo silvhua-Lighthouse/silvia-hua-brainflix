@@ -1,0 +1,78 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+
+header {
+    @include flex-mixin--row(100%);
+}
+
+header {
+    background-color: yellow;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+}
+
+.header {
+    @include flex-mixin--column(100%);
+    @include set-section-margin;
+    @include component-spacing();
+    @include tablet {
+        flex-direction: row;
+    }
+
+    &__logo {
+        max-height: 1.5625rem;
+        max-width: 7.5rem;
+    }
+    
+    &__search-container {
+        @include responsive-container(100%);
+        flex-wrap: wrap;
+        align-items: flex-start;
+        @include component-spacing();
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
+    &__search-input {
+        width: calc(100% - $avatar-width--mobile - $spacing--mobile);
+        position: relative;
+        background-image: url('./assets/images/search.svg');
+        background-repeat: no-repeat;
+        background-position: $form-padding--mobile center;
+        padding-left: 2.5rem;
+        height: $button-height;
+        order: 1;
+        @include tablet {
+            background-position: $form-padding--tablet center;
+            max-width: 15rem;
+        }
+    }
+
+    &__upload-button {
+        background-color: $brainflix-blue;
+        background-image: url('../../assets/images/upload.svg');
+        background-repeat: no-repeat;
+        background-position: $form-padding--mobile center;
+        order: 3;
+        @include tablet {
+            order: 2;
+        }
+    }
+
+    &__avatar {
+        @include avatar-div();
+        background-image: url(./assets/images/Mohan-muruge.jpg);
+        background-size:cover;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        order: 2;
+
+        @include tablet {
+            order: 3;
+        }
+    }
+}

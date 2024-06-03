@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import './App.css'
+import './App.scss'
 import Header from './components/Header/Header.jsx'
 import Article from './components/Article/Article.jsx'
-
 
 const article = {
   title: "The Future of Artificial Intelligence",
@@ -13,7 +12,6 @@ const article = {
 }
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

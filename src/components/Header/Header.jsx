@@ -1,5 +1,6 @@
 import brainflixLogo from '../../assets/images/BrainFlix-logo.svg'
 import FormField from '../FormField/FormField'
+import './Header.css'
 
 const searchProps = {
     className: "header__search-input",
