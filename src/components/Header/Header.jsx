@@ -1,6 +1,7 @@
 import brainflixLogo from '../../assets/images/BrainFlix-logo.svg'
 import FormField from '../FormField/FormField'
 import './Header.scss'
+import AvatarDiv from '../Avatar/Avatar'
 
 const searchProps = {
     className: "header__search-input",
@@ -16,14 +17,6 @@ function SearchInput(props) {
     )
 }
 
-function AvatarDiv() {
-    return (
-        <>
-        <div className="avatar-div header__avatar"></div>
-        </>
-    )
-}
-
 function Header() {
     return (
         <>
@@ -32,7 +25,7 @@ function Header() {
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <div className="header__search-container">
                     <SearchInput/>
-                    <AvatarDiv/>
+                    <AvatarDiv classesArray={"header__avatar"}/>
                     <button className="header__upload-button">Upload</button>
                 </div>
             </section>

@@ -135,7 +135,7 @@ header {
 }
 
 header {
-  background-color: pink;
+  background-color: lemonchiffon;
   position: fixed;
   width: 100%;
   top: 0;
@@ -238,7 +238,7 @@ header {
   top: 0;
   left: 0;
   line-height: 100%;
-  background-image: url(./assets/images/Mohan-muruge.jpg);
+  background-image: url("../../assets/images/Mohan-muruge.jpg");
   background-size: cover;
   background-size: auto 100%;
   background-repeat: no-repeat;
