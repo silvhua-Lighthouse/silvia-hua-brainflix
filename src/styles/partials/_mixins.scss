@@ -65,6 +65,7 @@
     }
     @include desktop {
         max-width: $max-content-width;
+        padding: $spacing--tablet 0;
     }
 }
 

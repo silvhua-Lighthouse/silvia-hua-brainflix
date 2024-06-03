@@ -50,6 +50,7 @@ section {
 @media screen and (min-width: 1280px) {
   section {
     max-width: 1208px;
+    padding: 1.5rem 0;
   }
 }
 
@@ -59,7 +60,6 @@ main {
   width: 100%;
   position: relative;
   top: 10.4375rem;
-  max-width: 100vw;
 }
 @media screen and (min-width: 768px) {
   main {
@@ -162,6 +162,7 @@ header {
 @media screen and (min-width: 1280px) {
   .header {
     max-width: 1208px;
+    padding: 1.5rem 0;
   }
 }
 @media screen and (min-width: 768px) {
