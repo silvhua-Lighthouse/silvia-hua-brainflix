@@ -6,10 +6,10 @@
 .article {
     background-color: rgb(214, 245, 179);
     position: relative;
-    top: 10.4375rem;
-    
+}
+
+article {
     @include set-element-margin(0);
-    @include tablet {
-        top: 5.5rem;
-    }
+    background-color: yellow;
+
 }

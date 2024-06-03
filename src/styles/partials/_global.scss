@@ -2,29 +2,43 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-body, #root {
-    @include zero-spacing;
-    width: 100%;
-}
-
-html {
-    // @include zero-spacing;
-    font-size: 1rem;
-    display: flex;
-    font-family: $font-family;
-}
-
-main {
-    // shift the page content down according to header height
-    margin-top: 5.75rem;
-    @include tablet {
-        margin-top: 3.25rem;
-    }
-}
 
 div, section {
     @include flex-mixin--row(100%);
     @include set-section-margin();
+}
+
+html, body {
+
+    background-color: wheat;
+    @include zero-spacing;
+    font-size: 1rem;
+    display: flex;
+    font-family: $font-family;
+    width: 100vw;
+    position: relative;
+}
+
+main {
+    // shift the page content down according to header height
+    // margin-top: 5.75rem;
+    // @include tablet {
+    //     margin-top: 3.25rem;
+    // }
+    @include flex-mixin(100%);
+    position: relative;
+    top: 10.4375rem;
+    max-width: 100vw;
+    
+    @include tablet {
+        top: 5.5rem;
+    }
+}
+
+#root {
+    @include zero-spacing;
+    @include flex-mixin(100vw);
+    background-color: paleturquoise;
 }
 
 a {

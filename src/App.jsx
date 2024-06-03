@@ -16,7 +16,9 @@ function App() {
   return (
     <>
       <Header />
-      <Article article={article}></Article>
+      <main>
+        <Article article={article}></Article>
+      </main>
 
     </>
   )
