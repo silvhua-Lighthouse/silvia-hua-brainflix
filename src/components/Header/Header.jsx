@@ -18,6 +18,9 @@ function SearchInput(props) {
 }
 
 function Header() {
+    const avatar = {
+        classesArray: ['header__avatar']
+    }
     return (
         <>
         <header>
@@ -25,7 +28,7 @@ function Header() {
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <div className="header__search-container">
                     <SearchInput/>
-                    <AvatarDiv classesArray={"header__avatar"}/>
+                    <AvatarDiv avatar={avatar}/>
                     <button className="header__upload-button">Upload</button>
                 </div>
             </section>

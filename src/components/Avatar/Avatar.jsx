@@ -12,9 +12,9 @@ function appendClass(classesArray) {
 }
 
 function AvatarDiv(props) {
-
-
-    const classesString = 'avatar-div' + appendClass(props.classesArray);
+    // console.log('props', props)
+    const {classesArray} = props.avatar;
+    const classesString = 'avatar-div' + appendClass(classesArray);
     
     return (
         <>
