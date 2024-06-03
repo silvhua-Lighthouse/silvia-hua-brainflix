@@ -2,7 +2,7 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-#root {
+#root, body {
     @include zero-spacing;
     @include flex-mixin(100%);
     background-color: wheat;

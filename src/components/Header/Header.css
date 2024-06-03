@@ -13,7 +13,7 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
-#root {
+#root, body {
   margin: 0;
   padding: 0;
   top: 0;
