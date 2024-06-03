@@ -1,9 +1,13 @@
 @use './styles/partials/global' as *;
-@use './styles/partials/fonts' as *;
+// @use './styles/partials/fonts' as *;
+@use './styles/partials/variables' as *;
+@use './styles/partials/mixins' as *;
 
 .article {
-    background-color: aqua;
+    background-color: wheat;
     position: relative;
-    top: 5.5rem;
-    // top: 3rem;
+    top: 10.4375rem;
+    @include tablet {
+        top: 5.5rem;
+    }
 }

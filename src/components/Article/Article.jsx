@@ -21,11 +21,14 @@ function Article(props) {
     const { title, author, date, views, likes } = props.article;
     return (
         <>
-        <article className="article">
-            <h1 className="article__title">{title}</h1>
-            {/* <ArticleMetadata /> */}
+        <section className='article'>
+            <article>
+                <h1 className="article__title">{title}</h1>
+                {/* <ArticleMetadata /> */}
 
-        </article>
+            </article>
+
+        </section>
         </>
     )
 }

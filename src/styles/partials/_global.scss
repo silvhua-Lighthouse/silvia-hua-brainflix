@@ -22,7 +22,6 @@ header, footer {
 header {
     background-color: yellow;
     position: fixed;
-    // left: 0;
     width: 100%;
     top: 0;
     z-index: 3;
@@ -36,7 +35,7 @@ main {
     }
 }
 
-div, section, article {
+div, section {
     @include flex-mixin--row(100%);
     @include set-section-margin();
 }
