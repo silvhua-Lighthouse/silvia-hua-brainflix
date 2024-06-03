@@ -91,6 +91,7 @@ button {
     width: $avatar-width--mobile;
     aspect-ratio: 1;
     overflow: hidden;
+    @include zero-spacing;
     @include tablet {
         /* avatar image placeholder size increased relative to what's in the style guide
         to better match mockup */
@@ -122,8 +123,11 @@ button {
         flex-direction: column;
         height: 90px;
         flex-wrap: wrap;
-        align-content: flex-start;
-        // justify-content: flex-start;
+        align-items: flex-start;
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
 
     }
     &__search-input {
@@ -136,6 +140,7 @@ button {
         order: 1;
         @include tablet {
             background-position: $form-padding--tablet center;
+            max-width: 15rem;
         }
     }
 
@@ -149,10 +154,12 @@ button {
 
     &__avatar {
         @extend .avatar-div;
+        transform: translateX(-100%);
         order: 3;
 
         @include tablet {
-            order: 3;
+            
+            transform: none;
         }
     }
 }

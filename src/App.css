@@ -140,6 +140,9 @@ button {
   width: 2.25rem;
   aspect-ratio: 1;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
 }
 @media screen and (min-width: 768px) {
   .avatar-div, .header__avatar, .avatar-div--posted {
@@ -187,7 +190,13 @@ button {
   flex-direction: column;
   height: 90px;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-items: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .header__search-container {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
 .header__search-input {
   width: calc(100% - 2.25rem - 1rem);
@@ -201,6 +210,7 @@ button {
 @media screen and (min-width: 768px) {
   .header__search-input {
     background-position: 1rem center;
+    max-width: 15rem;
   }
 }
 .header__upload-button {
@@ -211,10 +221,11 @@ button {
   order: 2;
 }
 .header__avatar {
+  transform: translateX(-100%);
   order: 3;
 }
 @media screen and (min-width: 768px) {
   .header__avatar {
-    order: 3;
+    transform: none;
   }
 }/*# sourceMappingURL=App.css.map */
