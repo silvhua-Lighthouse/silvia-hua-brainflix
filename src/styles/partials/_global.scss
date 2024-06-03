@@ -4,8 +4,11 @@
 
 #root {
     @include zero-spacing;
-    @include flex-mixin(100vw);
-    background-color: yellow;
+    @include flex-mixin(100%);
+    background-color: wheat;
+    font-size: 1rem;
+    font-family: $font-family;
+    position: relative;
 }
 
 div, section {
@@ -15,17 +18,6 @@ div, section {
 section {
     @include set-section-margin();
 
-}
-
-html, body {
-
-    background-color: wheat;
-    @include zero-spacing;
-    font-size: 1rem;
-    display: flex;
-    font-family: $font-family;
-    width: 100vw;
-    position: relative;
 }
 
 main {
