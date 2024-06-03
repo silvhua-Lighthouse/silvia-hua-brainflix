@@ -1,0 +1,165 @@
+@use './fonts' as *;
+@use './variables' as *;
+@use './mixins' as *;
+
+html {
+    // @include zero-spacing;
+    font-size: 1rem;
+    display: flex;
+    background-color: pink;
+    font-family: $font-family;
+}
+
+header, footer {
+    @include flex-mixin--row(100%);
+}
+
+header {
+    background-color: yellow;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+}
+
+main {
+    // shift the page content down according to header height
+    margin-top: 5.75rem;
+    @include tablet {
+        margin-top: 3.25rem;
+    }
+}
+
+div, section, article {
+    @include flex-mixin--row(100%);
+    @include set-section-margin();
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h2, h3, h4, h5 {
+    @include heading-margin();
+    font-weight: 700;
+}
+p {
+}
+
+textarea {
+    resize: none;
+    font-family: $font-family;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $form-padding--mobile;
+
+    @include tablet {
+        padding: $form-padding--tablet;
+    }
+}
+
+button {
+    box-sizing: border-box;
+    color: white;
+    border-radius: .25rem;
+    height: 2.5rem;
+    width: 100%;
+    border: none;
+    @include set-font(.625rem, 1.25rem, .75rem, 1.25rem, 700);
+    text-transform: uppercase;
+    
+    @include tablet {
+        width: auto;
+        max-width: 9.375rem;
+        padding: 0 3.5rem;
+    }
+}
+
+.responsive-container {
+    @include responsive-container(100%);
+
+}
+
+.avatar-div {
+    border-radius: 50%;
+    background-color: $mercury;
+    width: $avatar-width--mobile;
+    aspect-ratio: 1;
+    overflow: hidden;
+    @include zero-spacing;
+    @include tablet {
+        /* avatar image placeholder size increased relative to what's in the style guide
+        to better match mockup */
+        width: $avatar-width--desktop;
+    }
+
+    &--posted {
+        @extend .avatar-div;
+
+        @include tablet {
+        }
+    }
+}
+
+.header {
+    @include flex-mixin--column(100%);
+    @include set-section-margin;
+    @include tablet {
+        flex-direction: row;
+    }
+
+    &__logo {
+        max-height: 1.5625rem;
+        max-width: 7.5rem;
+    }
+    
+    &__search-container {
+        @include responsive-container(100%);
+        flex-direction: column;
+        height: 90px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+    }
+    &__search-input {
+        width: calc(100% - $avatar-width--mobile - $spacing--mobile);
+        position: relative;
+        background-image: url('./assets/images/search.svg');
+        background-repeat: no-repeat;
+        background-position: $form-padding--mobile center;
+        padding-left: 2.5rem;
+        order: 1;
+        @include tablet {
+            background-position: $form-padding--tablet center;
+            max-width: 15rem;
+        }
+    }
+
+    &__upload-button {
+        background-color: $brainflix-blue;
+        background-image: url('./assets/images/upload.svg');
+        background-repeat: no-repeat;
+        background-position: $form-padding--mobile center;
+        order: 2;
+    }
+
+    &__avatar {
+        @extend .avatar-div;
+        transform: translateX(-100%);
+        order: 3;
+
+        @include tablet {
+            
+            transform: none;
+        }
+    }
+}
