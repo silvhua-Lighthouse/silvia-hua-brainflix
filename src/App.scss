@@ -2,14 +2,3 @@
 @use './styles/partials/fonts' as *;
 @use './styles/partials/variables' as *;
 @use './styles/partials/mixins' as *;
-
-.article {
-    background-color: rgb(214, 245, 179);
-    position: relative;
-}
-
-article {
-    @include set-element-margin(0);
-    background-color: yellow;
-
-}

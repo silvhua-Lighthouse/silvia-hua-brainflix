@@ -23,6 +23,7 @@ function App() {
       <Header avatar={avatar}/>
       <main>
         <Article article={article}></Article>
+        <section>section2</section>
       </main>
 
     </>

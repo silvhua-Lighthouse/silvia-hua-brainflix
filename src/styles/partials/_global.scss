@@ -11,18 +11,20 @@
     position: relative;
 }
 
-div, section {
+div, article {
     @include flex-mixin--row(100%);
+    @include set-section-margin();
 }
 
 section {
-    @include set-section-margin();
-
+    @include flex-mixin--column(100%);
+    align-items: center;
+    background-color: pink;
 }
 
 main {
     // shift the page content down according to header height
-    @include flex-mixin(100%);
+    @include flex-mixin--column(100%);
     position: relative;
     top: 10.4375rem;
     
