@@ -2,10 +2,19 @@
 @use './variables' as *;
 @use './mixins' as *;
 
+#root {
+    @include zero-spacing;
+    @include flex-mixin(100vw);
+    background-color: yellow;
+}
 
 div, section {
     @include flex-mixin--row(100%);
+}
+
+section {
     @include set-section-margin();
+
 }
 
 html, body {
@@ -21,10 +30,6 @@ html, body {
 
 main {
     // shift the page content down according to header height
-    // margin-top: 5.75rem;
-    // @include tablet {
-    //     margin-top: 3.25rem;
-    // }
     @include flex-mixin(100%);
     position: relative;
     top: 10.4375rem;
@@ -33,12 +38,6 @@ main {
     @include tablet {
         top: 5.5rem;
     }
-}
-
-#root {
-    @include zero-spacing;
-    @include flex-mixin(100vw);
-    background-color: paleturquoise;
 }
 
 a {

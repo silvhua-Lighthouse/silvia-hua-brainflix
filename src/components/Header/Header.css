@@ -13,24 +13,39 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
+#root {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  display: flex;
+  position: relative;
+  width: 100vw;
+  background-color: yellow;
+}
+
 div, section {
   display: flex;
   position: relative;
   width: 100%;
   align-items: center;
   justify-content: space-between;
+}
+
+section {
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
-  div, section {
+  section {
     width: 100%;
     padding: 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  div, section {
+  section {
     max-width: 1208px;
   }
 }
@@ -61,18 +76,6 @@ main {
   main {
     top: 5.5rem;
   }
-}
-
-#root {
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  line-height: 100%;
-  display: flex;
-  position: relative;
-  width: 100vw;
-  background-color: paleturquoise;
 }
 
 a {
