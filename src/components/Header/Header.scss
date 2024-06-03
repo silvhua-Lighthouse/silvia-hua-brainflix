@@ -66,10 +66,10 @@ header {
 
     &__avatar {
         @include avatar-div();
-        background-image: url('../../assets/images/Mohan-muruge.jpg');
-        background-size:cover;
-        background-size: auto 100%;
-        background-repeat: no-repeat;
+        // background-image: url('../../assets/images/Mohan-muruge.jpg');
+        // background-size:cover;
+        // background-size: auto 100%;
+        // background-repeat: no-repeat;
         order: 2;
 
         @include tablet {

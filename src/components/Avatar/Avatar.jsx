@@ -13,12 +13,14 @@ function appendClass(classesArray) {
 
 function AvatarDiv(props) {
     // console.log('props', props)
-    const {classesArray} = props.avatar;
+    const {classesArray, src} = props.avatar;
     const classesString = 'avatar-div' + appendClass(classesArray);
     
     return (
         <>
-        <div className={classesString}></div>
+        <div className={classesString}>
+            <img class="avatar-div__img" src={src} alt="user avatar"/>
+        </div>
         </>
     )
 }
