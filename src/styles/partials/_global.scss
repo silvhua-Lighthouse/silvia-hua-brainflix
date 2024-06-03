@@ -6,7 +6,6 @@ html {
     // @include zero-spacing;
     font-size: 1rem;
     display: flex;
-    background-color: pink;
     font-family: $font-family;
 }
 
@@ -51,7 +50,7 @@ h2, h3, h4, h5 {
 p {
 }
 
-textarea {
+textarea, input {
     resize: none;
     font-family: $font-family;
     width: 100%;
@@ -138,6 +137,8 @@ button {
         background-position: $form-padding--mobile center;
         padding-left: 2.5rem;
         order: 1;
+        line-height: 50%; // this keeps button and search input box the same height
+        text-wrap: nowrap;
         @include tablet {
             background-position: $form-padding--tablet center;
             max-width: 15rem;

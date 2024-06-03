@@ -6,13 +6,13 @@ import FormField from '../FormField/FormField'
 const searchProps = {
     className: "header__search-input",
     placeholder: "Search",
-
+    type: 'input'
 }
 
 function SearchInput(props) {
     return (
         <>
-        <FormField id="search-input" name="search-input" className={searchProps.className} placeholder={searchProps.placeholder} rows="1"/>
+        <FormField id="search-input" name="search-input" className={searchProps.className} placeholder={searchProps.placeholder} rows="1" type={searchProps.type}/>
         </>
     )
 }

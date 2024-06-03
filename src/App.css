@@ -16,7 +16,6 @@
 html {
   font-size: 1rem;
   display: flex;
-  background-color: pink;
   font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
 }
 
@@ -86,7 +85,7 @@ h2, h3, h4, h5 {
   }
 }
 
-textarea {
+textarea, input {
   resize: none;
   font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
   width: 100%;
@@ -94,7 +93,7 @@ textarea {
   padding: 0.75rem;
 }
 @media screen and (min-width: 768px) {
-  textarea {
+  textarea, input {
     padding: 1rem;
   }
 }
@@ -206,6 +205,8 @@ button {
   background-position: 0.75rem center;
   padding-left: 2.5rem;
   order: 1;
+  line-height: 50%;
+  text-wrap: nowrap;
 }
 @media screen and (min-width: 768px) {
   .header__search-input {
