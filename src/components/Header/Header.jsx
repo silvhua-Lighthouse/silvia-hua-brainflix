@@ -1,5 +1,3 @@
-
-import { useState } from 'react'
 import brainflixLogo from '../../assets/images/BrainFlix-logo.svg'
 import FormField from '../FormField/FormField'
 

@@ -28,7 +28,6 @@ header, footer {
 }
 
 header {
-  background-color: yellow;
   position: fixed;
   left: 0;
   width: 100%;
@@ -234,4 +233,11 @@ button {
   .header__avatar {
     order: 3;
   }
+}
+
+.article {
+  background-color: aqua;
+  position: relative;
+  top: 5.5rem;
+  top: 3rem;
 }/*# sourceMappingURL=App.css.map */
