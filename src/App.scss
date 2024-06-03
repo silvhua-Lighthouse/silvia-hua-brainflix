@@ -1,10 +1,6 @@
 @use './styles/partials/global' as *;
 @use './styles/partials/fonts' as *;
 
-#root {
-    @include zero-spacing;
-}
-
 .article {
     background-color: aqua;
     position: relative;

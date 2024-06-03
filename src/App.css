@@ -13,6 +13,16 @@
   src: url("./assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("./assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
+#root {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
 html {
   font-size: 1rem;
   display: flex;
@@ -28,8 +38,8 @@ header, footer {
 }
 
 header {
+  background-color: yellow;
   position: fixed;
-  left: 0;
   width: 100%;
   top: 0;
   z-index: 3;
@@ -217,6 +227,8 @@ button {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  top: 0;
+  left: 0;
   line-height: 100%;
   background-image: url(./assets/images/Mohan-muruge.jpg);
   background-size: cover;
@@ -239,5 +251,4 @@ button {
   background-color: aqua;
   position: relative;
   top: 5.5rem;
-  top: 3rem;
 }/*# sourceMappingURL=App.css.map */
