@@ -17,11 +17,8 @@ function SearchInput(props) {
     )
 }
 
-function Header() {
-    const avatar = {
-        classesArray: ['header__avatar'],
-        src: './src/assets/images/Mohan-muruge.jpg'
-    }
+function Header(props) {
+    const {avatar} = props;
     return (
         <>
         <header>

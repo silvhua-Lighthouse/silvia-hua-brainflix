@@ -13,9 +13,14 @@ const article = {
 
 function App() {
 
+  const avatar = {
+    classesArray: ['header__avatar'],
+    src: './src/assets/images/Mohan-muruge.jpg'
+  }
+
   return (
     <>
-      <Header />
+      <Header avatar={avatar}/>
       <main>
         <Article article={article}></Article>
       </main>

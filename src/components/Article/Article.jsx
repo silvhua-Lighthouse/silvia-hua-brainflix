@@ -17,13 +17,13 @@ function ArticleMetadata(props) {
 }
 
 function Article(props) {
-    const { title, author, date, views, likes } = props.article;
+    const { title, ...metadata } = props.article;
     return (
         <>
         <section className='article'>
             <article>
                 <h1 className="article__title">{title}</h1>
-                {/* <ArticleMetadata /> */}
+                <ArticleMetadata metadata={metadata}/>
 
             </article>
 
