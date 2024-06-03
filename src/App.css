@@ -91,6 +91,7 @@ textarea, input {
   width: 100%;
   box-sizing: border-box;
   padding: 0.75rem;
+  border-radius: 4px;
 }
 @media screen and (min-width: 768px) {
   textarea, input {
@@ -125,31 +126,6 @@ button {
   }
 }
 
-.responsive-container {
-  display: flex;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.avatar-div, .header__avatar, .avatar-div--posted {
-  border-radius: 50%;
-  background-color: #E1E1E1;
-  width: 2.25rem;
-  aspect-ratio: 1;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  line-height: 100%;
-}
-@media screen and (min-width: 768px) {
-  .avatar-div, .header__avatar, .avatar-div--posted {
-    /* avatar image placeholder size increased relative to what's in the style guide
-    to better match mockup */
-    width: 2.5rem;
-  }
-}
 .header {
   display: flex;
   position: relative;
@@ -159,6 +135,7 @@ button {
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
+  gap: 1rem;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -169,6 +146,11 @@ button {
 @media screen and (min-width: 1280px) {
   .header {
     max-width: 1208px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    gap: 1.5rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -186,14 +168,17 @@ button {
   width: 100%;
   margin: 0;
   padding: 0;
-  flex-direction: column;
-  height: 90px;
   flex-wrap: wrap;
   align-items: flex-start;
+  gap: 1rem;
 }
 @media screen and (min-width: 768px) {
   .header__search-container {
-    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__search-container {
     justify-content: flex-end;
   }
 }
@@ -204,9 +189,8 @@ button {
   background-repeat: no-repeat;
   background-position: 0.75rem center;
   padding-left: 2.5rem;
+  height: 2.5rem;
   order: 1;
-  line-height: 50%;
-  text-wrap: nowrap;
 }
 @media screen and (min-width: 768px) {
   .header__search-input {
@@ -219,14 +203,35 @@ button {
   background-image: url("./assets/images/upload.svg");
   background-repeat: no-repeat;
   background-position: 0.75rem center;
-  order: 2;
-}
-.header__avatar {
-  transform: translateX(-100%);
   order: 3;
 }
 @media screen and (min-width: 768px) {
+  .header__upload-button {
+    order: 2;
+  }
+}
+.header__avatar {
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  width: 2.25rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+  background-image: url(./assets/images/Mohan-muruge.jpg);
+  background-size: cover;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  order: 2;
+}
+@media screen and (min-width: 768px) {
   .header__avatar {
-    transform: none;
+    width: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__avatar {
+    order: 3;
   }
 }/*# sourceMappingURL=App.css.map */
