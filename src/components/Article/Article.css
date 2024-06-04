@@ -144,6 +144,44 @@ button {
 .article {
   background-color: rgb(214, 245, 179);
 }
+.article__metadata {
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .article__metadata {
+    flex-direction: row;
+  }
+}
+.article__metadata--left, .article__metadata--right {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .article__metadata--left, .article__metadata--right {
+    gap: 1rem;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .article__metadata--left, .article__metadata--right {
+    gap: 1.5rem;
+  }
+}
+.article__metadata--left {
+  justify-content: flex-start;
+}
+.article__metadata--right {
+  justify-content: flex-end;
+}
 
 article {
   position: relative;
@@ -153,7 +191,7 @@ article {
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  background-color: yellow;
+  background-color: white;
 }
 @media screen and (min-width: 768px) {
   article {

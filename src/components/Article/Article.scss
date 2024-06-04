@@ -5,12 +5,38 @@
 
 .article {
     background-color: rgb(214, 245, 179);
+
+    &__metadata {
+        flex-direction: row;
+        @include zero-spacing;
+        @include tablet {
+            flex-direction: row;
+        }
+
+        &--left, &--right {
+            @include zero-spacing;
+            flex-direction: column;
+            
+            @include tablet {
+                @include component-spacing;
+                flex-direction: row;
+            }
+        }
+
+        &--left {
+            justify-content: flex-start;
+        }
+
+        &--right {
+            justify-content: flex-end;
+        }
+    }
 }
 
 article {
     position: relative;
     @include set-element-margin(0);
     @include flex-mixin--column(100%);
-    background-color: yellow;
+    background-color: white;
 
 }
