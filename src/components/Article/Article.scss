@@ -49,6 +49,6 @@ article {
     position: relative;
     @include set-section-margin();
     @include flex-mixin--column(100%);
-    background-color: yellow;
+    background-color: pink;
 
 }
