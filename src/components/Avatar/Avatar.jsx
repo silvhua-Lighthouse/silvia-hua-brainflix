@@ -1,6 +1,7 @@
 import './Avatar.scss';
 
 function appendClass(classesArray) {
+    console.log('appendClass classesArray', classesArray)
     if (typeof classesArray === 'string') {
         classesArray = [classesArray];
     }

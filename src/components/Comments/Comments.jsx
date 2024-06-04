@@ -21,12 +21,16 @@ import CommentsForm from '../CommentsForm/CommentsForm';
 */
 function Comments(props) {
     const { videosArray } = props.videosArray;
-    const commentsCardsElements = videosArray.map(videoObject => {
-
-    })
+    const avatarProps = {
+        avatarSrc: props.avatarSrc,
+        classesArray: ['comments__avatar']
+    }
+    // const commentsCardsElements = videosArray.map(videoObject => videoObject);
     return (
         <section>
-            <CommentsForm avatar={props.avatar}/>
+            <CommentsForm avatar={avatarProps}/>
         </section>
     )
 }
+
+export default Comments
