@@ -4,7 +4,7 @@ import './Header.scss'
 import AvatarDiv from '../Avatar/Avatar'
 
 function Header(props) {
-    const {avatar} = props;
+    const avatarProps = props;
 
     const searchProps = {
         className: "header__search-input",
@@ -19,7 +19,7 @@ function Header(props) {
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <div className="header__search-container">
                     <FormField id="search-input" name="search-input" className={className} placeholder={placeholder} rows="1" type={type}/>
-                    <AvatarDiv avatar={avatar}/>
+                    <AvatarDiv avatar={avatarProps}/>
                     <button className="header__upload-button">Upload</button>
                 </div>
             </section>

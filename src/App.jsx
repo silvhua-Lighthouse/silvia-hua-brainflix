@@ -8,15 +8,11 @@ import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
 const video = videosArray[0];
 
 function App() {
-
-  const avatar = {
-    classesArray: ['header__avatar'],
-    src: './src/assets/images/Mohan-muruge.jpg'
-  }
+  const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
 
   return (
     <>
-      <Header avatar={avatar}/>
+      <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
       <main>
         <CurrentVideo video={video} />
         <VideoDetails videoDetails={video}></VideoDetails>
