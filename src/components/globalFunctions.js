@@ -8,4 +8,9 @@ const formatDate = (dateObject, options = null) => {
     return formattedDate
 }
 
+export const formatNumber = (number) => {
+    const formattedNumber = number.toLocaleString()
+    return formattedNumber;
+}
+
 export default formatDate;

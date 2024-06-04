@@ -13,7 +13,7 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
-div, article {
+div {
   display: flex;
   position: relative;
   width: 100%;
@@ -24,13 +24,13 @@ div, article {
   box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
-  div, article {
+  div {
     width: 100%;
     padding: 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  div, article {
+  div {
     max-width: 1208px;
     padding: 1.5rem 0;
   }
@@ -43,7 +43,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: pink;
 }
 
 #root, body {
@@ -100,6 +99,20 @@ h2, h3, h4, h5 {
   }
 }
 
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+}
+
 textarea, input {
   resize: none;
   font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
@@ -141,16 +154,33 @@ button {
   }
 }
 
+span {
+  display: flex;
+  position: relative;
+  width: auto;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+
 .article {
   background-color: rgb(214, 245, 179);
 }
 .article__metadata {
-  flex-direction: row;
   margin: 0;
   padding: 0;
   top: 0;
   left: 0;
   line-height: 100%;
+  gap: 1rem;
+  flex-direction: row;
+  border: #E1E1E1 solid 0.0625rem;
+}
+@media screen and (min-width: 768px) {
+  .article__metadata {
+    gap: 1.5rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .article__metadata {
@@ -164,6 +194,7 @@ button {
   left: 0;
   line-height: 100%;
   flex-direction: column;
+  align-items: flex-start;
 }
 @media screen and (min-width: 768px) {
   .article__metadata--left, .article__metadata--right {
@@ -182,29 +213,34 @@ button {
 .article__metadata--right {
   justify-content: flex-end;
 }
+.article__author {
+  font-weight: 700;
+}
+.article__date, .article__views, .article__likes {
+  color: #AFAFAF;
+}
 
 article {
   position: relative;
-  margin: 0 0;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
   display: flex;
   position: relative;
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
+  background-color: yellow;
 }
 @media screen and (min-width: 768px) {
   article {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin: 0 auto;
+    width: 100%;
+    padding: 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   article {
-    margin: 0 auto;
-    padding-left: 0;
-    padding-right: 0;
     max-width: 1208px;
+    padding: 1.5rem 0;
   }
 }/*# sourceMappingURL=Article.css.map */
