@@ -3,7 +3,7 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/fonts' as *;
 
-.article {
+.current-video {
 
     &__metadata {
         @include zero-spacing;
@@ -37,11 +37,11 @@
         }
     }
 
-    &__author {
+    &__channel {
         font-weight: 700;
     }
 
-    &__date, &__views, &__likes {
+    &__timestamp, &__views, &__likes {
         color: $silver;
     }
 

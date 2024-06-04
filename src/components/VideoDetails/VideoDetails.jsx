@@ -1,11 +1,11 @@
 import './VideoDetails.scss'
-import Article from '../Description/Description';
+import Description from '../Description/Description';
 
 function VideoDetails(props) {
 
     return (
         <section className="video-details">
-            <Article article={props.article}/>
+            <Description videoDetails={props.videoDetails}/>
         </section>
     )
 
