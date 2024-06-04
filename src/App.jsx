@@ -6,7 +6,6 @@ import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
 import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
 
 const video = videosArray[0];
-console.log('App.jsx video', video)
 
 function App() {
 
