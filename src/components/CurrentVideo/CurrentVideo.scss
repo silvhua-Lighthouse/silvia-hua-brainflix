@@ -4,6 +4,17 @@
 @use '../../styles/partials/fonts' as *;
 
 .current-video {
+    background-color: black;
+    overflow: clip;
     width: 100%;
-    height: auto;
+
+    &__video {
+        width: 100%;
+        @include set-element-margin(0);
+        box-sizing: border-box;
+        @include tablet {
+            max-height: 80vh;
+            max-width: 100%;
+        }
+    }
 }

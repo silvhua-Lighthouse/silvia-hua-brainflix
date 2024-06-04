@@ -3,8 +3,8 @@ import './CurrentVideo.scss';
 function CurrentVideo(props) {
     const {image} = props.video;
     return (
-        <section>
-            <video className="current-video" poster={image}></video>
+        <section className="current-video">
+            <video className="current-video__video" poster={image} controls></video>
 
         </section>
     )
