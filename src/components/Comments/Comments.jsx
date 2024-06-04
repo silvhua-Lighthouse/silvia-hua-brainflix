@@ -26,7 +26,7 @@ function Comments(props) {
     })
     return (
         <section>
-            <CommentsForm />
+            <CommentsForm avatar={props.avatar}/>
         </section>
     )
 }

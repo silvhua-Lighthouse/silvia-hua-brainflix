@@ -16,7 +16,7 @@ function App() {
       <main>
         <CurrentVideo video={video} />
         <VideoDetails videoDetails={video}></VideoDetails>
-        <section>section2</section>
+        <Comments avatarSrc={avatarSrc}/>
       </main>
 
     </>
