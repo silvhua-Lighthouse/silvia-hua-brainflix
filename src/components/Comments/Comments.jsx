@@ -21,19 +21,22 @@ import CommentsCard from '../CommentsCard/CommentsCard';
 </section>
 */
 function Comments(props) {
-    const { videosArray } = props;
     const avatarProps = {
         avatarSrc: props.avatarSrc,
         classesArray: ['comments-form__avatar']
     }
-    const commentsCardsElements = videosArray.map(videoObject => {
-        return <CommentsCard key={videoObject.id} comments={videoObject.comments}/>
-        }
-    );
+
+    const { videosArray } = props;
+    const videoObject = videosArray[0];
+    const videoCommentsArray = videoObject.comments;
+    const videoCommentCards = videoCommentsArray.map(commentObject => {
+        console.log('comment object', commentObject);
+        return <CommentsCard key={commentObject.id} comments={commentObject}/>
+    })
     return (
         <section className="comments-section">
             <CommentsForm avatar={avatarProps}/>
-            {commentsCardsElements}
+            {videoCommentCards}
         </section>
     )
 }

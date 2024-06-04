@@ -18,8 +18,8 @@ import formatTimestamp from '../globalFunctions';
 */
     
 function CommentsCard(props) {
-    console.log('commentsCard props', props.comments)
-    const {name, comment, timestamp} = props.comments;
+    const {name, timestamp, comment} = props.comments;
+
     return (
         <div className="comments__card">
             <div className="comments__avatar-div">
