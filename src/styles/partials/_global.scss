@@ -2,15 +2,6 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-#root, body {
-    @include zero-spacing;
-    @include flex-mixin(100%);
-    background-color: wheat;
-    font-size: 1rem;
-    font-family: $font-family;
-    position: relative;
-}
-
 div, article {
     @include flex-mixin--row(100%);
     @include set-section-margin();
@@ -20,6 +11,20 @@ section {
     @include flex-mixin--column(100%);
     align-items: center;
     background-color: pink;
+}
+
+#root, body {
+    // @include set-section-margin();
+    @include zero-spacing;
+    @include flex-mixin(100%);
+    background-color: wheat;
+    font-size: 1rem;
+    font-family: $font-family;
+    position: relative;
+    box-sizing: border-box;
+    @include desktop {
+        max-width: 100%;
+    }
 }
 
 main {

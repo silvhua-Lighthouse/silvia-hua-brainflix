@@ -21,14 +21,14 @@ function ArticleMetadata(props) {
 function Article(props) {
     const { title, ...metadata } = props.article;
     return (
-        <>
+        <section>
         <article>
             <h1 className="article__title">{title}</h1>
             <ArticleMetadata metadata={metadata}/>
 
         </article>
 
-        </>
+        </section>
     )
 }
 

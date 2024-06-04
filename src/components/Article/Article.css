@@ -13,21 +13,6 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
-#root, body {
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  line-height: 100%;
-  display: flex;
-  position: relative;
-  width: 100%;
-  background-color: wheat;
-  font-size: 1rem;
-  font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
-  position: relative;
-}
-
 div, article {
   display: flex;
   position: relative;
@@ -59,6 +44,27 @@ section {
   justify-content: center;
   align-items: center;
   background-color: pink;
+}
+
+#root, body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: wheat;
+  font-size: 1rem;
+  font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
+  position: relative;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1280px) {
+  #root, body {
+    max-width: 100%;
+  }
 }
 
 main {
