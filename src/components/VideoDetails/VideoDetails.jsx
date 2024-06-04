@@ -14,7 +14,6 @@ function VideoDetails(props) {
             </article>
         </section>
     )
-
 }
 
 export default VideoDetails;

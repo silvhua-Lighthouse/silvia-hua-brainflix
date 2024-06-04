@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './Description.scss';
-function Description(props) {
+function Description({description}) {
     return (
         <>
-        <p>{props.description}</p>
+        <p>{description}</p>
         </>
-
     )
 }
 
