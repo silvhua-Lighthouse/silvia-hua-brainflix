@@ -23,7 +23,7 @@ function Comments(props) {
     const { videosArray } = props.videosArray;
     const avatarProps = {
         avatarSrc: props.avatarSrc,
-        classesArray: ['comments__avatar']
+        classesArray: ['comments-form__avatar']
     }
     // const commentsCardsElements = videosArray.map(videoObject => videoObject);
     return (
