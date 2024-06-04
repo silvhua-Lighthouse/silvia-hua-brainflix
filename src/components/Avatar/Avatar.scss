@@ -1,5 +1,19 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
 
 .avatar-div {
+    border-radius: 50%;
+    background-color: $mercury;
+    width: $avatar-width--mobile;
+    aspect-ratio: 1;
+    overflow: hidden;
+    @include zero-spacing;
+    @include tablet {
+        width: $avatar-width--desktop;
+    }
+
     &__img {
         height: 100%;
     }

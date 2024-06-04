@@ -4,5 +4,4 @@
 @use '../../styles/partials/fonts' as *;
 
 .comments-form__avatar {
-    @include avatar-div();
 }

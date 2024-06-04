@@ -273,22 +273,7 @@ header {
   }
 }
 .header__avatar {
-  border-radius: 50%;
-  background-color: #E1E1E1;
-  width: 2.25rem;
-  aspect-ratio: 1;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  line-height: 100%;
   order: 2;
-}
-@media screen and (min-width: 768px) {
-  .header__avatar {
-    width: 2.5rem;
-  }
 }
 @media screen and (min-width: 768px) {
   .header__avatar {

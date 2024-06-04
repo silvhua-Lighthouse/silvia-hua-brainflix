@@ -107,15 +107,3 @@
         gap: $spacing--tablet;
     }
 }
-
-@mixin avatar-div() {
-    border-radius: 50%;
-    background-color: $mercury;
-    width: $avatar-width--mobile;
-    aspect-ratio: 1;
-    overflow: hidden;
-    @include zero-spacing;
-    @include tablet {
-        width: $avatar-width--desktop;
-    }
-}
