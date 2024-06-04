@@ -62,7 +62,6 @@ section {
   display: flex;
   position: relative;
   width: 100%;
-  background-color: wheat;
   font-size: 1rem;
   font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
   position: relative;
@@ -172,9 +171,6 @@ span {
   gap: 0.5em;
 }
 
-.article {
-  background-color: rgb(214, 245, 179);
-}
 .article__metadata {
   margin: 0;
   padding: 0;
@@ -183,7 +179,9 @@ span {
   line-height: 100%;
   gap: 1rem;
   flex-direction: row;
-  border: #E1E1E1 solid 0.0625rem;
+  border-bottom: #E1E1E1 solid 0.0625rem;
+  padding: 0.5em 0;
+  border-top: #E1E1E1 solid 0.0625rem;
 }
 @media screen and (min-width: 768px) {
   .article__metadata {
@@ -192,6 +190,7 @@ span {
 }
 @media screen and (min-width: 768px) {
   .article__metadata {
+    border-top: none;
     flex-direction: row;
   }
 }
@@ -203,16 +202,16 @@ span {
   line-height: 100%;
   flex-direction: column;
   align-items: flex-start;
+  gap: 1rem;
 }
 @media screen and (min-width: 768px) {
   .article__metadata--left, .article__metadata--right {
-    gap: 1rem;
-    flex-direction: row;
+    gap: 1.5rem;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .article__metadata--left, .article__metadata--right {
-    gap: 1.5rem;
+    flex-direction: row;
   }
 }
 .article__metadata--left {
@@ -238,7 +237,6 @@ article {
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  background-color: pink;
 }
 @media screen and (min-width: 768px) {
   article {

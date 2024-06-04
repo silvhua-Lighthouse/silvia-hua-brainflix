@@ -4,14 +4,16 @@
 @use '../../styles/partials/fonts' as *;
 
 .article {
-    background-color: rgb(214, 245, 179);
 
     &__metadata {
         @include zero-spacing;
         @include component-spacing;
         flex-direction: row;
-        border: $divider;
+        border-bottom: $divider;
+        padding: 0.5em 0;
+        border-top: $divider;
         @include tablet {
+            border-top: none;
             flex-direction: row;
         }
 
@@ -19,9 +21,9 @@
             @include zero-spacing;
             flex-direction: column;
             align-items: flex-start;
+            @include component-spacing;
             
             @include tablet {
-                @include component-spacing;
                 flex-direction: row;
             }
         }
@@ -49,6 +51,4 @@ article {
     position: relative;
     @include set-section-margin();
     @include flex-mixin--column(100%);
-    background-color: pink;
-
 }
