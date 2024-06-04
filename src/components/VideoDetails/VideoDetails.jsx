@@ -1,5 +1,5 @@
 import './VideoDetails.scss'
-import Article from '../Article/Article';
+import Article from '../Description/Description';
 
 function VideoDetails(props) {
 

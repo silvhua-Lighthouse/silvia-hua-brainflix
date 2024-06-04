@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import formatDate, {formatNumber} from '../globalFunctions';
-import './Article.scss';
+import './Metadata.scss';
 import likesIcon from '../../assets/images/likes.svg';
 import viewsIcon from '../../assets/images/views.svg'
 
-function ArticleMetadata(props) {
+function VideoMetadata(props) {
     const {author, date, views, likes} = props.metadata;
     return (
         <>
@@ -22,17 +22,4 @@ function ArticleMetadata(props) {
     )
 }
 
-function Article(props) {
-    const { title, body, ...metadata } = props.article;
-    return (
-        <article>
-            <h1 className="article__title">{title}</h1>
-            <ArticleMetadata metadata={metadata}/>
-            <p>{body}</p>
-
-        </article>
-
-    )
-}
-
-export default Article
+export default VideoMetadata;
