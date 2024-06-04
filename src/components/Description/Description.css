@@ -179,9 +179,9 @@ span {
   line-height: 100%;
   gap: 1rem;
   flex-direction: row;
-  border-bottom: #E1E1E1 solid 0.0625rem;
+  border-bottom: 0.0625rem solid #E1E1E1;
   padding: 0.5em 0;
-  border-top: #E1E1E1 solid 0.0625rem;
+  border-top: 0.0625rem solid #E1E1E1;
 }
 @media screen and (min-width: 768px) {
   .current-video__metadata {

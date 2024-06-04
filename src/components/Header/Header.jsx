@@ -3,29 +3,22 @@ import FormField from '../FormField/FormField'
 import './Header.scss'
 import AvatarDiv from '../Avatar/Avatar'
 
-const searchProps = {
-    className: "header__search-input",
-    placeholder: "Search",
-    type: 'input'
-}
-
-function SearchInput(props) {
-    return (
-        <>
-        <FormField id="search-input" name="search-input" className={searchProps.className} placeholder={searchProps.placeholder} rows="1" type={searchProps.type}/>
-        </>
-    )
-}
-
 function Header(props) {
     const {avatar} = props;
+
+    const searchProps = {
+        className: "header__search-input",
+        placeholder: "Search",
+        type: 'input'
+    }
+    const {className, placeholder, type} = searchProps;
     return (
         <>
         <header>
             <section className="header">
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <div className="header__search-container">
-                    <SearchInput/>
+                    <FormField id="search-input" name="search-input" className={className} placeholder={placeholder} rows="1" type={type}/>
                     <AvatarDiv avatar={avatar}/>
                     <button className="header__upload-button">Upload</button>
                 </div>
