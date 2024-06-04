@@ -5,7 +5,6 @@ function CurrentVideo(props) {
     return (
         <section className="current-video">
             <video className="current-video__video" poster={image} controls></video>
-
         </section>
     )
 }

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.scss'
 import Header from './components/Header/Header.jsx'
-import Article from './components/Article/Article.jsx'
 import videosArray from './data/video-details.json';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
+import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
 
 const article = {
   title: "The Future of Artificial Intelligence",
@@ -26,7 +26,7 @@ function App() {
       <Header avatar={avatar}/>
       <main>
         <CurrentVideo video={videosArray[0]} />
-        <Article article={article}></Article>
+        <VideoDetails article={article}></VideoDetails>
         <section>section2</section>
       </main>
 

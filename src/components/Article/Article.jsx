@@ -25,7 +25,6 @@ function ArticleMetadata(props) {
 function Article(props) {
     const { title, body, ...metadata } = props.article;
     return (
-        <section>
         <article>
             <h1 className="article__title">{title}</h1>
             <ArticleMetadata metadata={metadata}/>
@@ -33,7 +32,6 @@ function Article(props) {
 
         </article>
 
-        </section>
     )
 }
 

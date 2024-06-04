@@ -41,7 +41,7 @@ header {
     &__search-input {
         width: calc(100% - $avatar-width--mobile - $spacing--mobile);
         position: relative;
-        background-image: url('./assets/images/search.svg');
+        background-image: url('../../assets/images/search.svg');
         background-repeat: no-repeat;
         background-position: $form-padding--mobile center;
         padding-left: 2.5rem;
