@@ -11,7 +11,10 @@ const CommentsForm = (props) => {
         placeholder: 'Add a new comment',
         type: 'textarea',
         rows: '4',
-        label: 'Join the conversation',
+        label: {
+            labelText: 'Join the conversation',
+            inputContainerClassName: 'comments__input-container'
+            },
         minlength: '2'
     }
     const buttonProps = {

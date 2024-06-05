@@ -2,13 +2,15 @@ import { useState } from 'react';
 import './FormField.scss';
 
 function FormField(props) {
-    const {id, name, className, placeholder, type, rows, label} = props.inputProps;
-    const minlength = props.inputProps.minlength || 1;
+    const {id, name, className, placeholder, type, rows} = props.inputProps;
+    const minlength = props.inputProps.minlength ?? 1;
+    const labelText = props.inputProps.label?.labelText;
+    const inputContainerClassName = props.inputProps.label?.inputContainerClassName;
 
     const renderLabel = () => {
-        if (label) {
+        if (labelText) {
             return (
-                <label htmlFor={id}>{label}</label>
+                <label htmlFor={id}>{labelText}</label>
             )
         }
     }
@@ -20,6 +22,15 @@ function FormField(props) {
             default:
                 return <input id={id} name={name} className={className} placeholder={placeholder} rows={rows} minLength={minlength}></input>
         }
+    }
+
+    if (inputContainerClassName) {
+        return (
+            <div className={inputContainerClassName}>
+                {renderLabel()}
+                {renderInputElement()}
+            </div>
+        )
     }
 
     return (

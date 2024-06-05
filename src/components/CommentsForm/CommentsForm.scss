@@ -36,14 +36,18 @@
         }
     }
 
-    &__input-label {
-        @include set-font(.75rem, 100%, .875rem, 100%, 600); 
-        box-sizing: border-box;
-        color: $silver;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-top: 0.5em;
+    &__input-container {
+        @include zero-spacing;
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+    // &__input-label {
+    //     box-sizing: border-box;
+    //     color: $silver;
+    //     font-weight: 600;
+    //     text-transform: uppercase;
+    // }
 
     &__input-field {
         @include tablet {

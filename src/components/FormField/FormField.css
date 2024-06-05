@@ -173,7 +173,17 @@ textarea, input {
 }
 
 label {
+  font-size: 0.0063rem;
+  line-height: 1.25rem;
+  font-weight: 600;
   text-transform: uppercase;
   color: #AFAFAF;
-  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+@media screen and (min-width: 768px) {
+  label {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+  }
 }/*# sourceMappingURL=FormField.css.map */
