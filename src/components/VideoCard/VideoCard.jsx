@@ -5,7 +5,6 @@ const VideoCard = (props) => {
     const {id, title, channel, image} = videoObject;
 
     const clickHandler = () => {
-        console.log(`Selecting video ${id} ${title}`);
         onSelectVideo(id);
     }
     return (

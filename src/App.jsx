@@ -13,9 +13,9 @@ function App() {
   let currentVideoObject = videosArray[0];
 
   const selectVideoObject = (videoId) => {
-    currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
     setVideoId(videoId)
   }
+  currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
 
 
   return (
