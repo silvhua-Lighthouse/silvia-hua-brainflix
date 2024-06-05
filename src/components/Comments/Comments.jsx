@@ -23,7 +23,7 @@ import CommentsCard from '../CommentsCard/CommentsCard';
 function Comments(props) {
     const avatarProps = {
         avatarSrc: props.avatarSrc,
-        classesArray: ['comments-form__avatar']
+        classesArray: ['comments__user-avatar']
     }
     const { videosArray } = props;
     const videoObject = videosArray[0];

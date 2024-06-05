@@ -21,7 +21,7 @@ textarea, input {
 }
 
 label {
-    @include set-font(.0063rem, 1.25rem, .75rem, 1.25rem, 600); 
+    @include set-font(.8125rem, 100%, .8125rem, 100%, 600); 
     text-transform: uppercase;
     color: $silver;
     margin-bottom: .25rem;

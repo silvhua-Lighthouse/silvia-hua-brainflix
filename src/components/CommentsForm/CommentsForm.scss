@@ -21,8 +21,7 @@
     }
 
     &__user-avatar {
-        position: relative;
-        height: 100%;
+        margin-top: 1.0625rem;
     }
 
     &__form {
@@ -33,6 +32,7 @@
         @include tablet {
             gap: $spacing--tablet;
             flex-direction: row;
+            align-items: flex-end;
         }
     }
 
@@ -41,13 +41,6 @@
         flex-direction: column;
         align-items: flex-start;
     }
-
-    // &__input-label {
-    //     box-sizing: border-box;
-    //     color: $silver;
-    //     font-weight: 600;
-    //     text-transform: uppercase;
-    // }
 
     &__input-field {
         @include tablet {

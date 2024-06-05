@@ -32,8 +32,7 @@
   background-image: url("../../assets/images/add_comment.svg");
 }
 .comments__user-avatar {
-  position: relative;
-  height: 100%;
+  margin-top: 1.0625rem;
 }
 .comments__form {
   display: flex;
@@ -48,6 +47,7 @@
   .comments__form {
     gap: 1.5rem;
     flex-direction: row;
+    align-items: flex-end;
   }
 }
 .comments__input-container {
