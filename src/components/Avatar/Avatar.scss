@@ -11,7 +11,7 @@
     overflow: hidden;
     @include zero-spacing;
     @include tablet {
-        width: $avatar-width--desktop;
+        width: $avatar-width--tablet;
     }
 
     &__img {

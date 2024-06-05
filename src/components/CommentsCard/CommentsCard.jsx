@@ -22,7 +22,7 @@ function CommentsCard(props) {
 
     return (
         <div className="comments__card">
-            <div className="comments__avatar-div">
+            <div className="avatar-div comments__avatar-div">
             </div>
             <div className="comments__text-container">
                 <div className="comments__metadata">

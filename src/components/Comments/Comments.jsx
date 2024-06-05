@@ -25,12 +25,10 @@ function Comments(props) {
         avatarSrc: props.avatarSrc,
         classesArray: ['comments-form__avatar']
     }
-
     const { videosArray } = props;
     const videoObject = videosArray[0];
     const videoCommentsArray = videoObject.comments;
     const videoCommentCards = videoCommentsArray.map(commentObject => {
-        console.log('comment object', commentObject);
         return <CommentsCard key={commentObject.id} comments={commentObject}/>
     })
     return (

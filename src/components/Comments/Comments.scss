@@ -2,7 +2,142 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/fonts' as *;
+@use '../Avatar/Avatar.scss' as *;
 
 .comments {
+    &__card {
+        @include flex-mixin--row(100%);
+        border-bottom: $divider;
+        gap: $spacing--mobile;
+        align-items: flex-start;
+        @include tablet {
+            gap: $spacing--tablet;
+        }
+    }
+
+    &__avatar-div {
+        margin-top: 1em;
+    }
+
+    &__text-container {
+        @include flex-mixin--column(calc(100% - $avatar-width--mobile - $spacing--mobile));
+        @include zero-spacing();
+        @include tablet {
+            width: calc(100% - $avatar-width--tablet - $spacing--tablet)
+        }
+    }
+
+    &__metadata {
+        @include flex-mixin--row(100%);
+        @include zero-spacing();
+        margin: 1em 0;
+    }
+
+    &__name {
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        @include zero-spacing;
+    }
     
+    &__date {
+        color: $silver;
+        @include zero-spacing;
+    }
+
+    &__comment {
+        text-align: left;
+        justify-self: left;
+        width: 100%; // necessary so that short comments are left-aligned;
+        &:last-of-type {
+            padding: 0;
+        }
+    }
+
+    // &__body {
+    //     @include flex-mixin--column(100%);
+    //     @include tablet {
+    //         width: 90%;
+    //     }
+
+    //     @include desktop {
+    //         width: 50%;
+    //     }
+    // }
+    
+    // &__form-container {
+    //     @include flex-mixin--row(100%);
+    //     align-items: flex-start;
+    //     gap: 1rem;
+    //     border-bottom: $divider;
+    //     @include tablet {
+    //         gap: 1.125rem;
+    //     }
+    // }
+
+    // &__user-avatar {
+    //     position: relative;
+    //     height: 100%;
+    // }
+
+    // &__form {
+    //     @include flex-mixin--column(100%);
+    //     width: 100%;
+    //     padding-bottom: 1rem;
+
+    //     @include tablet {
+    //         padding-bottom: 2.25rem;
+    //     }
+    // }
+
+    // &__input-label {
+    //     @include set-font(.75rem, 100%, .875rem, 100%, 600); 
+    //     box-sizing: border-box;
+    //     color: $silver;
+    //     font-weight: 600;
+    //     text-transform: uppercase;
+    //     margin-top: 0.5em;
+    // }
+
+    // &__input-field {
+    //     margin: .25rem 0 1rem;
+    //     width: 100%;
+    //     min-height: 2.25rem;
+    //     font-family: 'Avenir Next';
+    //     color: $brainflix-black;
+    //     resize: none;
+    //     border: 1px solid $mercury;
+    //     border-radius: .25rem;
+    //     padding: .75rem;
+    //     box-sizing: border-box;
+    //     background-color: $alabaster;
+    //     @include tablet {
+    //         min-height: 3rem;
+    //         padding: 1rem;
+
+    //         &:last-of-type {
+    //             margin-bottom: 2.25rem;
+    //         }
+    //     }
+
+    //     &:focus, &:focus-visible, &:focus-within { // doesn't work
+    //         border-color: $brainflix-black;
+    //         outline: none; // get rid of the default black outline that hides the specified border style
+    //     }
+
+    //     &--error {
+    //         border-color: #D22D2D;
+    //     }
+
+    //     &::placeholder {
+    //         color: $brainflix-black;
+    //     }
+    // }
+
+    // &__cards-container {
+    //     @include flex-mixin--column(100%);
+    //     margin-bottom: 1.375rem;
+    //     @include tablet {
+    //         margin-bottom: 3.125rem;
+    //     }
+    // }
 }
