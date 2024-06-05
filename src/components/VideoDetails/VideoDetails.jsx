@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import './VideoDetails.scss'
 import Description from '../Description/Description';
 import Metadata from '../Metadata/Metadata';
+import Comments from '../Comments/Comments.jsx';
 
 function VideoDetails(props) {
-    const { title, description, comments, ...metadata } = props.videoDetails;
+    const {avatarSrc, videosArray} =  props;
+    const [videoId, setVideoId] = useState(0);
+    let videoObject = videosArray[videoId]
+    const { title, description, comments, ...metadata } = videoObject;
 
     return (
         <section className="video-details">
@@ -13,6 +18,7 @@ function VideoDetails(props) {
                 <Description description={description}/>
                 <p className="current-video__n-comments">{comments.length} Comments</p>
             </article>
+        <Comments avatarSrc={avatarSrc} videoObject={videoObject}/>
         </section>
     )
 }

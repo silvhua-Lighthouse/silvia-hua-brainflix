@@ -4,7 +4,6 @@ import Header from './components/Header/Header.jsx'
 import videosArray from './data/video-details.json';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
 import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
-import Comments from './components/Comments/Comments.jsx';
 
 const video = videosArray[0];
 function App() {
@@ -15,8 +14,7 @@ function App() {
       <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
       <main>
         <CurrentVideo video={video} />
-        <VideoDetails videoDetails={video}></VideoDetails>
-        <Comments avatarSrc={avatarSrc} videosArray={videosArray}/>
+        <VideoDetails videosArray={videosArray} avatarSrc={avatarSrc}></VideoDetails>
       </main>
 
     </>

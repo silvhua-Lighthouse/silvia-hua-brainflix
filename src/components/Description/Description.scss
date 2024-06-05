@@ -1,7 +1,7 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
-.current-video {
 
+.current-video {
     &__metadata {
         @include zero-spacing;
         @include component-spacing;

@@ -2,7 +2,7 @@ import './Comments.scss'
 import CommentsForm from '../CommentsForm/CommentsForm';
 import CommentsCard from '../CommentsCard/CommentsCard';
 /* 
-<section class="comments-section">
+<div class="comments-section">
     <div class="comments__form-container">
         <div class="comments-form__avatar">
             <img src="./assets/images/Mohan-muruge.jpg" alt="user-avatar" class="comments__user-avatar"/>
@@ -18,24 +18,23 @@ import CommentsCard from '../CommentsCard/CommentsCard';
     <div class="comments">
         <!-- DOM elements added here -->
     </div>
-</section>
+</div>
 */
 function Comments(props) {
     const avatarProps = {
         avatarSrc: props.avatarSrc,
         classesArray: ['comments__user-avatar']
     }
-    const { videosArray } = props;
-    const videoObject = videosArray[0];
+    const { videoObject } = props;
     const videoCommentsArray = videoObject.comments;
     const videoCommentCards = videoCommentsArray.map(commentObject => {
         return <CommentsCard key={commentObject.id} comments={commentObject}/>
     })
     return (
-        <section className="comments-section">
+        <div className="comments-section">
             <CommentsForm avatar={avatarProps}/>
             {videoCommentCards}
-        </section>
+        </div>
     )
 }
 
