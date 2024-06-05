@@ -1,1 +1,8 @@
-/*# sourceMappingURL=NextVideos.css.map */
+.next-videos {
+  background-color: pink;
+}
+@media screen and (min-width: 1280px) {
+  .next-videos {
+    width: 25%;
+  }
+}/*# sourceMappingURL=NextVideos.css.map */

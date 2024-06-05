@@ -2,4 +2,9 @@
 
 .secondary {
     @include zero-spacing;
+    flex-direction: column;
+    @include desktop {
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }

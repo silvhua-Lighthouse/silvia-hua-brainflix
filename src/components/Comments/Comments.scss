@@ -119,8 +119,6 @@ $comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--t
     }
 
     &__comment {
-        text-align: left;
-        justify-self: left;
         width: 100%; // necessary so that short comments are left-aligned;
         &:last-of-type {
             padding: 0;

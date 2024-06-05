@@ -5,8 +5,8 @@ import VideoCard from '../VideoCard/VideoCard';
 */
 const NextVideos = () => {
     return (
-        <section>
-            
+        <section className="next-videos">
+            hello
         </section>
     )
 }

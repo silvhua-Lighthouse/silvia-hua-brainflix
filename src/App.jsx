@@ -4,6 +4,7 @@ import Header from './components/Header/Header.jsx'
 import videosArray from './data/video-details.json';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
 import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
+import NextVideos from './components/NextVideos/NextVideos.jsx';
 
 const video = videosArray[0];
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <CurrentVideo video={video} />
         <section className="secondary">
           <VideoDetails videosArray={videosArray} avatarSrc={avatarSrc}></VideoDetails>
+          <NextVideos />
         </section>
       </main>
 

@@ -1,0 +1,10 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.next-videos {
+    background-color: pink;
+    
+    @include desktop {
+        width: 25%;
+    }
+}

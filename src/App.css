@@ -4,4 +4,11 @@
   top: 0;
   left: 0;
   line-height: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 1280px) {
+  .secondary {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }/*# sourceMappingURL=App.css.map */

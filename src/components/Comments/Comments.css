@@ -184,8 +184,6 @@
   line-height: 100%;
 }
 .comments__comment {
-  text-align: left;
-  justify-self: left;
   width: 100%;
 }
 .comments__comment:last-of-type {
