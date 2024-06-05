@@ -26,7 +26,7 @@
 @media screen and (min-width: 768px) {
   .current-video__video {
     max-height: 80vh;
-    max-width: 100%;
+    max-width: 1208px;
   }
 }
 .current-video__metadata {

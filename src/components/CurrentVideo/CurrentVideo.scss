@@ -12,7 +12,7 @@
         box-sizing: border-box;
         @include tablet {
             max-height: 80vh;
-            max-width: 100%;
+            max-width: $max-content-width;
         }
     }
 
