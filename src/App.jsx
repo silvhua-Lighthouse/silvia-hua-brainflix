@@ -6,7 +6,6 @@ import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
 import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
 import NextVideos from './components/NextVideos/NextVideos.jsx';
 
-const video = videosArray[0];
 function App() {
   const [currentVideoId, setVideoId] = useState(videosArray[0].id);
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
@@ -15,17 +14,21 @@ function App() {
     videosArray.find(videoObject => videoObject.id === videoId);
   }
 
+  const currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
+
   return (
     <>
       <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
       <main>
-        <CurrentVideo video={video} />
+        <CurrentVideo currentVideoObject={currentVideoObject} />
         <section className="secondary">
           <VideoDetails 
             videosArray={videosArray} avatarSrc={avatarSrc}
-            // onSelectVideo={selectVideo}
+            currentVideoId={currentVideoId}
           ></VideoDetails>
-          <NextVideos videosArray={videosArray} onSelectVideo={selectVideoObject} currentVideoId={currentVideoId}/>
+          <NextVideos 
+            videosArray={videosArray} onSelectVideo={selectVideoObject} currentVideoId={currentVideoId}
+          />
         </section>
       </main>
 

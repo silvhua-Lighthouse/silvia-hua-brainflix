@@ -1,7 +1,8 @@
 import './CurrentVideo.scss';
 
-function CurrentVideo(props) {
-    const {image} = props.video;
+function CurrentVideo({currentVideoObject}) {
+    const {image} = currentVideoObject;
+    console.log('Current Video video obj', currentVideoObject);
     return (
         <section className="current-video">
             <video className="current-video__video" poster={image} controls></video>
