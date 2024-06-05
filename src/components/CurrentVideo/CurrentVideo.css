@@ -106,14 +106,14 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-p {
+p, textarea, input {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
   color: #323232;
 }
 @media screen and (min-width: 768px) {
-  p {
+  p, textarea, input {
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;

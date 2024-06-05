@@ -52,13 +52,11 @@
         padding: .75rem;
         box-sizing: border-box;
         background-color: $alabaster;
+        overflow: hidden;
         @include tablet {
-            min-height: 3rem;
-            padding: 1rem;
-
-            &:last-of-type {
-                margin-bottom: 2.25rem;
-            }
+            height: $button-height;
+            padding: 0 1rem;
+            line-height: $button-height;
         }
 
         &:focus, &:focus-visible, &:focus-within { // doesn't work

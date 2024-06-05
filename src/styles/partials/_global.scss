@@ -60,6 +60,7 @@ p {
 }
 
 textarea, input {
+    @extend p;
     resize: none;
     font-family: $font-family;
     width: 100%;
