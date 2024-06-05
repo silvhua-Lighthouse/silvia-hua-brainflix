@@ -11,7 +11,7 @@ function VideoDetails(props) {
                 <h1 className="current-video__title">{title}</h1>
                 <Metadata metadata={metadata}/>
                 <Description description={description}/>
-                <p className="current-video__n-comments">{comments.length} likes</p>
+                <p className="current-video__n-comments">{comments.length} Comments</p>
             </article>
         </section>
     )

@@ -8,10 +8,8 @@ import CommentsCard from '../CommentsCard/CommentsCard';
             <img src="./assets/images/Mohan-muruge.jpg" alt="user-avatar" class="comments__user-avatar"/>
         </div>
         <form class="comments__form">
-            <label for="name-field" class="comments__input-label">Name</label>
-            <input type="text" name="name" id="name-field" class="comments__input-field" placeholder="Enter your name" minlength=2/>
-            <label for="comment-field" class="comments__input-label">Comment</label>
-            <textarea name="comment" id="comment-field" class="comments__input-field" rows="5" placeholder="Add a new comment" minlength=2></textarea>
+            <label for="comment-field" class="comments__input-label">Join the conversation</label>
+            <textarea name="userComment" id="user-name" class="comments__input-field" rows="4" placeholder="Add a new comment" minlength=2></textarea>
             <button type="submit" class="button">comment</button>
         </form>
     </div>

@@ -170,4 +170,10 @@ textarea, input {
   textarea, input {
     padding: 1rem;
   }
+}
+
+label {
+  text-transform: uppercase;
+  color: #AFAFAF;
+  font-weight: 600;
 }/*# sourceMappingURL=FormField.css.map */

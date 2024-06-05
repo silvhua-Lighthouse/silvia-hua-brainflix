@@ -19,3 +19,9 @@ textarea, input {
         padding: $form-padding--tablet;
     }
 }
+
+label {
+    text-transform: uppercase;
+    color: $silver;
+    font-weight: 600;
+}
