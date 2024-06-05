@@ -59,19 +59,6 @@ p {
     color: $brainflix-black;
 }
 
-textarea, input {
-    @extend p;
-    resize: none;
-    font-family: $font-family;
-    width: 100%;
-    box-sizing: border-box;
-    padding: $form-padding--mobile;
-    border-radius: 4px;
-    @include tablet {
-        padding: $form-padding--tablet;
-    }
-}
-
 button {
     box-sizing: border-box;
     color: white;

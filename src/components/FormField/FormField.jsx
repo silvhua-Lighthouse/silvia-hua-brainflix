@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import './FormField.scss';
 
 function FormField(props) {
     const renderInputElement = () => {

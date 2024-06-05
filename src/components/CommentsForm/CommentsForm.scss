@@ -41,22 +41,11 @@
     }
 
     &__input-field {
-        margin: .25rem 0 1rem;
-        width: 100%;
-        min-height: 2.25rem;
-        font-family: 'Avenir Next';
-        color: $brainflix-black;
-        resize: none;
-        border: 1px solid $mercury;
-        border-radius: .25rem;
-        padding: .75rem;
-        box-sizing: border-box;
-        background-color: $alabaster;
-        overflow: hidden;
         @include tablet {
             height: $button-height;
             padding: 0 1rem;
             line-height: $button-height;
+            overflow: hidden;
         }
 
         &:focus, &:focus-visible, &:focus-within { // doesn't work

@@ -1,3 +1,21 @@
-@mixin form-field {
-    
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+
+textarea, input {
+    @extend p;
+    resize: none;
+    font-family: $font-family;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $form-padding--mobile;
+    color: $brainflix-black;
+    resize: none;
+    border: 1px solid $mercury;
+    border-radius: .25rem;
+    background-color: $alabaster;
+    @include tablet {
+        padding: $form-padding--tablet;
+    }
 }
