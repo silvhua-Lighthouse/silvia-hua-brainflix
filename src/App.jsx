@@ -8,7 +8,12 @@ import NextVideos from './components/NextVideos/NextVideos.jsx';
 
 const video = videosArray[0];
 function App() {
+  const [selectedVideoId, setVideoId] = useState(0);
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
+
+  const selectVideoObject = (videoId) => {
+    videosArray.find(videoObject => videoObject.id === videoId);
+  }
 
   return (
     <>
@@ -16,8 +21,11 @@ function App() {
       <main>
         <CurrentVideo video={video} />
         <section className="secondary">
-          <VideoDetails videosArray={videosArray} avatarSrc={avatarSrc}></VideoDetails>
-          <NextVideos videosArray={videosArray}/>
+          <VideoDetails 
+            videosArray={videosArray} avatarSrc={avatarSrc}
+            // onSelectVideo={selectVideo}
+          ></VideoDetails>
+          <NextVideos videosArray={videosArray} onSelectVideo={selectVideoObject}/>
         </section>
       </main>
 

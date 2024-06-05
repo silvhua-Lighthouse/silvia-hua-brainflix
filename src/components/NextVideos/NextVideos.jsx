@@ -3,7 +3,7 @@ import VideoCard from '../VideoCard/VideoCard';
 /*
 <section>
 */
-const NextVideos = ({videosArray}) => {
+const NextVideos = ({videosArray, onSelectVideo}) => {
 
     const nextVideosArray = videosArray;
     return (
@@ -11,7 +11,7 @@ const NextVideos = ({videosArray}) => {
             <h2 className="next-videos__heading">Next Videos</h2>
             {
                 nextVideosArray.map(
-                    videoObject => <VideoCard key={videoObject.id} videoObject={videoObject} />
+                    videoObject => <VideoCard key={videoObject.id} videoObject={videoObject} onSelectVideo={onSelectVideo}/>
                 )
             }
         </section>
