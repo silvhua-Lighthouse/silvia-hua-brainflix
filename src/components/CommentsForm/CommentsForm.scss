@@ -1,7 +1,7 @@
-@use '../../styles/partials/global' as *;
+// @use '../../styles/partials/global' as *;
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
-@use '../../styles/partials/fonts' as *;
+// @use '../../styles/partials/fonts' as *;
 
 .comments {
     
@@ -16,6 +16,10 @@
         }
     }
 
+    &__button {
+        background-image: url('../../assets/images/add_comment.svg');
+    }
+
     &__user-avatar {
         position: relative;
         height: 100%;
@@ -24,10 +28,11 @@
     &__form {
         @include flex-mixin--column(100%);
         width: 100%;
-        padding-bottom: 1rem;
+        gap: $spacing--mobile;
 
         @include tablet {
-            padding-bottom: 2.25rem;
+            gap: $spacing--tablet;
+            flex-direction: row;
         }
     }
 

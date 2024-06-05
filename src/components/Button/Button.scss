@@ -4,17 +4,19 @@
 @use '../../styles/partials/fonts' as *;
 
 button {
+    @include flex-mixin--row(100%);
+    justify-content: center;
     box-sizing: border-box;
     color: white;
     border-radius: .25rem;
     height: $button-height;
-    width: 100%;
     border: none;
     @include set-font(.625rem, 1.25rem, .75rem, 1.25rem, 700);
     text-transform: uppercase;
     background-color: $brainflix-blue;
     background-repeat: no-repeat;
-    background-position: $form-padding--mobile center;
+    background-position: 0.75em center;
+    background-size: auto 40%;
     
     @include tablet {
         width: auto;

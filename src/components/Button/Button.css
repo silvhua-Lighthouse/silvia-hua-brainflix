@@ -155,11 +155,16 @@ article {
 }
 
 button {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
   box-sizing: border-box;
   color: white;
   border-radius: 0.25rem;
   height: 2.5rem;
-  width: 100%;
   border: none;
   font-size: 0.625rem;
   line-height: 1.25rem;
@@ -167,7 +172,8 @@ button {
   text-transform: uppercase;
   background-color: #0095FF;
   background-repeat: no-repeat;
-  background-position: 0.75rem center;
+  background-position: 0.75em center;
+  background-size: auto 40%;
 }
 @media screen and (min-width: 768px) {
   button {

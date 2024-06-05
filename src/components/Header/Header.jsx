@@ -17,7 +17,8 @@ function Header(props) {
     }
     const buttonProps = {
         className: "header__upload-button",
-        innerText: 'Upload'
+        innerText: 'Upload',
+        type: 'submit'
     }
     return (
         <>
@@ -27,7 +28,6 @@ function Header(props) {
                 <div className="header__search-container">
                     <FormField inputProps={searchProps}/>
                     <AvatarDiv avatar={avatarProps}/>
-                    {/* <button className="header__upload-button">Upload</button> */}
                     <Button buttonProps={buttonProps} />
                 </div>
             </section>

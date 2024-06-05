@@ -3,7 +3,6 @@ import './FormField.scss';
 
 function FormField(props) {
     const renderInputElement = () => {
-        console.log('FormField props', props)
         const {id, name, className, placeholder, type, rows} = props.inputProps;
 
         switch(type) {

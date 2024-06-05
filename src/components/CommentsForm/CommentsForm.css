@@ -1,159 +1,3 @@
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
-  font-weight: 600;
-}
-* {
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  line-height: 100%;
-}
-
-div {
-  display: flex;
-  position: relative;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 768px) {
-  div {
-    width: 100%;
-    padding: 1.5rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  div {
-    max-width: 1208px;
-    padding: 1.5rem 0;
-  }
-}
-
-section {
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#root, body {
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  line-height: 100%;
-  display: flex;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;
-  position: relative;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 1280px) {
-  #root, body {
-    max-width: 100%;
-  }
-}
-
-main {
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  top: 10.4375rem;
-}
-@media screen and (min-width: 768px) {
-  main {
-    top: 5.5rem;
-  }
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style: none;
-}
-
-h1, h2, h3, h4, h5 {
-  margin: 1.5rem 0 1rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 768px) {
-  h1, h2, h3, h4, h5 {
-    margin: 2.25rem 0 1.5rem;
-  }
-}
-
-p {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  color: #323232;
-}
-@media screen and (min-width: 768px) {
-  p {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 400;
-  }
-}
-
-span {
-  display: flex;
-  position: relative;
-  width: auto;
-  align-items: center;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5em;
-}
-
-article {
-  position: relative;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  article {
-    width: 100%;
-    padding: 1.5rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  article {
-    max-width: 1208px;
-    padding: 1.5rem 0;
-  }
-}
-
 .comments__form-container {
   display: flex;
   position: relative;
@@ -184,6 +28,9 @@ article {
     gap: 1.125rem;
   }
 }
+.comments__button {
+  background-image: url("../../assets/images/add_comment.svg");
+}
 .comments__user-avatar {
   position: relative;
   height: 100%;
@@ -195,11 +42,12 @@ article {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  padding-bottom: 1rem;
+  gap: 1rem;
 }
 @media screen and (min-width: 768px) {
   .comments__form {
-    padding-bottom: 2.25rem;
+    gap: 1.5rem;
+    flex-direction: row;
   }
 }
 .comments__input-label {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.scss'
+// import './App.scss'
 import Header from './components/Header/Header.jsx'
 import videosArray from './data/video-details.json';
 import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
