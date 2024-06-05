@@ -17,7 +17,7 @@ function App() {
         <CurrentVideo video={video} />
         <section className="secondary">
           <VideoDetails videosArray={videosArray} avatarSrc={avatarSrc}></VideoDetails>
-          <NextVideos />
+          <NextVideos videosArray={videosArray}/>
         </section>
       </main>
 
