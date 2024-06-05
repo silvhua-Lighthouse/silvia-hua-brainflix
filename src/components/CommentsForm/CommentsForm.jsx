@@ -1,4 +1,3 @@
-import './CommentsForm.scss'
 import FormField from '../FormField/FormField'
 import AvatarDiv from '../Avatar/Avatar'
 import Button from '../Button/Button'

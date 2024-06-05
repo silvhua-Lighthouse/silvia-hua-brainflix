@@ -1,4 +1,3 @@
-import './CommentsCard.scss'
 import formatTimestamp from '../globalFunctions';
 
 /* This is the HTML to re-create using DOM:

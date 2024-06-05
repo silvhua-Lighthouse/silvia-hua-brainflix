@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import formatTimestamp, {formatNumber} from '../globalFunctions';
-import './Metadata.scss';
 import likesIcon from '../../assets/images/likes.svg';
 import viewsIcon from '../../assets/images/views.svg'
 
