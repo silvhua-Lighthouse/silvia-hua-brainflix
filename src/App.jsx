@@ -10,11 +10,13 @@ function App() {
   const [currentVideoId, setVideoId] = useState(videosArray[0].id);
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
 
+  let currentVideoObject = videosArray[0];
+
   const selectVideoObject = (videoId) => {
-    videosArray.find(videoObject => videoObject.id === videoId);
+    currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
+    setVideoId(videoId)
   }
 
-  const currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
 
   return (
     <>
