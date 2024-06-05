@@ -19,6 +19,7 @@
   top: 0;
   left: 0;
   line-height: 100%;
+  color: #323232;
 }
 
 div {
@@ -96,13 +97,41 @@ li {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1 {
   margin: 1.5rem 0 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
 }
 @media screen and (min-width: 768px) {
-  h1, h2, h3, h4, h5 {
+  h1 {
     margin: 2.25rem 0 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+  }
+}
+
+h2, h3, h4, h5 {
+  margin: 1.5rem 0 1rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  h2, h3, h4, h5 {
+    margin: 2.25rem 0 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2, h3, h4, h5 {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
   }
 }
 
@@ -188,4 +217,7 @@ button {
     max-width: 9.375rem;
     padding: 0 3.5rem;
   }
+}
+button:hover {
+  background-color: #0065AD;
 }/*# sourceMappingURL=Button.css.map */

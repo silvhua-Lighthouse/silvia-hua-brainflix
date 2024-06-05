@@ -59,11 +59,6 @@ $comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--t
             overflow: hidden;
         }
 
-        &:focus, &:focus-visible, &:focus-within { // doesn't work
-            border-color: $brainflix-black;
-            outline: none; // get rid of the default black outline that hides the specified border style
-        }
-
         &--error {
             border-color: #D22D2D;
         }

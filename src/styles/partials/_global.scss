@@ -4,6 +4,7 @@
 
 * {
     @include zero-spacing;
+    color: $brainflix-black;
 }
 
 div {
@@ -17,7 +18,6 @@ section {
 }
 
 #root, body {
-    // @include set-section-margin();
     @include zero-spacing;
     @include flex-mixin(100%);
     font-size: 1rem;
@@ -48,10 +48,14 @@ li {
     list-style: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1 {
     @include heading-margin();
-    font-weight: 700;
+    @include set-font(1.5rem, 2rem, 2.0625rem, 2.75rem, 700);
+}
 
+h2, h3, h4, h5 {
+    @include heading-margin();
+    @include set-font(.75rem, 1.25rem, .75rem, 1.25rem, 700);
 }
 
 p {

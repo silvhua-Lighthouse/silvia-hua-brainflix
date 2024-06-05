@@ -8,4 +8,8 @@
     @include desktop {
         width: 25%;
     }
+
+    &__heading {
+        color: $silver;
+    }
 }

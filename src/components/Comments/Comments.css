@@ -95,10 +95,6 @@
     overflow: hidden;
   }
 }
-.comments__input-field:focus, .comments__input-field:focus-visible, .comments__input-field:focus-within {
-  border-color: #323232;
-  outline: none;
-}
 .comments__input-field--error {
   border-color: #D22D2D;
 }

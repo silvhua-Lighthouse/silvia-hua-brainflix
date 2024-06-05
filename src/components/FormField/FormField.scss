@@ -17,6 +17,11 @@ textarea, input {
     @include tablet {
         padding: $form-padding--tablet;
     }
+
+    &:focus {
+        outline: none;
+        border-color: $brainflix-blue;
+    }
 }
 
 label {
