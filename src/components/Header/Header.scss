@@ -53,10 +53,7 @@ header {
     }
 
     &__upload-button {
-        background-color: $brainflix-blue;
         background-image: url('../../assets/images/upload.svg');
-        background-repeat: no-repeat;
-        background-position: $form-padding--mobile center;
         order: 3;
         @include tablet {
             order: 2;

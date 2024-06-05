@@ -1,15 +1,5 @@
 import './Avatar.scss';
-
-function appendClass(classesArray) {
-    if (typeof classesArray === 'string') {
-        classesArray = [classesArray];
-    }
-    let classesString = '';
-    for (let i=0; i < classesArray.length; i++) {
-        classesString += ` ${classesArray[i]}`;
-    }
-    return classesString;
-}
+import { appendClass } from '../globalFunctions';
 
 function AvatarDiv(props) {
     const {classesArray, avatarSrc} = props.avatar;

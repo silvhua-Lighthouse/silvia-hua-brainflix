@@ -1,0 +1,24 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+
+button {
+    box-sizing: border-box;
+    color: white;
+    border-radius: .25rem;
+    height: $button-height;
+    width: 100%;
+    border: none;
+    @include set-font(.625rem, 1.25rem, .75rem, 1.25rem, 700);
+    text-transform: uppercase;
+    background-color: $brainflix-blue;
+    background-repeat: no-repeat;
+    background-position: $form-padding--mobile center;
+    
+    @include tablet {
+        width: auto;
+        max-width: 9.375rem;
+        padding: 0 3.5rem;
+    }
+}

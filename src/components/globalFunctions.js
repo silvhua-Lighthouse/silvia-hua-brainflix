@@ -20,4 +20,15 @@ export const formatNumber = (number) => {
     return formattedNumber;
 }
 
+export function appendClass(classesArray) {
+    if (typeof classesArray === 'string') {
+        classesArray = [classesArray];
+    }
+    let classesString = '';
+    for (let i=0; i < classesArray.length; i++) {
+        classesString += ` ${classesArray[i]}`;
+    }
+    return classesString;
+}
+
 export default formatTimestamp;
