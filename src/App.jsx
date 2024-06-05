@@ -25,8 +25,7 @@ function App() {
         <CurrentVideo currentVideoObject={currentVideoObject} />
         <section className="secondary">
           <VideoDetails 
-            videosArray={videosArray} avatarSrc={avatarSrc}
-            currentVideoId={currentVideoId}
+            currentVideoObject={currentVideoObject} avatarSrc={avatarSrc}
           ></VideoDetails>
           <NextVideos 
             videosArray={videosArray} onSelectVideo={selectVideoObject} currentVideoId={currentVideoId}

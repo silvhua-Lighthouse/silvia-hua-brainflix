@@ -5,10 +5,8 @@ import Metadata from '../Metadata/Metadata';
 import Comments from '../Comments/Comments.jsx';
 
 function VideoDetails(props) {
-    const {avatarSrc, videosArray} =  props;
-    const [videoId, setVideoId] = useState(0);
-    let videoObject = videosArray[videoId]
-    const { title, description, comments, ...metadata } = videoObject;
+    const {avatarSrc, currentVideoObject} =  props;
+    const { title, description, comments, ...metadata } = currentVideoObject;
 
     return (
         <section className="video-details">
@@ -18,7 +16,7 @@ function VideoDetails(props) {
                 <Description description={description}/>
                 <p className="current-video__n-comments">{comments.length} Comments</p>
             </article>
-        <Comments avatarSrc={avatarSrc} videoObject={videoObject}/>
+        <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
         </section>
     )
 }
