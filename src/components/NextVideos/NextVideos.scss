@@ -3,6 +3,7 @@
 
 .next-videos {
     background-color: pink;
+    gap: $spacing--mobile;
     
     @include desktop {
         width: 25%;

@@ -1,2 +1,20 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+
+$card-height--tablet: 18.75rem;
+
+.video-card {
+    background-color: wheat;
+    height: $card-height--tablet;
+
+    &__image {
+        width: 40%;
+    }
+
+    &__text-container {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+    }
+}
