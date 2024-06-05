@@ -3,7 +3,7 @@ import './Description.scss';
 function Description({description}) {
     return (
         <>
-        <p>{description}</p>
+        <p className="current-video__description">{description}</p>
         </>
     )
 }

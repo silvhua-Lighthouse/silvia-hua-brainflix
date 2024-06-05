@@ -81,3 +81,9 @@ span {
     align-items: center;
     gap: 0.5em;
 }
+
+article {
+    position: relative;
+    @include set-section-margin();
+    @include flex-mixin--column(100%);
+}

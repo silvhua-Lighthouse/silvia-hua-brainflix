@@ -3,7 +3,6 @@ import FormField from '../FormField/FormField'
 import AvatarDiv from '../Avatar/Avatar'
 
 const CommentsForm = (props) => {
-    // const { classesArray, AvatarSrc } = props.avatar;
     const formProps = {
         id: 'user-comment',
         name: 'userComment', 

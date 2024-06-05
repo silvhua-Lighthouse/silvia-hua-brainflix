@@ -3,7 +3,7 @@ import Description from '../Description/Description';
 import Metadata from '../Metadata/Metadata';
 
 function VideoDetails(props) {
-    const { title, description, ...metadata } = props.videoDetails;
+    const { title, description, comments, ...metadata } = props.videoDetails;
 
     return (
         <section className="video-details">
@@ -11,6 +11,7 @@ function VideoDetails(props) {
                 <h1 className="current-video__title">{title}</h1>
                 <Metadata metadata={metadata}/>
                 <Description description={description}/>
+                <p className="current-video__n-comments">{comments.length} likes</p>
             </article>
         </section>
     )

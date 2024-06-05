@@ -37,7 +37,7 @@
         }
     }
 
-    &__channel {
+    &__channel, &__n-comments {
         font-weight: 700;
     }
 
@@ -45,10 +45,4 @@
         color: $silver;
     }
 
-}
-
-article {
-    position: relative;
-    @include set-section-margin();
-    @include flex-mixin--column(100%);
 }

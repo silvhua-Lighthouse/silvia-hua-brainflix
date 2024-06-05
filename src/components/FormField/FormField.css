@@ -157,6 +157,30 @@ span {
   gap: 0.5em;
 }
 
+article {
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  article {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  article {
+    max-width: 1208px;
+    padding: 1.5rem 0;
+  }
+}
+
 textarea, input {
   resize: none;
   font-family: "Avenir Next", "Courier New", Courier, monospace, Arial, Helvetica, sans-serif;

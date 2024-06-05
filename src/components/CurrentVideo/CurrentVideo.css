@@ -157,6 +157,30 @@ span {
   gap: 0.5em;
 }
 
+article {
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  article {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  article {
+    max-width: 1208px;
+    padding: 1.5rem 0;
+  }
+}
+
 .current-video {
   background-color: black;
   overflow: clip;
@@ -186,5 +210,68 @@ span {
   .current-video__video {
     max-height: 80vh;
     max-width: 100%;
+  }
+}
+.current-video__metadata {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  gap: 1rem;
+  flex-direction: row;
+  border-bottom: 0.0625rem solid #E1E1E1;
+  padding: 0.5em 0;
+  border-top: 0.0625rem solid #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .current-video__metadata {
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .current-video__metadata {
+    border-top: none;
+    flex-direction: row;
+  }
+}
+.current-video__metadata--left, .current-video__metadata--right {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .current-video__metadata--left, .current-video__metadata--right {
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .current-video__metadata--left, .current-video__metadata--right {
+    flex-direction: row;
+  }
+}
+.current-video__metadata--left {
+  justify-content: flex-start;
+}
+.current-video__metadata--right {
+  justify-content: flex-end;
+}
+.current-video__channel, .current-video__n-comments {
+  font-weight: 700;
+}
+.current-video__timestamp, .current-video__views, .current-video__likes {
+  color: #AFAFAF;
+}
+.current-video__description {
+  padding: 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .current-video__description {
+    padding: 1.5rem 0;
   }
 }/*# sourceMappingURL=CurrentVideo.css.map */
