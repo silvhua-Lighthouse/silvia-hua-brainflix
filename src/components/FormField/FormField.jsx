@@ -2,11 +2,14 @@ import { useState } from 'react'
 
 function FormField(props) {
     const renderInputElement = () => {
-        switch(props.type) {
+        console.log('FormField props', props)
+        const {id, name, className, placeholder, type, rows} = props.inputProps;
+
+        switch(type) {
             case 'textarea':
-                return <textarea id={props.id} name={props.name} className={props.className} placeholder={props.placeholder} rows={props.rows}></textarea>;
+                return <textarea id={id} name={name} className={className} placeholder={placeholder} rows={rows}></textarea>;
             default:
-                return <input id={props.id} name={props.name} className={props.className} placeholder={props.placeholder} rows={props.rows}></input>
+                return <input id={id} name={name} className={className} placeholder={placeholder} rows={rows}></input>
         }
     }
 

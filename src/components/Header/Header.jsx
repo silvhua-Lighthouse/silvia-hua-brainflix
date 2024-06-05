@@ -7,18 +7,20 @@ function Header(props) {
     const avatarProps = props;
 
     const searchProps = {
+        id: "search-input",
+        name: "search-input",
         className: "header__search-input",
         placeholder: "Search",
-        type: 'input'
+        type: 'input',
+        rows: '1'
     }
-    const {className, placeholder, type} = searchProps;
     return (
         <>
         <header>
             <section className="header">
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <div className="header__search-container">
-                    <FormField id="search-input" name="search-input" className={className} placeholder={placeholder} rows="1" type={type}/>
+                    <FormField inputProps={searchProps}/>
                     <AvatarDiv avatar={avatarProps}/>
                     <button className="header__upload-button">Upload</button>
                 </div>

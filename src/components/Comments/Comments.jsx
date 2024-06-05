@@ -3,7 +3,7 @@ import CommentsForm from '../CommentsForm/CommentsForm';
 import CommentsCard from '../CommentsCard/CommentsCard';
 /* 
 <section class="comments-section">
-    <div class="comments-form">
+    <div class="comments__form-container">
         <div class="comments-form__avatar">
             <img src="./assets/images/Mohan-muruge.jpg" alt="user-avatar" class="comments__user-avatar"/>
         </div>
