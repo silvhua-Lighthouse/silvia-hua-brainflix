@@ -2,6 +2,13 @@
 @use '../../styles/partials/variables' as *;
 @use '../Avatar/Avatar.scss' as *;
 
+$comments-content-width--mobile: calc(100% - $avatar-width--mobile - $spacing--mobile);
+$comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--tablet);
+
+.comments-section {
+    flex-direction: column;
+}
+
 .comments {
     
     &__form-container {
@@ -9,9 +16,11 @@
         @include set-section-margin;
         align-items: flex-start;
         gap: 1rem;
+        padding: $spacing--mobile 0;
         border-bottom: $divider;
         @include tablet {
             gap: 1.125rem;
+            padding: $spacing--tablet 0;
         }
     }
 
@@ -25,10 +34,11 @@
 
     &__form {
         @include flex-mixin--column(100%);
-        width: 100%;
+        width: $comments-content-width--mobile;
         gap: $spacing--mobile;
 
         @include tablet {
+            width: $comments-content-width--tablet;
             gap: $spacing--tablet;
             flex-direction: row;
             align-items: flex-end;
@@ -63,40 +73,38 @@
         }
     }
 
-    &__cards-container {
-        @include flex-mixin--column(100%);
-        margin-bottom: 1.375rem;
-        @include tablet {
-            margin-bottom: 3.125rem;
-        }
-    }
-
     &__card {
         @include flex-mixin--row(100%);
         border-bottom: $divider;
-        gap: $spacing--mobile;
+        padding: $spacing--mobile 0;
         align-items: flex-start;
         @include tablet {
-            gap: $spacing--tablet;
+            padding: $spacing--tablet 0;
         }
     }
 
     &__avatar-div {
-        margin-top: 1em;
+        margin-top: .25rem;
+        @include tablet {
+            margin-top: .375rem;
+        }
     }
 
     &__text-container {
-        @include flex-mixin--column(calc(100% - $avatar-width--mobile - $spacing--mobile));
+        @include flex-mixin--column($comments-content-width--mobile);
         @include zero-spacing();
         @include tablet {
-            width: calc(100% - $avatar-width--tablet - $spacing--tablet)
+            width: $comments-content-width--tablet;
         }
     }
 
     &__metadata {
         @include flex-mixin--row(100%);
         @include zero-spacing();
-        margin: 1em 0;
+        margin: .25rem 0 1em;
+        @include tablet {
+            margin: .375rem 0 1em;
+        }
     }
 
     &__name {
