@@ -3,7 +3,6 @@ import './VideoCard.scss';
 const VideoCard = (props) => {
     const {videoObject, onSelectVideo} = props;
     const {id, title, channel, image} = videoObject;
-    console.log('VideoCard props', props);
 
     const clickHandler = () => {
         console.log(`Selecting video ${id} ${title}`);
