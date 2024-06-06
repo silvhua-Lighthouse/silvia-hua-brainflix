@@ -23,14 +23,14 @@ function Header(props) {
     return (
         <>
         <header>
-            <section className="header">
+            <nav className="header">
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
                 <div className="header__search-container">
                     <FormField inputProps={searchProps}/>
                     <AvatarDiv avatar={avatarProps}/>
                     <Button buttonProps={buttonProps} />
                 </div>
-            </section>
+            </nav>
         </header>
         </>
     )

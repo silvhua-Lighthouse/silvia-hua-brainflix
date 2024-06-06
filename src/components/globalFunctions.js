@@ -1,17 +1,36 @@
-export const formatDate = (dateObject, options = null) => {
-    // format a date to the "MM/DD/YYYY"    
-    if (options === null) {
-        options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+export const formatDate = (dateObject, locale='en-US', options={}, removeCommas=false) => {
+    /* 
+    Format Date object to string.
+    
+    Parameters:
+    - dateObject (dateObject)
+    - locale (string): e.g. 
+        - 'en-US' for 'M/D/YYY'
+        - 'en-CA' for YYYY-DD-MM
+    - options (object)
+    */
+    console.log(locale)
+    options = options || { month: 'numeric', day: 'numeric', year: 'numeric' };
+    let formattedDate = dateObject.toLocaleDateString(locale, options) // format the date to string
+    if (removeCommas) {
+        formattedDate = formatDate.replace(/,/g, ''); // remove commas
     }
-    const formattedDate = dateObject.toLocaleDateString('en-CA', options) // format the date to string
-        .replace(/,/g, ''); // remove commas
     return formattedDate
 }
 
-function formatTimestamp(timestamp) {
-    // convert timestamp to Date object
-    const dateFormattingOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
-    const date = formatDate(new Date(timestamp), dateFormattingOptions);
+function formatTimestamp(timestamp, dateFormattingOptions, locale) {
+    /* 
+    Convert timestamp to Date object
+    
+    Parameters:
+    - timestamp (timestamp)
+    - dateFormattingOptions (object): 
+        - For Mon Jan 2024: { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }
+    - locale (string)
+    */
+    console.log('formatTimestamp', locale)
+    dateFormattingOptions = dateFormattingOptions || { month: 'numeric', day: 'numeric', year: 'numeric' };
+    const date = formatDate(new Date(timestamp), locale, dateFormattingOptions);
     return date;
 }
 

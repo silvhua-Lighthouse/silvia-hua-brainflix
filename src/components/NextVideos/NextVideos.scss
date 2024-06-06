@@ -4,16 +4,18 @@
 .next-videos {
     @include set-section-margin;
     @include component-spacing;
-
+    padding-bottom: 1rem;
     @include tablet {
         width: 45%;
         margin: 0;
         align-self: flex-start;
+        padding-bottom: $page-margin--tablet;
     }
     
     @include desktop {
         border-left: $divider;
         padding-left: $spacing--tablet;
+        padding-bottom: 4rem;
     }
 
     &__heading {

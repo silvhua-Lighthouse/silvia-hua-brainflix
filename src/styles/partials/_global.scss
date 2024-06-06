@@ -12,7 +12,7 @@ div {
     @include set-section-margin();
 }
 
-section {
+section, nav {
     @include flex-mixin--column(100%);
     align-items: center;
 }
@@ -36,7 +36,7 @@ main {
     top: 10.4375rem;
     
     @include tablet {
-        top: 5.5rem;
+        top: 4.5rem;
     }
 }
 
