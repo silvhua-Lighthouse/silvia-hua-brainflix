@@ -4,6 +4,8 @@
 }
 .video-card__image {
   width: 40%;
+  border-radius: 0.25rem;
+  background-color: #E1E1E1;
 }
 .video-card__text-container {
   flex-direction: column;

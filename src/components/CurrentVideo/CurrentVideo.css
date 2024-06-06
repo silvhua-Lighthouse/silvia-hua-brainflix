@@ -1,6 +1,11 @@
+video::-webkit-media-controls {
+  color: #323232;
+  opacity: 50%;
+  aspect-ratio: 16/9;
+}
+
 .current-video {
   background-color: black;
-  overflow: clip;
   width: 100%;
 }
 .current-video__video {
@@ -25,8 +30,8 @@
 }
 @media screen and (min-width: 768px) {
   .current-video__video {
-    max-height: 80vh;
     max-width: 1208px;
+    max-height: 85vh;
   }
 }
 .current-video__metadata {

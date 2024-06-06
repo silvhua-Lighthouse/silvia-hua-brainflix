@@ -1,9 +1,14 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+video::-webkit-media-controls {
+  color: $brainflix-black;
+  opacity: 50%;
+  aspect-ratio: 16 / 9;
+}
+
 .current-video {
     background-color: black;
-    overflow: clip;
     width: 100%;
 
     &__video {
@@ -11,8 +16,8 @@
         @include set-element-margin(0);
         box-sizing: border-box;
         @include tablet {
-            max-height: 80vh;
             max-width: $max-content-width;
+            max-height: 85vh;
         }
     }
 
