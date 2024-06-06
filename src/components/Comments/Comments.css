@@ -24,18 +24,18 @@
 }
 
 .comments__form-container {
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-bottom: 0.0625rem solid #E1E1E1;
   display: flex;
   position: relative;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
+  padding: 1rem 0;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 0.0625rem solid #E1E1E1;
 }
 @media screen and (min-width: 768px) {
   .comments__form-container {
@@ -51,8 +51,17 @@
 }
 @media screen and (min-width: 768px) {
   .comments__form-container {
-    gap: 1.125rem;
     padding: 1.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__form-container {
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .comments__form-container {
+    gap: 1.125rem;
   }
 }
 .comments__button {
@@ -105,18 +114,24 @@
   color: #323232;
 }
 .comments__card {
+  border-bottom: 0.0625rem solid #E1E1E1;
   display: flex;
   position: relative;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 0.0625rem solid #E1E1E1;
   padding: 1rem 0;
+  align-items: flex-start;
   align-items: flex-start;
 }
 @media screen and (min-width: 768px) {
   .comments__card {
     padding: 1.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__card {
+    padding-right: 1.5rem;
   }
 }
 .comments__avatar-div {

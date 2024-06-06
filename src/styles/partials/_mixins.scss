@@ -107,3 +107,10 @@
         gap: $spacing--tablet;
     }
 }
+
+@mixin desktop-spacing() {
+    @include desktop {
+        padding-right: $spacing--tablet;
+        justify-content: flex-start;
+    }
+}

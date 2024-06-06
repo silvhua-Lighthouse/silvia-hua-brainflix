@@ -5,6 +5,21 @@
 $comments-content-width--mobile: calc(100% - $avatar-width--mobile - $spacing--mobile);
 $comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--tablet);
 
+@mixin comment-card-layout {
+    border-bottom: $divider;
+    @include flex-mixin--row(100%);
+    padding: $spacing--mobile 0;
+    align-items: flex-start;
+    @include tablet {
+        padding: $spacing--tablet 0;
+
+    }
+
+    @include desktop {
+        padding-right: $spacing--tablet;
+    }
+}
+
 .comments-section {
     flex-direction: column;
 }
@@ -12,15 +27,11 @@ $comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--t
 .comments {
     
     &__form-container {
-        @include flex-mixin--row(100%);
         @include set-section-margin;
-        align-items: flex-start;
+        @include comment-card-layout();
         gap: 1rem;
-        padding: $spacing--mobile 0;
-        border-bottom: $divider;
         @include tablet {
             gap: 1.125rem;
-            padding: $spacing--tablet 0;
         }
     }
 
@@ -69,13 +80,8 @@ $comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--t
     }
 
     &__card {
-        @include flex-mixin--row(100%);
-        border-bottom: $divider;
-        padding: $spacing--mobile 0;
+        @include comment-card-layout();
         align-items: flex-start;
-        @include tablet {
-            padding: $spacing--tablet 0;
-        }
     }
 
     &__avatar-div {

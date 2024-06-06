@@ -26,11 +26,16 @@ video::-webkit-media-controls {
         @include component-spacing;
         flex-direction: row;
         border-bottom: $divider;
-        padding: 0.5em 0;
+        // padding: 0.5em 0;
+        padding-right: 5rem;
+        background-color: red;
         border-top: $divider;
         @include tablet {
             border-top: none;
             flex-direction: row;
+        }
+        @include desktop {
+            padding-right: 5rem;
         }
 
         &--left, &--right {

@@ -43,7 +43,8 @@ video::-webkit-media-controls {
   gap: 1rem;
   flex-direction: row;
   border-bottom: 0.0625rem solid #E1E1E1;
-  padding: 0.5em 0;
+  padding-right: 5rem;
+  background-color: red;
   border-top: 0.0625rem solid #E1E1E1;
 }
 @media screen and (min-width: 768px) {
@@ -55,6 +56,11 @@ video::-webkit-media-controls {
   .current-video__metadata {
     border-top: none;
     flex-direction: row;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .current-video__metadata {
+    padding-right: 5rem;
   }
 }
 .current-video__metadata--left, .current-video__metadata--right {
