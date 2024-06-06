@@ -1,0 +1,43 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.metadata {
+    @include zero-spacing;
+    @include component-spacing;
+    box-sizing: border-box;
+    flex-direction: row;
+    border-bottom: $divider;
+    padding: 0.5em 0;
+    border-top: $divider;
+    @include desktop-spacing;
+    @include tablet {
+        border-top: none;
+        flex-direction: row;
+    }
+
+    &--left, &--right {
+        @include zero-spacing;
+        flex-direction: column;
+        align-items: flex-start;
+        @include component-spacing;
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &--left {
+        justify-content: flex-start;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &__channel, &__n-comments {
+        font-weight: 700;
+    }
+    
+    &__timestamp, &__views, &__likes {
+        color: $silver;
+    }
+}

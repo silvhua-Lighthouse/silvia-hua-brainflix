@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './FormField.scss';
 
 function FormField(props) {

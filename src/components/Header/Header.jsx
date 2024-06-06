@@ -25,7 +25,7 @@ function Header(props) {
         <header>
             <nav className="header">
                 <img src={brainflixLogo} className="header__logo" alt="logo" />
-                <div className="header__search-container">
+                <div className="header__nav-container">
                     <FormField inputProps={searchProps}/>
                     <AvatarDiv avatar={avatarProps}/>
                     <Button buttonProps={buttonProps} />

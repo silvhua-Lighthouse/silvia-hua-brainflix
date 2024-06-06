@@ -53,7 +53,7 @@ header {
   max-height: 1.5625rem;
   max-width: 7.5rem;
 }
-.header__search-container {
+.header__nav-container {
   display: flex;
   position: relative;
   width: 100%;
@@ -64,12 +64,12 @@ header {
   gap: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .header__search-container {
+  .header__nav-container {
     gap: 1.5rem;
   }
 }
 @media screen and (min-width: 768px) {
-  .header__search-container {
+  .header__nav-container {
     justify-content: flex-end;
   }
 }

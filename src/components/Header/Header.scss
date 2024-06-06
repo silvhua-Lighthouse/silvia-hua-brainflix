@@ -27,7 +27,7 @@ header {
         max-width: 7.5rem;
     }
     
-    &__search-container {
+    &__nav-container {
         @include responsive-container(100%);
         flex-wrap: wrap;
         align-items: flex-start;
@@ -36,6 +36,7 @@ header {
             justify-content: flex-end;
         }
     }
+    
     &__search-input {
         width: calc(100% - $avatar-width--mobile - $spacing--mobile);
         position: relative;
