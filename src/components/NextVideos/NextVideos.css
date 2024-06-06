@@ -1,5 +1,4 @@
 .next-videos {
-  background-color: pink;
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
@@ -8,18 +7,29 @@
 @media screen and (min-width: 768px) {
   .next-videos {
     width: 100%;
-    padding: 1.5rem;
+    padding: 0 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .next-videos {
-    max-width: 1208px;
-    padding: 1.5rem 0;
+    max-width: calc(1280px - 4rem);
+    padding: 0;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .next-videos {
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
   .next-videos {
     width: 45%;
+    margin: 0;
+    align-self: flex-start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .next-videos {
     border-left: 0.0625rem solid #E1E1E1;
     padding-left: 1.5rem;
   }

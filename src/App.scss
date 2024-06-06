@@ -4,10 +4,15 @@
 .secondary {
     @include zero-spacing;
     flex-direction: column;
+    padding-bottom: 1rem;
+    @include tablet {
+        padding-bottom: $page-margin--tablet;
+    }
     @include desktop {
         flex-direction: row;
         align-items: flex-start;
         margin: 0 auto;
         max-width: $max-content-width;
+        padding-bottom: 4rem;
     }
 }

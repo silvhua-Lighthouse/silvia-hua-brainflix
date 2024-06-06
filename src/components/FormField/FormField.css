@@ -35,13 +35,13 @@ div {
 @media screen and (min-width: 768px) {
   div {
     width: 100%;
-    padding: 1.5rem;
+    padding: 0 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   div {
-    max-width: 1208px;
-    padding: 1.5rem 0;
+    max-width: calc(1280px - 4rem);
+    padding: 0;
   }
 }
 
@@ -173,13 +173,13 @@ article {
 @media screen and (min-width: 768px) {
   article {
     width: 100%;
-    padding: 1.5rem;
+    padding: 0 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   article {
-    max-width: 1208px;
-    padding: 1.5rem 0;
+    max-width: calc(1280px - 4rem);
+    padding: 0;
   }
 }
 

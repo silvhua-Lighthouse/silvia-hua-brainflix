@@ -25,12 +25,12 @@ video::-webkit-media-controls {
     margin: 0 auto;
     padding-left: 0;
     padding-right: 0;
-    max-width: 1208px;
+    max-width: calc(1280px - 4rem);
   }
 }
 @media screen and (min-width: 768px) {
   .current-video__video {
-    max-width: 1208px;
+    max-width: calc(1280px - 4rem);
     max-height: 85vh;
   }
 }

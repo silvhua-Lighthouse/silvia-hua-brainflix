@@ -61,11 +61,11 @@
 
     @include tablet {
         width: 100%;
-        padding: $spacing--tablet;
+        padding: 0 $page-margin--tablet;
     }
     @include desktop {
         max-width: $max-content-width;
-        padding: $spacing--tablet 0;
+        padding: 0;
     }
 }
 

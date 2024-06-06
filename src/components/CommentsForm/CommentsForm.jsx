@@ -19,7 +19,7 @@ const CommentsForm = (props) => {
     const buttonProps = {
         className: 'comments__button',
         innerText: 'Comment',
-        type: 'type'
+        type: 'submit'
     }
     return (
         <>

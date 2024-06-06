@@ -2,12 +2,16 @@
 @use '../../styles/partials/variables' as *;
 
 .next-videos {
-    background-color: pink;
     @include set-section-margin;
-    gap: $spacing--mobile;
+    @include component-spacing;
+
+    @include tablet {
+        width: 45%;
+        margin: 0;
+        align-self: flex-start;
+    }
     
     @include desktop {
-        width: 45%;
         border-left: $divider;
         padding-left: $spacing--tablet;
     }
