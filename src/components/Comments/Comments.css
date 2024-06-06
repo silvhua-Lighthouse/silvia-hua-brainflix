@@ -76,13 +76,17 @@
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  width: calc(100% - 2.25rem - 1rem);
   gap: 1rem;
+  width: calc(100% - 2.25rem - 1rem);
+}
+@media screen and (min-width: 768px) {
+  .comments__form {
+    gap: 1.5rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .comments__form {
     width: calc(100% - 2.5rem - 1.5rem);
-    gap: 1.5rem;
     flex-direction: row;
     align-items: flex-end;
   }

@@ -24,19 +24,16 @@ video::-webkit-media-controls {
     &__metadata {
         @include zero-spacing;
         @include component-spacing;
+        box-sizing: border-box;
         flex-direction: row;
         border-bottom: $divider;
-        // padding: 0.5em 0;
-        padding-right: 5rem;
-        background-color: red;
+        padding: 0.5em 0;
         border-top: $divider;
         @include tablet {
             border-top: none;
             flex-direction: row;
         }
-        @include desktop {
-            padding-right: 5rem;
-        }
+        @include desktop-spacing;
 
         &--left, &--right {
             @include zero-spacing;

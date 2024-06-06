@@ -3,14 +3,21 @@
 
 .next-videos {
     background-color: pink;
+    @include set-section-margin;
     gap: $spacing--mobile;
     
     @include desktop {
-        width: 33%;
+        width: 45%;
         border-left: $divider;
+        padding-left: $spacing--tablet;
     }
 
     &__heading {
         color: $silver;
+        justify-self: flex-start;
+        width: 100%;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 }

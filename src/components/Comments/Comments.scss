@@ -45,12 +45,11 @@ $comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--t
 
     &__form {
         @include flex-mixin--column(100%);
+        @include component-spacing;
         width: $comments-content-width--mobile;
-        gap: $spacing--mobile;
 
         @include tablet {
             width: $comments-content-width--tablet;
-            gap: $spacing--tablet;
             flex-direction: row;
             align-items: flex-end;
         }

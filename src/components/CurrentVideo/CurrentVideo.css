@@ -41,10 +41,10 @@ video::-webkit-media-controls {
   left: 0;
   line-height: 100%;
   gap: 1rem;
+  box-sizing: border-box;
   flex-direction: row;
   border-bottom: 0.0625rem solid #E1E1E1;
-  padding-right: 5rem;
-  background-color: red;
+  padding: 0.5em 0;
   border-top: 0.0625rem solid #E1E1E1;
 }
 @media screen and (min-width: 768px) {
@@ -60,7 +60,8 @@ video::-webkit-media-controls {
 }
 @media screen and (min-width: 1280px) {
   .current-video__metadata {
-    padding-right: 5rem;
+    padding-right: 1.5rem;
+    justify-content: flex-start;
   }
 }
 .current-video__metadata--left, .current-video__metadata--right {
