@@ -3,11 +3,11 @@ import CommentsForm from '../CommentsForm/CommentsForm';
 import CommentsCard from '../CommentsCard/CommentsCard';
 /* 
 <div class="comments-section">
-    <div class="comments__form-container">
+    <div class="comments-form">
         <div class="comments-form__avatar">
-            <img src="./assets/images/Mohan-muruge.jpg" alt="user-avatar" class="comments__user-avatar"/>
+            <img src="./assets/images/Mohan-muruge.jpg" alt="user-avatar" class="comments-form__user-avatar"/>
         </div>
-        <form class="comments__form">
+        <form class="comments-form__form">
             <div class=comments__input>
                 <label for="comment-field" class="comments__input-label">Join the conversation</label>
                 <textarea name="userComment" id="user-name" class="comments__input-field" rows="4" placeholder="Add a new comment" minlength=2></textarea>
@@ -23,7 +23,7 @@ import CommentsCard from '../CommentsCard/CommentsCard';
 function Comments(props) {
     const avatarProps = {
         avatarSrc: props.avatarSrc,
-        classesArray: ['comments__user-avatar']
+        classesArray: ['comments-form__user-avatar']
     }
     const { videoObject } = props;
     const videoCommentsArray = videoObject.comments;

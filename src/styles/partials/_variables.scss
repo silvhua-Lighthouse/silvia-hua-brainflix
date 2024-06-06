@@ -25,3 +25,6 @@ $avatar-width--mobile: 2.25rem;
 $avatar-width--tablet: 2.5rem;
 
 $button-height: 2.5rem;
+
+$comments-content-width--mobile: calc(100% - $avatar-width--mobile - $spacing--mobile);
+$comments-content-width--tablet: calc(100% - $avatar-width--tablet - $spacing--tablet);
