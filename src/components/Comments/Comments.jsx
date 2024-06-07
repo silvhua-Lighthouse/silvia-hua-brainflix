@@ -1,6 +1,6 @@
 import './Comments.scss'
 import CommentsForm from '../CommentsForm/CommentsForm';
-import CommentsCard from '../CommentsCard/CommentsCard';
+import CommentCard from '../CommentCard/CommentCard';
 /* 
 <div class="comments-section">
     <div class="comments-form">
@@ -12,7 +12,7 @@ import CommentsCard from '../CommentsCard/CommentsCard';
                 <label for="comment-field" class="comments__input-label">Join the conversation</label>
                 <textarea name="userComment" id="user-name" class="comments__input-field" rows="4" placeholder="Add a new comment" minlength=2></textarea>
             </div>
-            <button type="submit" class="button">comment</button>
+            <button type="submit" class="comments-form__button">comment</button>
         </form>
     </div>
     <div class="comments">
@@ -28,7 +28,7 @@ function Comments(props) {
     const { videoObject } = props;
     const videoCommentsArray = videoObject.comments;
     const videoCommentCards = videoCommentsArray.map(commentObject => {
-        return <CommentsCard key={commentObject.id} comments={commentObject}/>
+        return <CommentCard key={commentObject.id} comments={commentObject}/>
     })
     return (
         <div className="comments-section">
