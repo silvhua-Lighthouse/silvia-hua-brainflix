@@ -1,5 +1,6 @@
 import './NextVideos.scss';
 import VideoCard from '../VideoCard/VideoCard';
+import { Link } from 'react-router-dom';
 /*
 <section>
 */
@@ -11,7 +12,7 @@ const NextVideos = ({videosArray, onSelectVideo, currentVideoId}) => {
             {
                 nextVideosArray.map(
                     videoObject => 
-                    <VideoCard key={videoObject.id} videoObject={videoObject} onSelectVideo={onSelectVideo}/>
+                    <Link key={videoObject.id} to={`/videos/${videoObject.id}`}><VideoCard key={videoObject.id} videoObject={videoObject} onSelectVideo={onSelectVideo}/></Link>
                 )
             }
         </aside>
