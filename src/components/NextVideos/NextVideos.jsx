@@ -12,7 +12,15 @@ const NextVideos = ({videosArray, onSelectVideo, currentVideoId}) => {
             {
                 nextVideosArray.map(
                     videoObject => 
-                    <Link key={videoObject.id} to={`/videos/${videoObject.id}`}><VideoCard key={videoObject.id} videoObject={videoObject} onSelectVideo={onSelectVideo}/></Link>
+                    <Link 
+                        key={videoObject.id} 
+                        to={`/videos/${videoObject.id}`}>
+                        <VideoCard 
+                            key={videoObject.id} 
+                            videoObject={videoObject} 
+                            // onSelectVideo={onSelectVideo}
+                        />
+                    </Link>
                 )
             }
         </aside>

@@ -18,7 +18,8 @@ function VideoDetails(props) {
     const selectVideoObject = (videoId) => {
       setVideoId(videoId)
     }
-    currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
+    currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
+    // currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
     const { title, description, comments, ...metadata } = currentVideoObject;
 
     return (
@@ -35,7 +36,10 @@ function VideoDetails(props) {
                 <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
             </section>
             <NextVideos 
-                videosArray={videosArray} onSelectVideo={selectVideoObject} currentVideoId={currentVideoId}
+                videosArray={videosArray} 
+                onSelectVideo={selectVideoObject} 
+                currentVideoId={videoId}
+                // currentVideoId={currentVideoId}
             />
         </section>
         </main>
