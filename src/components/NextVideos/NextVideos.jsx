@@ -6,7 +6,7 @@ import VideoCard from '../VideoCard/VideoCard';
 const NextVideos = ({videosArray, onSelectVideo, currentVideoId}) => {
     const nextVideosArray = videosArray.filter(video => video.id !== currentVideoId);
     return (
-        <section className="next-videos">
+        <aside className="next-videos">
             <h2 className="next-videos__heading">Next Videos</h2>
             {
                 nextVideosArray.map(
@@ -14,7 +14,7 @@ const NextVideos = ({videosArray, onSelectVideo, currentVideoId}) => {
                     <VideoCard key={videoObject.id} videoObject={videoObject} onSelectVideo={onSelectVideo}/>
                 )
             }
-        </section>
+        </aside>
     )
 }
 
