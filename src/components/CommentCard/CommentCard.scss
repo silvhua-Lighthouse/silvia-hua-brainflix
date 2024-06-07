@@ -1,0 +1,57 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+@mixin comment-card-layout {
+    border-bottom: $divider;
+    @include flex-mixin--row(100%);
+    padding: $spacing--mobile 0;
+    align-items: flex-start;
+    @include tablet {
+        padding: $spacing--tablet 0;
+
+    }
+
+    @include desktop {
+        padding-right: $spacing--tablet;
+    }
+}
+
+.comment-card {
+    @include comment-card-layout();
+    align-items: flex-start;
+
+    &__text-container {
+        @include flex-mixin--column($comments-content-width--mobile);
+        @include zero-spacing();
+        @include tablet {
+            width: $comments-content-width--tablet;
+        }
+    }
+
+    &__metadata {
+        @include flex-mixin--row(100%);
+        @include zero-spacing();
+        margin: .25rem 0 1em;
+        @include tablet {
+            margin: .375rem 0 1em;
+        }
+    }
+
+    &__name {
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        @include zero-spacing;
+    }
+    
+    &__date {
+        color: $silver;
+        @include zero-spacing;
+    }
+
+    &__comment {
+        width: 100%; // necessary so that short comments are left-aligned;
+        &:last-of-type {
+            padding: 0;
+        }
+    }
+}

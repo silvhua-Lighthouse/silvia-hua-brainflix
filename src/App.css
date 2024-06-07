@@ -1,0 +1,16 @@
+.secondary {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 1280px) {
+  .secondary {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: calc(1280px - 4rem);
+  }
+}/*# sourceMappingURL=App.css.map */

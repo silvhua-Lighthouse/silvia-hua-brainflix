@@ -1,0 +1,30 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+
+button {
+    @include flex-mixin--row(100%);
+    justify-content: center;
+    box-sizing: border-box;
+    color: white;
+    border-radius: .25rem;
+    height: $button-height;
+    border: none;
+    @include set-font(.625rem, 1.25rem, .75rem, 1.25rem, 700);
+    text-transform: uppercase;
+    background-color: $brainflix-blue;
+    background-repeat: no-repeat;
+    background-position: 0.75em center;
+    background-size: auto 40%;
+    
+    @include tablet {
+        width: auto;
+        max-width: 9.375rem;
+        padding: 0 3.5rem;
+    }
+
+    &:hover {
+        background-color: $brainflix-darkblue;
+    }
+}

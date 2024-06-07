@@ -1,0 +1,32 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+$card-height--tablet: 5rem;
+
+.video-card {
+    @include zero-spacing;
+    @include component-spacing;
+    height: $card-height--tablet;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__image {
+        width: 40%;
+        border-radius: .25rem;
+        background-color: $mercury;
+        height: $card-height--tablet;
+        width: auto;
+    }
+
+    &__text-container {
+        @include zero-spacing;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+    }
+
+    &__title {
+        margin: 0;
+    }
+}

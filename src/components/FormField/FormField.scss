@@ -1,0 +1,32 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+textarea, input {
+    @extend p;
+    resize: none;
+    font-family: $font-family;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $form-padding--mobile;
+    color: $brainflix-black;
+    resize: none;
+    border: 1px solid $mercury;
+    border-radius: .25rem;
+    background-color: $alabaster;
+    @include tablet {
+        padding: $form-padding--tablet;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $brainflix-blue;
+    }
+}
+
+label {
+    @include set-font(.8125rem, 100%, .8125rem, 100%, 600); 
+    text-transform: uppercase;
+    color: $silver;
+    margin-bottom: .25rem;
+}

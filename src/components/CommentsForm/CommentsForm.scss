@@ -1,0 +1,65 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../Avatar/Avatar.scss' as *;
+@use '../CommentCard/CommentCard.scss' as *;
+
+.comments-form {
+    @include set-section-margin;
+    @include comment-card-layout();
+    gap: 1rem;
+
+    @include tablet {
+        gap: 1.125rem;
+    }
+
+    &__form {
+        @include flex-mixin--column(100%);
+        @include component-spacing;
+        width: $comments-content-width--mobile;
+
+        @include tablet {
+            width: $comments-content-width--tablet;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+
+    &__avatar-div {
+        margin-top: .25rem;
+
+        @include tablet {
+            margin-top: .375rem;
+        }
+    }
+
+    &__button {
+        background-image: url('../../assets/images/add_comment.svg');
+    }
+
+    &__user-avatar {
+        margin-top: 1.0625rem;
+    }
+
+    &__input-container {
+        @include zero-spacing;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__input-field {
+        @include tablet {
+            height: $button-height;
+            padding: 0 1rem;
+            line-height: $button-height;
+            overflow: hidden;
+        }
+
+        &--error {
+            border-color: #D22D2D;
+        }
+
+        &::placeholder {
+            color: $brainflix-black;
+        }
+    }
+}
