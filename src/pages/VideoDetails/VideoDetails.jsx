@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useParams, Navigate } from 'react-router-dom';
 import './VideoDetails.scss'
 import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
@@ -9,8 +10,10 @@ import videosArray from '../../data/video-details.json';
 
 function VideoDetails(props) {
     const {avatarSrc} =  props;
-    const [currentVideoId, setVideoId] = useState(videosArray[0].id);
-
+    const {videoId} = useParams();
+    console.log(videoId);
+    // const [currentVideoId, setVideoId] = useState(videosArray[0].id);
+    const [currentVideoId, setVideoId] = useState(videoId);
     let currentVideoObject = videosArray[currentVideoId];
   
     const selectVideoObject = (videoId) => {
