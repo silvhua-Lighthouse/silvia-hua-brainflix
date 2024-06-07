@@ -9,7 +9,6 @@ export const formatDate = (dateObject, locale='en-US', options={}, removeCommas=
         - 'en-CA' for YYYY-DD-MM
     - options (object)
     */
-    console.log(locale)
     options = options || { month: 'numeric', day: 'numeric', year: 'numeric' };
     let formattedDate = dateObject.toLocaleDateString(locale, options) // format the date to string
     if (removeCommas) {
@@ -28,7 +27,6 @@ function formatTimestamp(timestamp, dateFormattingOptions, locale) {
         - For Mon Jan 2024: { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }
     - locale (string)
     */
-    console.log('formatTimestamp', locale)
     dateFormattingOptions = dateFormattingOptions || { month: 'numeric', day: 'numeric', year: 'numeric' };
     const date = formatDate(new Date(timestamp), locale, dateFormattingOptions);
     return date;
