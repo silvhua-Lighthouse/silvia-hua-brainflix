@@ -4,25 +4,27 @@
 .next-videos {
     @include set-section-margin;
     @include component-spacing;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
+    padding-top: 0;
     @include tablet {
         width: 45%;
         margin: 0;
         align-self: flex-start;
-        padding-bottom: $page-margin--tablet;
+        padding: $page-margin--tablet;
     }
     
     @include desktop {
         border-left: $divider;
         padding-left: $spacing--tablet;
+        padding-top: 2.25rem;
         padding-bottom: 4rem;
     }
 
     &__heading {
         color: $silver;
+        margin: 0;
         justify-self: flex-start;
         width: 100%;
-        margin-bottom: 0;
         text-transform: uppercase;
         font-weight: 600;
     }
