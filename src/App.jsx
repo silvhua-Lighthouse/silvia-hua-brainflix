@@ -1,10 +1,8 @@
 import { useState } from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.scss'
 import Header from './components/Header/Header.jsx'
 import videosArray from './data/video-details.json';
-import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
-import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
-import NextVideos from './components/NextVideos/NextVideos.jsx';
 
 function App() {
   const [currentVideoId, setVideoId] = useState(videosArray[0].id);
@@ -19,21 +17,14 @@ function App() {
 
 
   return (
-    <>
+    <BrowserRouter>
       <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
-      <main>
-        <CurrentVideo currentVideoObject={currentVideoObject} />
-        <section className="secondary">
-          <VideoDetails 
-            currentVideoObject={currentVideoObject} avatarSrc={avatarSrc}
-          ></VideoDetails>
-          <NextVideos 
-            videosArray={videosArray} onSelectVideo={selectVideoObject} currentVideoId={currentVideoId}
-          />
-        </section>
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage 
+        />} />
+      </Routes>
 
-    </>
+    </BrowserRouter>
   )
 }
 
