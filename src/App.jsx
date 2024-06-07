@@ -7,15 +7,9 @@ import VideoDetails from './pages/VideoDetails/VideoDetails.jsx';
 import Home from './pages/Home/Home.jsx';
 
 function App() {
-  const [currentVideoId, setVideoId] = useState(videosArray[0].id);
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
 
   let currentVideoObject = videosArray[0];
-
-  const selectVideoObject = (videoId) => {
-    setVideoId(videoId)
-  }
-  currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
 
 
   return (
@@ -30,7 +24,7 @@ function App() {
         } />
         <Route path="videodetails" element={
           <VideoDetails 
-            currentVideoObject={currentVideoObject} 
+            // currentVideoObject={currentVideoObject} 
             avatarSrc={avatarSrc} 
           />
         } />
