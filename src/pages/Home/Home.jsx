@@ -1,14 +1,11 @@
 import './Home.scss';
 import VideoDetails from '../VideoDetails/VideoDetails';
 
-const Home = ({avatarSrc, currentVideoObject}) => {
-  const { title, description, comments, ...metadata } = currentVideoObject;
+const Home = ({avatarSrc}) => {
+  
   return (
     <>
-    <VideoDetails 
-      currentVideoObject={currentVideoObject} 
-      avatarSrc={avatarSrc} 
-    />
+    <VideoDetails avatarSrc={avatarSrc} />
     </>
   )
 }

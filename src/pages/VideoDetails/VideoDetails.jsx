@@ -10,8 +10,7 @@ import videosArray from '../../data/video-details.json';
 
 function VideoDetails(props) {
     const {avatarSrc} =  props;
-    const {videoId} = useParams();
-    console.log(videoId);
+    const videoId = useParams().videoId ?? videosArray[0].id;
     // const [currentVideoId, setVideoId] = useState(videosArray[0].id);
     const [currentVideoId, setVideoId] = useState(videoId);
     let currentVideoObject = videosArray[currentVideoId];
