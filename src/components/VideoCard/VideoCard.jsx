@@ -9,7 +9,7 @@ const VideoCard = (props) => {
     }
     return (
         <div onClick={clickHandler} className="video-card">
-            <img src={image} className="video-card__image" />
+            <img src={image} className="video-card__image" alt={`'${title}' video thumbnail`}/>
             <div className="video-card__text-container">
                 <h3 className="video-card__title">{title}</h3>
                 <p>{channel}</p>
