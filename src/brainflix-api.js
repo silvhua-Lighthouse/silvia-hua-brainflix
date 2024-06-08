@@ -1,4 +1,6 @@
 import API_KEY from './data/secrets';
+import axios from "axios";
+
 
 export class BrainFlixApi {
   
