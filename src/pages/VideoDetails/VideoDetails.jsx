@@ -13,7 +13,7 @@ function VideoDetails(props) {
   const {avatarSrc, videosArray} =  props;
   const [videoId, setVideoId] = useState(["84e96018-4022-434e-80bf-000ce4cd12b8"]);
 
-  const [currentVideoObject, setVideoObject] = useState([]);
+  const [currentVideoObject, setVideoObject] = useState({});
   // const [videoId, setVideoId] = useState([useParams().videoId]);
 
   let defaultVideoObject;
@@ -32,10 +32,11 @@ function VideoDetails(props) {
     const fetchVideoObject = async (videoId) => {
       const videoDetailsResponse = await apiInstance.getVideo(videoId);
       // console.log('current video object', videoDetailsResponse)
-      return setVideoObject(videoDetailsResponse);
+      setVideoObject(videoDetailsResponse);
+      return videoDetailsResponse;
     }
-    const videoDetailsResponse = fetchVideoObject(videoId);
-    setVideoObject(videoDetailsResponse);
+    fetchVideoObject(videoId);
+    // setVideoObject(videoDetailsResponse);
     // console.log(videoDetailsResponse);
 
   }, []);
