@@ -5,19 +5,26 @@ import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
-import videosArray from '../../data/video-details.json';
+// import videosArray from '../../data/video-details.json';
 import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
 
 function VideoDetails(props) {
-  const {avatarSrc, videosArray} =  props;
-  console.log('videos array in Video Details', videosArray);
-  const [videoId, setVideoId] = useState(["84e96018-4022-434e-80bf-000ce4cd12b8"]);
+  const {avatarSrc, videosArray, defaultId} =  props;
+  console.log('VideoDetails defaultId', defaultId);
+  // console.log('videos array in Video Details', videosArray);
 
   const [currentVideoObject, setVideoObject] = useState({});
-  // const [videoId, setVideoId] = useState([useParams().videoId]);
 
-  let defaultVideoObject;
+
+  // const [videoId, setVideoId] = useState([useParams().videoId]);
+  
+  const [videoId, setVideoId] = useState(defaultId);
+  // const [videoId, setVideoId] = useState(useParams().videoId ?? defaultId);
+  // const [videoId, setVideoId] = useState(useParams().videoId ?? "84e96018-4022-434e-80bf-000ce4cd12b8");
+  // const [videoId, setVideoId] = useState(useParams().videoId ?? videosArray[0].id);
+
+
   // async function getInitialVideoObject() {
   //   defaultVideoObject = await apiInstance.getVideo(videoId);
   //   console.log('default video object', defaultVideoObject);
@@ -25,7 +32,7 @@ function VideoDetails(props) {
   // }
   // getInitialVideoObject();
 
-  // console.log('videoId', videoId);
+  console.log('videoId', videoId);
 
   // const videoId = useParams().videoId ?? videosArray[0].id;
 
@@ -51,7 +58,7 @@ function VideoDetails(props) {
     <main>
     <CurrentVideo currentVideoObject={currentVideoObject} />
     <section className="secondary">
-      <section className="video-details">
+      {/* <section className="video-details">
         <article>
           <h1 className="current-video__title">{title}</h1>
           <Metadata metadata={metadata}/>
@@ -59,8 +66,8 @@ function VideoDetails(props) {
           <p className="current-video__n-comments">{comments.length} Comments</p>
         </article>
         <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
-      </section>
-      <NextVideos videosArray={videosArray} currentVideoId={videoId} />
+      </section> */}
+      {/* <NextVideos videosArray={videosArray} currentVideoId={videoId} /> */}
     </section>
     </main>
   )
