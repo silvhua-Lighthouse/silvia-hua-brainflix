@@ -1,4 +1,4 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './VideoDetails.scss'
 import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
