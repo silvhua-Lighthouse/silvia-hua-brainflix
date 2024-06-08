@@ -8,10 +8,10 @@ const VideoUpload = () => {
   const inputPropsTitle = {
     id:"title",
     name:"title",
-    className:"upload__input-field",
+    className:"form-field__input",
     label: {
         labelText: 'Title your video',
-        inputContainerClassName: 'upload__input-container'
+        inputContainerClassName: 'form-field__container'
         },
     placeholder:"Add a title to your video",
     type:"input",
@@ -19,10 +19,10 @@ const VideoUpload = () => {
   }
   const inputPropsDescription = {id:"description",
     name:"description",
-    className:"upload__input-field",
+    className:"",
     label: {
         labelText: 'Add a video description',
-        inputContainerClassName: 'upload__input-container'
+        inputContainerClassName: 'form-field__container'
         },
     placeholder:"Add a description to your video",
     type:"textarea",
