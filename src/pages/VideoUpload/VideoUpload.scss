@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+// @use '../../styles/partials/global' as *;
+
+.upload {
+  @include flex-mixin--column(100%);
+    align-items: flex-start;
+  @include set-section-margin();
+
+  &__title {
+
+  }
+
+  &__thumbnail-container {
+    @include zero-spacing;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__preview {
+    width: 100%;
+  }
+}
