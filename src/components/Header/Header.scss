@@ -14,6 +14,11 @@ header {
     }
 }
 
+.header-border {
+    @include header-spacing;
+    @include zero-spacing;
+}
+
 .header {
     @include flex-mixin--column(100%);
     @include set-section-margin;

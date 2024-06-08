@@ -114,3 +114,11 @@
         justify-content: flex-start;
     }
 }
+
+@mixin header-spacing {
+    top: 10.4375rem;
+    
+    @include tablet {
+        top: 4.5rem;
+    }
+}

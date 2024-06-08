@@ -4,8 +4,9 @@
 
 .upload {
   @include flex-mixin--column(100%);
-    align-items: flex-start;
   @include set-section-margin();
+  align-items: flex-start;
+  // border-top: $divider;
 
   &__title {
 
