@@ -5,26 +5,36 @@ import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
-import videosArray from '../../data/video-details.json';
+// import videosArray from '../../data/video-details.json';
 import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
 
 function VideoDetails(props) {
   const {avatarSrc} =  props;
-  const [videosArray1, setVideosArray] = useState([]);
+  const [videosArray, setVideosArray] = useState([]);
+  const [currentVideoObject, setVideoObject] = useState([]);
+  // let videoObject;
 
   useEffect(() => {
     const fetchVideos = async () => {
       const response = await apiInstance.getVideosArray();
       setVideosArray(response);
+      console.log(response)
     }
     fetchVideos();
   }, [])
-  console.log('videos array', videosArray1)
   const videoId = useParams().videoId ?? videosArray[0].id;
-  let currentVideoObject = videosArray[videoId];
 
-  currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
+  useEffect(() => {
+    const fetchVideoObject = async (videoId) => {
+      const response = await apiInstance.getVideo(videoId);
+      setVideoObject(response);
+    }
+    fetchVideoObject(videoId);
+  }, []);
+  // let currentVideoObject = videosArray[videoId];
+
+  // currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
   const { title, description, comments, ...metadata } = currentVideoObject;
 
   return (
