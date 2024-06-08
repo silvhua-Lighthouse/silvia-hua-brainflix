@@ -44,7 +44,7 @@ header {
         background-repeat: no-repeat;
         background-position: $form-padding--mobile center;
         padding-left: 2.5rem;
-        height: $button-height;
+        // height: $button-height;
         order: 1;
         @include tablet {
             background-position: $form-padding--tablet center;

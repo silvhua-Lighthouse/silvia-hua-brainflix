@@ -10,7 +10,8 @@ function Header(props) {
     const searchProps = {
         id: "search-input",
         name: "search-input",
-        className: "header__search-input",
+        // className: "header__search-input",
+        className: "header__search-input form-field__input",
         placeholder: "Search",
         type: 'input',
         rows: '1'
