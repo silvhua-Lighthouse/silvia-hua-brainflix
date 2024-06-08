@@ -7,8 +7,8 @@ const Home = ({avatarSrc, videosArray, defaultId}) => {
     <>
     <VideoDetails 
       avatarSrc={avatarSrc} 
-      videosArray={videosArray} 
-      defaultId={defaultId}
+      // videosArray={videosArray} 
+      // defaultId={defaultId}
       />
     </>
   )

@@ -8,19 +8,18 @@ import apiInstance from './brainflix-api.js';
 
 function App() {
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
-  const [videosArray, setVideosArray] = useState([]);
-  const [defaultId, setDefaultId] = useState();
+  // const [videosArray, setVideosArray] = useState([]);
+  // const [defaultId, setDefaultId] = useState();
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      const response = await apiInstance.getVideosArray();
-      setVideosArray(response);
-      setDefaultId(response[0].id);
-    }
-    fetchVideos();
+  // useEffect(() => {
+  //   const fetchVideos = async () => {
+  //     const response = await apiInstance.getVideosArray();
+  //     setVideosArray(response);
+  //     setDefaultId(response[0].id);
+  //   }
+  //   fetchVideos();
 
-  }, [])
-  console.log('defaultId', defaultId)
+  // }, [])
   return (
     <BrowserRouter>
       <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
@@ -29,8 +28,8 @@ function App() {
           path="/" 
           element={<Home 
             avatarSrc={avatarSrc} 
-            videosArray={videosArray} 
-            defaultId={defaultId}
+            // videosArray={videosArray} 
+            // defaultId={defaultId}
           />} 
         />
         {/* <Route 

@@ -10,16 +10,24 @@ import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
 
 function VideoDetails(props) {
-  const {avatarSrc, videosArray, defaultId} =  props;
-  console.log('VideoDetails defaultId', defaultId);
-  // console.log('videos array in Video Details', videosArray);
-
-  const [currentVideoObject, setVideoObject] = useState({});
-
-
-  // const [videoId, setVideoId] = useState([useParams().videoId]);
+  // const {avatarSrc, videosArray, defaultId} =  props;
   
-  const [videoId, setVideoId] = useState(defaultId);
+  const [videosArray, setVideosArray] = useState([]);
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const response = await apiInstance.getVideosArray();
+      setVideosArray(response);
+      // setDefaultId(response[0].id);
+    }
+    fetchVideos();
+
+  }, [])
+  const [currentVideoObject, setVideoObject] = useState({});
+  console.log(videosArray);
+
+  const [videoId, setVideoId] = useState(useParams().videoId);
+  
+  // const [videoId, setVideoId] = useState(defaultId);
   // const [videoId, setVideoId] = useState(useParams().videoId ?? defaultId);
   // const [videoId, setVideoId] = useState(useParams().videoId ?? "84e96018-4022-434e-80bf-000ce4cd12b8");
   // const [videoId, setVideoId] = useState(useParams().videoId ?? videosArray[0].id);
@@ -32,22 +40,23 @@ function VideoDetails(props) {
   // }
   // getInitialVideoObject();
 
-  console.log('videoId', videoId);
+  // console.log('videoId', videoId);
 
   // const videoId = useParams().videoId ?? videosArray[0].id;
 
-  useEffect(() => {
-    const fetchVideoObject = async (videoId) => {
-      const videoDetailsResponse = await apiInstance.getVideo(videoId);
-      // console.log('current video object', videoDetailsResponse)
-      setVideoObject(videoDetailsResponse);
-      return videoDetailsResponse;
-    }
-    fetchVideoObject(videoId);
-    // setVideoObject(videoDetailsResponse);
-    // console.log(videoDetailsResponse);
+  // useEffect(() => {
+  //   const fetchVideoObject = async (videoId) => {
+  //     const videoDetailsResponse = await apiInstance.getVideo(videoId);
+  //     // console.log('current video object', videoDetailsResponse)
+  //     setVideoObject(videoDetailsResponse);
+  //     return videoDetailsResponse;
+  //   }
+  //   fetchVideoObject(videoId);
+  //   // setVideoObject(videoDetailsResponse);
+  //   // console.log(videoDetailsResponse);
 
-  }, []);
+  // }, []);
+
   // let currentVideoObject = videosArray[videoId];
 
   // currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
@@ -56,9 +65,9 @@ function VideoDetails(props) {
 
   return (
     <main>
-    <CurrentVideo currentVideoObject={currentVideoObject} />
+    {/* <CurrentVideo currentVideoObject={currentVideoObject} />
     <section className="secondary">
-      {/* <section className="video-details">
+      <section className="video-details">
         <article>
           <h1 className="current-video__title">{title}</h1>
           <Metadata metadata={metadata}/>
@@ -66,9 +75,9 @@ function VideoDetails(props) {
           <p className="current-video__n-comments">{comments.length} Comments</p>
         </article>
         <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
-      </section> */}
-      {/* <NextVideos videosArray={videosArray} currentVideoId={videoId} /> */}
-    </section>
+      </section>
+      <NextVideos videosArray={videosArray} currentVideoId={videoId} />
+    </section> */}
     </main>
   )
 }
