@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
 
 function VideoDetails(props) {
-  // const {avatarSrc, videosArray, defaultId} =  props;
+  const {avatarSrc} =  props;
   
   const [videosArray, setVideosArray] = useState([]);
   const [videoId, setVideoId] = useState(useParams().videoId);
@@ -24,8 +24,6 @@ function VideoDetails(props) {
 
   }, [])
   const [currentVideoObject, setVideoObject] = useState({});
-  console.log(videosArray);
-  console.log('video', videoId);
 
   useEffect(() => {
     const fetchVideoObject = async (videoId) => {
@@ -42,15 +40,15 @@ function VideoDetails(props) {
     <main>
     <CurrentVideo currentVideoObject={currentVideoObject} />
     <section className="secondary">
-      {/* <section className="video-details">
+      <section className="video-details">
         <article>
           <h1 className="current-video__title">{title}</h1>
-          <Metadata metadata={metadata}/>
+          {/* <Metadata metadata={metadata}/>
           <Description description={description}/>
-          <p className="current-video__n-comments">{comments.length} Comments</p>
+          <p className="current-video__n-comments">{comments.length} Comments</p> */}
         </article>
-        <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
-      </section> */}
+        {/* <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/> */}
+      </section>
       <NextVideos videosArray={videosArray} currentVideoId={videoId} />
     </section>
     </main>
