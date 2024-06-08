@@ -43,32 +43,30 @@ function VideoDetails(props) {
   // getInitialVideoObject();
 
 
-  // const videoId = useParams().videoId ?? videosArray[0].id;
 
-  // useEffect(() => {
-  //   const fetchVideoObject = async (videoId) => {
-  //     const videoDetailsResponse = await apiInstance.getVideo(videoId);
-  //     // console.log('current video object', videoDetailsResponse)
-  //     setVideoObject(videoDetailsResponse);
-  //     return videoDetailsResponse;
-  //   }
-  //   fetchVideoObject(videoId);
-  //   // setVideoObject(videoDetailsResponse);
-  //   // console.log(videoDetailsResponse);
+  useEffect(() => {
+    const fetchVideoObject = async (videoId) => {
+      const videoDetailsResponse = await apiInstance.getVideo(videoId);
+      // console.log('current video object', videoDetailsResponse)
+      setVideoObject(videoDetailsResponse);
+    }
+    fetchVideoObject(videoId);
+    // setVideoObject(videoDetailsResponse);
+    // console.log('video details', currentVideoObject);
 
-  // }, []);
+  }, [videoId]);
 
   // let currentVideoObject = videosArray[videoId];
 
   // currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
   const { title, description, comments, ...metadata } = currentVideoObject;
-  // console.log(currentVideoObject)
+  console.log(currentVideoObject)
 
   return (
     <main>
-    {/* <CurrentVideo currentVideoObject={currentVideoObject} />
+    <CurrentVideo currentVideoObject={currentVideoObject} />
     <section className="secondary">
-      <section className="video-details">
+      {/* <section className="video-details">
         <article>
           <h1 className="current-video__title">{title}</h1>
           <Metadata metadata={metadata}/>
@@ -76,9 +74,9 @@ function VideoDetails(props) {
           <p className="current-video__n-comments">{comments.length} Comments</p>
         </article>
         <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
-      </section>
+      </section> */}
       <NextVideos videosArray={videosArray} currentVideoId={videoId} />
-    </section> */}
+    </section>
     </main>
   )
 }
