@@ -20,6 +20,16 @@ const VideoUpload = () => {
     type:"textarea",
     rows:"4"
   }
+  const buttonPropsReset = {
+    className: "upload__button--cancel",
+    innerText: "Cancel",
+    type: "reset" 
+  }
+  const buttonPropsSubmit = {
+    className: "upload__button--publish",
+    innerText: "Publish",
+    type: "submit"
+  }
   return (
     <section>
       <h1 className="upload__title">Upload Video</h1>
@@ -36,14 +46,8 @@ const VideoUpload = () => {
         <FormField inputProps={inputPropsDescription} />
       </form>
       <div className="upload__buttons-container">
-        {/* <Button 
-          className="upload__button--cancel" 
-          type="reset" 
-        />
-        <Button 
-          className="upload__button--publish" 
-          type="submit"
-        /> */}
+        <Button buttonProps={buttonPropsReset} />
+        <Button buttonProps={buttonPropsSubmit} />
       </div>
     </section>
   )
