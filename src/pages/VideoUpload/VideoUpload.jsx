@@ -32,7 +32,6 @@ const VideoUpload = () => {
   }
   return (
     <main>
-      <div className="header-border"></div>
       <section className="upload">
         <h1 className="upload__title">Upload Video</h1>
         <div className="upload__thumbnail-container">
