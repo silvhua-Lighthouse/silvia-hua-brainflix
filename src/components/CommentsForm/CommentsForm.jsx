@@ -8,7 +8,7 @@ const CommentsForm = (props) => {
         id: 'user-comment',
         name: 'userComment', 
         // className: 'comments-form__input-field',
-        className: 'form-field__input comments-form__input-field',
+        className: 'form-field__input--responsive comments-form__input-field',
         placeholder: 'Add a new comment',
         type: 'textarea',
         rows: '4',
