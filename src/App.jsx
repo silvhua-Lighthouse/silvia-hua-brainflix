@@ -13,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home avatarSrc={avatarSrc} />} />
         <Route path="videos/:videoId" element={<VideoDetails avatarSrc={avatarSrc} />} />
+        <Route path="*" element={<Home avatarSrc={avatarSrc} />} />
       </Routes>
-
     </BrowserRouter>
   )
 }
