@@ -31,10 +31,11 @@ function VideoDetails(props) {
       setVideoObject(videoDetailsResponse);
     }
     fetchVideoObject(videoId);
+    console.log('new videoId', videoId);
   }, [videoId]);
 
   const { title, description, comments, ...metadata } = currentVideoObject;
-  console.log(currentVideoObject)
+  // console.log(currentVideoObject)
 
   return (
     <main>
