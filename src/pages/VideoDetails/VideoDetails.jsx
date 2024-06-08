@@ -13,19 +13,21 @@ function VideoDetails(props) {
   // const {avatarSrc, videosArray, defaultId} =  props;
   
   const [videosArray, setVideosArray] = useState([]);
+  const [videoId, setVideoId] = useState(useParams().videoId);
   useEffect(() => {
     const fetchVideos = async () => {
       const response = await apiInstance.getVideosArray();
       setVideosArray(response);
-      // setDefaultId(response[0].id);
+      setVideoId(videoId ?? response[0].id);
     }
     fetchVideos();
 
   }, [])
   const [currentVideoObject, setVideoObject] = useState({});
   console.log(videosArray);
+  console.log('video', videoId);
 
-  const [videoId, setVideoId] = useState(useParams().videoId);
+
   
   // const [videoId, setVideoId] = useState(defaultId);
   // const [videoId, setVideoId] = useState(useParams().videoId ?? defaultId);
@@ -40,7 +42,6 @@ function VideoDetails(props) {
   // }
   // getInitialVideoObject();
 
-  // console.log('videoId', videoId);
 
   // const videoId = useParams().videoId ?? videosArray[0].id;
 
