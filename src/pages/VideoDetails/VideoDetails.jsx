@@ -4,11 +4,21 @@ import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
-import NextVideos from '../../components/NextVideos/NextVideos.jsx';
+// import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 import videosArray from '../../data/video-details.json';
+import { useEffect } from 'react';
+import apiInstance from '../../brainflix-api.js';
 
 function VideoDetails(props) {
   const {avatarSrc} =  props;
+
+  useEffect(() => {
+    const fetchVideos = async() => {
+      const videosResponse = await apiInstance.getVideosArray()
+      return videosResponse;
+    };
+    videosArray
+  })
   const videoId = useParams().videoId ?? videosArray[0].id;
   let currentVideoObject = videosArray[videoId];
 
