@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useParams, Navigate } from 'react-router-dom';
 import './VideoDetails.scss'
 import Description from '../../components/Description/Description.jsx';
@@ -11,15 +10,9 @@ import videosArray from '../../data/video-details.json';
 function VideoDetails(props) {
     const {avatarSrc} =  props;
     const videoId = useParams().videoId ?? videosArray[0].id;
-    // const [currentVideoId, setVideoId] = useState(videosArray[0].id);
-    const [currentVideoId, setVideoId] = useState(videoId);
-    let currentVideoObject = videosArray[currentVideoId];
+    let currentVideoObject = videosArray[videoId];
   
-    const selectVideoObject = (videoId) => {
-      setVideoId(videoId)
-    }
     currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
-    // currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
     const { title, description, comments, ...metadata } = currentVideoObject;
 
     return (
@@ -37,9 +30,7 @@ function VideoDetails(props) {
             </section>
             <NextVideos 
                 videosArray={videosArray} 
-                onSelectVideo={selectVideoObject} 
                 currentVideoId={videoId}
-                // currentVideoId={currentVideoId}
             />
         </section>
         </main>

@@ -1,9 +1,7 @@
 import './NextVideos.scss';
 import VideoCard from '../VideoCard/VideoCard';
 import { Link } from 'react-router-dom';
-/*
-<section>
-*/
+
 const NextVideos = ({videosArray, onSelectVideo, currentVideoId}) => {
     const nextVideosArray = videosArray.filter(video => video.id !== currentVideoId);
     return (
@@ -18,7 +16,6 @@ const NextVideos = ({videosArray, onSelectVideo, currentVideoId}) => {
                         <VideoCard 
                             key={videoObject.id} 
                             videoObject={videoObject} 
-                            // onSelectVideo={onSelectVideo}
                         />
                     </Link>
                 )
