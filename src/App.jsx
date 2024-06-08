@@ -3,39 +3,21 @@ import './App.scss'
 import Header from './components/Header/Header.jsx'
 import VideoDetails from './pages/VideoDetails/VideoDetails.jsx';
 import Home from './pages/Home/Home.jsx';
-import { useEffect, useState } from 'react';
-import apiInstance from './brainflix-api.js';
 
 function App() {
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
-  // const [videosArray, setVideosArray] = useState([]);
-  // const [defaultId, setDefaultId] = useState();
-
-  // useEffect(() => {
-  //   const fetchVideos = async () => {
-  //     const response = await apiInstance.getVideosArray();
-  //     setVideosArray(response);
-  //     setDefaultId(response[0].id);
-  //   }
-  //   fetchVideos();
-
-  // }, [])
   return (
     <BrowserRouter>
       <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
       <Routes>
         <Route 
           path="/" 
-          element={<Home 
-            avatarSrc={avatarSrc} 
-            // videosArray={videosArray} 
-            // defaultId={defaultId}
-          />} 
+          element={<Home avatarSrc={avatarSrc} />} 
         />
-        {/* <Route 
+        <Route 
           path="videos/:videoId" 
-          element={<VideoDetails avatarSrc={avatarSrc} videosArray={videosArray}/>} 
-        /> */}
+          element={<VideoDetails avatarSrc={avatarSrc}/>} 
+        />
         <Route path="*" element={<Home avatarSrc={avatarSrc} />} />
       </Routes>
     </BrowserRouter>
