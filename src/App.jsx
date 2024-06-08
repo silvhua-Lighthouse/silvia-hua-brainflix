@@ -16,17 +16,20 @@ function App() {
       setVideosArray(response);
     }
     fetchVideos();
+
   }, [])
+  console.log('videos array', videosArray);
+
 
   return (
     <BrowserRouter>
       <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
       <Routes>
-        <Route path="/" element={<Home avatarSrc={avatarSrc} />} />
-        <Route 
+        <Route path="/" element={<Home avatarSrc={avatarSrc} videosArray={videosArray} />} />
+        {/* <Route 
           path="videos/:videoId" 
           element={<VideoDetails avatarSrc={avatarSrc} videosArray={videosArray}/>} 
-        />
+        /> */}
         <Route path="*" element={<Home avatarSrc={avatarSrc} />} />
       </Routes>
     </BrowserRouter>

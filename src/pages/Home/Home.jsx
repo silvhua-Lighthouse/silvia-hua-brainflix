@@ -1,11 +1,11 @@
 import './Home.scss';
 import VideoDetails from '../VideoDetails/VideoDetails';
 
-const Home = ({avatarSrc}) => {
+const Home = ({avatarSrc, videosArray}) => {
   
   return (
     <>
-    <VideoDetails avatarSrc={avatarSrc} />
+    <VideoDetails avatarSrc={avatarSrc} videosArray={videosArray} />
     </>
   )
 }

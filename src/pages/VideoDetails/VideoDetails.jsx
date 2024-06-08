@@ -5,12 +5,13 @@ import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
-// import videosArray from '../../data/video-details.json';
+import videosArray from '../../data/video-details.json';
 import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
 
 function VideoDetails(props) {
   const {avatarSrc, videosArray} =  props;
+  console.log('videos array in Video Details', videosArray);
   const [videoId, setVideoId] = useState(["84e96018-4022-434e-80bf-000ce4cd12b8"]);
 
   const [currentVideoObject, setVideoObject] = useState({});
@@ -44,12 +45,12 @@ function VideoDetails(props) {
 
   // currentVideoObject = videosArray.find(videoObject => videoObject.id === videoId);
   const { title, description, comments, ...metadata } = currentVideoObject;
-  console.log(currentVideoObject)
+  // console.log(currentVideoObject)
 
   return (
     <main>
     <CurrentVideo currentVideoObject={currentVideoObject} />
-    {/* <section className="secondary">
+    <section className="secondary">
       <section className="video-details">
         <article>
           <h1 className="current-video__title">{title}</h1>
@@ -60,7 +61,7 @@ function VideoDetails(props) {
         <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
       </section>
       <NextVideos videosArray={videosArray} currentVideoId={videoId} />
-    </section> */}
+    </section>
     </main>
   )
 }
