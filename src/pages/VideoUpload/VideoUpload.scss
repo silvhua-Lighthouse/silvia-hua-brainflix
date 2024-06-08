@@ -6,9 +6,9 @@
   @include flex-mixin--column(100%);
   @include set-section-margin();
   align-items: flex-start;
-  // border-top: $divider;
 
-  &__title {
+  &__form {
+    width: 100%;
 
   }
 
