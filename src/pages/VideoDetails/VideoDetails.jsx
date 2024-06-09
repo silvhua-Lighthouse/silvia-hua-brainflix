@@ -29,12 +29,13 @@ function VideoDetails(props) {
 
   useEffect(() => {
     const updateVideoObject = () => {
-      setVideoObject(videosArray0.find(videoObject => videoObject.id === videoId));
+      setVideoObject(videosArray0.find(videoObject => videoObject.id === (videoId ?? videosArray0[0].id)));
     }
     updateVideoObject();
     console.log('useParams().videoId changed')
   }, [useParams().videoId])
 
+  /* Video details */
   // useEffect(() => {
   //   const fetchVideoObject = async (videoId) => {
   //     const videoDetailsResponse = await apiInstance.getVideo(videoId);
@@ -43,7 +44,7 @@ function VideoDetails(props) {
   //   fetchVideoObject(videoId);
   //   console.log('new videoId', videoId);
   // }, [videoId]);
-
+  console.log('current video object', currentVideoObject, '\nvideoId', videoId);
   const { title, description, comments, ...metadata } = currentVideoObject;
 
   return (
