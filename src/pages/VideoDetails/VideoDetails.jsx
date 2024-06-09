@@ -14,7 +14,8 @@ function VideoDetails(props) {
   
   const [videosArray, setVideosArray] = useState([]);
   const [videoId, setVideoId] = useState(useParams().videoId);
-  const [currentVideoObject, setVideoObject] = useState(videosArray0[0]);
+  const [currentVideoObject, setVideoObject] = useState(null);
+  // const [currentVideoObject, setVideoObject] = useState(videosArray0[0]);
   useEffect(() => {
     const fetchVideos = async () => {
       const response = await apiInstance.getVideosArray();
@@ -22,11 +23,12 @@ function VideoDetails(props) {
       if (!videoId) {
         setVideoId(response[0].id);
       }
-      setVideoObject(videosArray0.find(videoObject => videoObject.id === (videoId ?? response[0].id)));
+      setVideoObject(videosArray.find(videoObject => videoObject.id === (videoId ?? response[0].id)));
     }
     fetchVideos();
 
-  }, [])
+  }, []);
+
 
   useEffect(() => {
     // const updateVideoObject = () => {
@@ -37,19 +39,26 @@ function VideoDetails(props) {
   }, [useParams().videoId])
 
   /* Video details */
-  // useEffect(() => {
-  //   const fetchVideoObject = async (videoId) => {
-  //     const videoDetailsResponse = await apiInstance.getVideo(videoId);
-  //     setVideoObject(videoDetailsResponse);
-  //   }
-  //   fetchVideoObject(videoId);
-  //   console.log('new videoId', videoId);
-  // }, [videoId]);
+  useEffect(() => {
+    const fetchVideoObject = async (videoId) => {
+      const videoDetailsResponse = await apiInstance.getVideo(videoId);
+      setVideoObject(videoDetailsResponse);
+      console.log('video details response', videoDetailsResponse);
+    }
+    fetchVideoObject(videoId);
+    console.log('new videoId', videoId);
+  }, [videoId]);
 
   // console.log('current video object', currentVideoObject, '\nvideoId', videoId);
 
 
+  if (videosArray.length === 0 || !currentVideoObject) {
+    return (
+      <p> Just a moment while we load the recipe details....</p>
+    );
+  }
   console.log('videoId\n', videoId, (!videoId));
+  console
   const { title, description, comments, ...metadata } = currentVideoObject;
 
   return (
