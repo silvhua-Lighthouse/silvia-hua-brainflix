@@ -14,16 +14,18 @@ function VideoDetails(props) {
   
   const [videosArray, setVideosArray] = useState([]);
   const [videoId, setVideoId] = useState(useParams().videoId);
+  const [currentVideoObject, setVideoObject] = useState(videosArray0[0]);
   useEffect(() => {
     const fetchVideos = async () => {
       const response = await apiInstance.getVideosArray();
       setVideosArray(response);
-      setVideoId(videoId ?? response[0].id);
+      const currentVideoId = videoId ?? response[0].id
+      setVideoId(currentVideoId);
+      setVideoObject(videosArray0.find(videoObject => videoObject.id === currentVideoId));
     }
     fetchVideos();
 
-  }, [])
-  const [currentVideoObject, setVideoObject] = useState(videosArray0[0]);
+  }, [videoId])
 
   // useEffect(() => {
   //   const fetchVideoObject = async (videoId) => {
