@@ -8,6 +8,7 @@ function VideoDetails(props) {
   const {avatarSrc} =  props;
   const [videosArray, setVideosArray] = useState([]);
   const [videoId, setVideoId] = useState(useParams().videoId);
+  const [refreshValue, setRefreshValue] = useState(0);
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -20,6 +21,12 @@ function VideoDetails(props) {
     fetchVideos();
 
   }, []);
+
+  useEffect(() => {
+    setRefreshValue(refreshValue + 1);
+
+    console.log('useParams().videoId changed')
+  }, [useParams().videoId])
 
 
   // useEffect(() => {
