@@ -36,6 +36,7 @@ function VideoDetails(props) {
     // }
     // updateVideoObject();
     console.log('useParams().videoId changed')
+  // }, [])
   }, [useParams().videoId])
 
   /* Video details */
@@ -48,17 +49,17 @@ function VideoDetails(props) {
     fetchVideoObject(videoId);
     console.log('new videoId', videoId);
   }, [videoId]);
+  // }, [])
 
   // console.log('current video object', currentVideoObject, '\nvideoId', videoId);
 
 
-  if (videosArray.length === 0 || !currentVideoObject) {
+  if (videosArray.length === 0 || !currentVideoObject || currentVideoObject.length === 0) {
     return (
       <p> Just a moment while we load the recipe details....</p>
     );
   }
   console.log('videoId\n', videoId, (!videoId));
-  console
   const { title, description, comments, ...metadata } = currentVideoObject;
 
   return (
