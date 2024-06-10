@@ -1,24 +1,27 @@
 import './CurrentVideo.scss';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import apiInstance from '../../brainflix-api.js';
 import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
-function CurrentVideo({videoId, videosArray, avatarSrc}) {
+function CurrentVideo({videosArray, avatarSrc}) {
   const [currentVideoObject, setVideoObject] = useState(null);
+  const [videoId, setVideoId] = useState(useParams().videoId);
 
   /* Video details */
   useEffect(() => {
     const fetchVideoObject = async (videoId) => {
       const videoDetailsResponse = await apiInstance.getVideo(videoId);
       setVideoObject(videoDetailsResponse);
-      console.log('video details response', videoDetailsResponse);
+      // console.log('video details response', videoDetailsResponse);
     }
     fetchVideoObject(videoId);
+    setVideoId('');
     console.log('new videoId', videoId);
-  }, [videoId]);
+  }, [useParams().videoId]);
 
   if (!currentVideoObject) {
       return <main>Loading...</main>
@@ -42,7 +45,10 @@ function CurrentVideo({videoId, videosArray, avatarSrc}) {
           </article>
           <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
         </section>
-        <NextVideos videosArray={videosArray} currentVideoId={videoId} />
+        <NextVideos 
+          videosArray={videosArray} 
+          // currentVideoId={videoId} 
+        />
       </section>
     </section>
   )

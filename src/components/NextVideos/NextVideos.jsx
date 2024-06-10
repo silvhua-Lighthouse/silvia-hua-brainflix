@@ -1,9 +1,12 @@
 import './NextVideos.scss';
 import VideoCard from '../VideoCard/VideoCard';
 import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const NextVideos = ({videosArray, currentVideoId}) => {
+const NextVideos = ({videosArray}) => {
+  const currentVideoId = useParams().videoId;
   const nextVideosArray = videosArray.filter(video => video.id !== currentVideoId);
+
   return (
     <aside className="next-videos">
     <h2 className="next-videos__heading">Next Videos</h2>
