@@ -3,6 +3,7 @@ import './VideoDetails.scss'
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
 import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
+import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
 function VideoDetails(props) {
   const {avatarSrc} =  props;
@@ -39,10 +40,14 @@ function VideoDetails(props) {
 
   return (
     <main>
-      <CurrentVideo 
+      {/* <CurrentVideo 
       // videoId={videoId} 
       videosArray={videosArray} 
       avatarSrc={avatarSrc} 
+      /> */}
+      <NextVideos
+        videosArray={videosArray} 
+        avatarSrc={avatarSrc} 
       />
     </main>
   )
