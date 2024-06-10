@@ -9,7 +9,7 @@ import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
 function CurrentVideo({videosArray, avatarSrc}) {
   const [currentVideoObject, setVideoObject] = useState(null);
-  const [videoId, setVideoId] = useState(useParams().videoId);
+  const [videoId, setVideoId] = useState(useParams().videoId || videosArray[0].id);
 
   /* Video details */
   useEffect(() => {
@@ -19,7 +19,6 @@ function CurrentVideo({videosArray, avatarSrc}) {
       // console.log('video details response', videoDetailsResponse);
     }
     fetchVideoObject(videoId);
-    setVideoId('');
     console.log('new videoId', videoId);
   }, [useParams().videoId]);
 
