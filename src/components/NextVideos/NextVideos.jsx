@@ -8,11 +8,11 @@ import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import apiInstance from '../../brainflix-api.js';
 
-const NextVideos = ({videosArray, avatarSrc}) => {
-  const currentVideoId = useParams().videoId || videosArray[0].id;
+const NextVideos = ({videoId, videosArray, avatarSrc}) => {
+  const currentVideoId = videoId || videosArray[0].id;
   const nextVideosArray = videosArray.filter(video => video.id !== currentVideoId);
   const [currentVideoObject, setVideoObject] = useState(null);
-  const [videoId, setVideoId] = useState(currentVideoId);
+  // const [videoId, setVideoId] = useState(currentVideoId);
 
   /* Video details */
   useEffect(() => {
@@ -61,10 +61,6 @@ const NextVideos = ({videosArray, avatarSrc}) => {
           </article>
           <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
         </section>
-        {/* <NextVideos 
-          videosArray={videosArray} 
-          // currentVideoId={videoId} 
-        /> */}
       </section>
       <aside className="next-videos">
       <h2 className="next-videos__heading">Next Videos</h2>

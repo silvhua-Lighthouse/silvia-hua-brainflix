@@ -48,6 +48,7 @@ function VideoDetails(props) {
       <NextVideos
         videosArray={videosArray} 
         avatarSrc={avatarSrc} 
+        videoId={videoId}
       />
     </main>
   )
