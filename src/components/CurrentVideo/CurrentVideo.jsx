@@ -16,10 +16,9 @@ function CurrentVideo({videosArray, avatarSrc}) {
     const fetchVideoObject = async (videoId) => {
       const videoDetailsResponse = await apiInstance.getVideo(videoId);
       setVideoObject(videoDetailsResponse);
-      // console.log('video details response', videoDetailsResponse);
     }
     fetchVideoObject(videoId);
-    console.log('new videoId', videoId);
+    console.log('CurrentVideo: new videoId\n', videoId);
   }, [useParams().videoId]);
 
   if (!currentVideoObject) {
