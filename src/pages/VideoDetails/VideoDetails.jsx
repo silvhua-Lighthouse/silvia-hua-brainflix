@@ -14,7 +14,6 @@ function VideoDetails(props) {
   
   const [videosArray, setVideosArray] = useState([]);
   const [videoId, setVideoId] = useState(useParams().videoId);
-  const [currentVideoObject, setVideoObject] = useState(null);
   // const [currentVideoObject, setVideoObject] = useState(videosArray0[0]);
   useEffect(() => {
     const fetchVideos = async () => {
@@ -23,7 +22,7 @@ function VideoDetails(props) {
       if (!videoId) {
         setVideoId(response[0].id);
       }
-      setVideoObject(videosArray.find(videoObject => videoObject.id === (videoId ?? response[0].id)));
+      // setVideoObject(videosArray.find(videoObject => videoObject.id === (videoId ?? response[0].id)));
     }
     fetchVideos();
 
@@ -36,37 +35,26 @@ function VideoDetails(props) {
     // }
     // updateVideoObject();
     console.log('useParams().videoId changed')
-  // }, [])
   }, [useParams().videoId])
-
-  /* Video details */
-  useEffect(() => {
-    const fetchVideoObject = async (videoId) => {
-      const videoDetailsResponse = await apiInstance.getVideo(videoId);
-      setVideoObject(videoDetailsResponse);
-      console.log('video details response', videoDetailsResponse);
-    }
-    fetchVideoObject(videoId);
-    console.log('new videoId', videoId);
-  }, [videoId]);
-  // }, [])
 
   // console.log('current video object', currentVideoObject, '\nvideoId', videoId);
 
 
-  if (videosArray.length === 0 || !currentVideoObject || currentVideoObject.length === 0) {
+  if (videosArray.length === 0) {
+  // if (videosArray.length === 0 || !currentVideoObject || currentVideoObject.length === 0) {
     return (
       <p> Just a moment while we load the recipe details....</p>
     );
   }
-  console.log('videoId\n', videoId, (!videoId));
-  const { title, description, comments, ...metadata } = currentVideoObject;
+  // console.log('videoId\n', videoId, (!videoId));
+  // const { title, description, comments, ...metadata } = currentVideoObject;
 
   return (
     <main>
-    <CurrentVideo currentVideoObject={currentVideoObject} />
+    {/* <CurrentVideo currentVideoObject={currentVideoObject} /> */}
+    <CurrentVideo videoId={videoId} />
     <section className="secondary">
-      <section className="video-details">
+      {/* <section className="video-details">
         <article>
           <h1 className="current-video__title">{title}</h1>
           <Metadata metadata={metadata}/>
@@ -74,7 +62,7 @@ function VideoDetails(props) {
           <p className="current-video__n-comments">{comments.length} Comments</p>
         </article>
         <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
-      </section>
+      </section> */}
       <NextVideos videosArray={videosArray} currentVideoId={videoId} />
     </section>
     </main>
