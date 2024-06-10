@@ -1,32 +1,51 @@
 import './CurrentVideo.scss';
 import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
+import Description from '../../components/Description/Description.jsx';
+import Metadata from '../../components/Metadata/Metadata.jsx';
+import Comments from '../../components/Comments/Comments.jsx';
+import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
-function CurrentVideo({videoId}) {
-    const [currentVideoObject, setVideoObject] = useState(null);
+function CurrentVideo({videoId, videosArray, avatarSrc}) {
+  const [currentVideoObject, setVideoObject] = useState(null);
 
-    /* Video details */
-    useEffect(() => {
-      const fetchVideoObject = async (videoId) => {
-        const videoDetailsResponse = await apiInstance.getVideo(videoId);
-        setVideoObject(videoDetailsResponse);
-        console.log('video details response', videoDetailsResponse);
-      }
-      fetchVideoObject(videoId);
-      console.log('new videoId', videoId);
-    }, [videoId]);
-
-    if (!currentVideoObject) {
-        return <p>Loading...</p>
+  /* Video details */
+  useEffect(() => {
+    const fetchVideoObject = async (videoId) => {
+      const videoDetailsResponse = await apiInstance.getVideo(videoId);
+      setVideoObject(videoDetailsResponse);
+      console.log('video details response', videoDetailsResponse);
     }
-    const {image} = currentVideoObject;
+    fetchVideoObject(videoId);
+    console.log('new videoId', videoId);
+  }, [videoId]);
 
+  if (!currentVideoObject) {
+      return <p>Loading...</p>
+  }
+  const {image} = currentVideoObject;
 
-    return (
-        <section className="current-video">
-            <video className="current-video__video" poster={image} controls></video>
-        </section>
-    )
+  const { title, description, comments, ...metadata } = currentVideoObject;
+
+  return (
+    <>
+    <section className="current-video">
+      <video className="current-video__video" poster={image} controls></video>
+    </section>
+    <section className="secondary">
+      <section className="video-details">
+        <article>
+          <h1 className="current-video__title">{title}</h1>
+          <Metadata metadata={metadata}/>
+          <Description description={description}/>
+          <p className="current-video__n-comments">{comments.length} Comments</p>
+        </article>
+        <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
+      </section>
+      <NextVideos videosArray={videosArray} currentVideoId={videoId} />
+    </section>
+    </>
+  )
 }
 
 export default CurrentVideo;

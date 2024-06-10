@@ -52,7 +52,7 @@ function VideoDetails(props) {
   return (
     <main>
     {/* <CurrentVideo currentVideoObject={currentVideoObject} /> */}
-    <CurrentVideo videoId={videoId} />
+    <CurrentVideo videoId={videoId} videosArray={videosArray} avatarSrc={avatarSrc} />
     <section className="secondary">
       {/* <section className="video-details">
         <article>
@@ -63,7 +63,7 @@ function VideoDetails(props) {
         </article>
         <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
       </section> */}
-      <NextVideos videosArray={videosArray} currentVideoId={videoId} />
+      {/* <NextVideos videosArray={videosArray} currentVideoId={videoId} /> */}
     </section>
     </main>
   )
