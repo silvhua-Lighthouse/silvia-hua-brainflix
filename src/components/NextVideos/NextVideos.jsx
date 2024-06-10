@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 const NextVideos = ({videosArray}) => {
   const currentVideoId = useParams().videoId;
   const nextVideosArray = videosArray.filter(video => video.id !== currentVideoId);
-  console.log('Next Videos currentVideoId\n\t', currentVideoId);
 
   return (
     <aside className="next-videos">

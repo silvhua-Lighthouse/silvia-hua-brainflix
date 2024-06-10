@@ -12,16 +12,15 @@ function CurrentVideo({videosArray, avatarSrc}) {
   const [videoId, setVideoId] = useState(useParams().videoId);
 
   /* Video details */
-  const fetchVideoObject = async (videoId) => {
-    const videoDetailsResponse = await apiInstance.getVideo(videoId);
-    setVideoObject(videoDetailsResponse);
-    // console.log('video details response', videoDetailsResponse);
-  }
-  
   useEffect(() => {
+    const fetchVideoObject = async (videoId) => {
+      const videoDetailsResponse = await apiInstance.getVideo(videoId);
+      setVideoObject(videoDetailsResponse);
+      // console.log('video details response', videoDetailsResponse);
+    }
     fetchVideoObject(videoId);
-    setVideoId(videoId);
-    console.log('Current Video:\nnew videoId\n\t', videoId);
+    setVideoId('');
+    console.log('new videoId', videoId);
   }, [useParams().videoId]);
 
   if (!currentVideoObject) {
