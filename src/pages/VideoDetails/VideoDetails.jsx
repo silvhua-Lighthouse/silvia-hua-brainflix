@@ -40,16 +40,16 @@ function VideoDetails(props) {
 
   return (
     <main>
-      {/* <CurrentVideo 
+      <CurrentVideo 
       // videoId={videoId} 
       videosArray={videosArray} 
       avatarSrc={avatarSrc} 
-      /> */}
-      <NextVideos
+      />
+      {/* <NextVideos
         videosArray={videosArray} 
         avatarSrc={avatarSrc} 
         videoId={videoId}
-      />
+      /> */}
     </main>
   )
 }

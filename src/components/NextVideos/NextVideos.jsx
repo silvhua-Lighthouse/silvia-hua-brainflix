@@ -47,7 +47,7 @@ const NextVideos = ({videoId, videosArray, avatarSrc}) => {
 
   return (
     <>
-    <section className="secondary">
+    {/* <section className="secondary">
       <section className="current-video">
         <video className="current-video__video" poster={image} controls></video>
       </section>
@@ -61,7 +61,7 @@ const NextVideos = ({videoId, videosArray, avatarSrc}) => {
           </article>
           <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
         </section>
-      </section>
+      </section> */}
       <aside className="next-videos">
       <h2 className="next-videos__heading">Next Videos</h2>
       {
@@ -72,7 +72,7 @@ const NextVideos = ({videoId, videosArray, avatarSrc}) => {
         )
       }
       </aside>
-    </section>
+    // </section>
     </>
 
   )

@@ -5,29 +5,29 @@ import apiInstance from '../../brainflix-api.js';
 import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
+import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
 function CurrentVideo({videosArray, avatarSrc}) {
-  // const [currentVideoObject, setVideoObject] = useState(null);
-  // const [videoId, setVideoId] = useState(useParams().videoId);
+  const [currentVideoObject, setVideoObject] = useState(null);
+  const [videoId, setVideoId] = useState(useParams().videoId || videosArray[0].id);
 
-  // /* Video details */
-  // useEffect(() => {
-  //   const fetchVideoObject = async (videoId) => {
-  //     const videoDetailsResponse = await apiInstance.getVideo(videoId);
-  //     setVideoObject(videoDetailsResponse);
-  //     // console.log('video details response', videoDetailsResponse);
-  //   }
-  //   fetchVideoObject(videoId);
-  //   setVideoId('');
-  //   console.log('new videoId', videoId);
-  // }, [useParams().videoId]);
+  /* Video details */
+  useEffect(() => {
+    const fetchVideoObject = async (videoId) => {
+      const videoDetailsResponse = await apiInstance.getVideo(videoId);
+      setVideoObject(videoDetailsResponse);
+      // console.log('video details response', videoDetailsResponse);
+    }
+    fetchVideoObject(videoId);
+    console.log('new videoId', videoId);
+  }, [useParams().videoId]);
 
-  // if (!currentVideoObject) {
-  //     return <main>Loading...</main>
-  // }
-  // const {image} = currentVideoObject;
+  if (!currentVideoObject) {
+      return <main>Loading...</main>
+  }
+  const {image} = currentVideoObject;
 
-  // const { title, description, comments, ...metadata } = currentVideoObject;
+  const { title, description, comments, ...metadata } = currentVideoObject;
 
   return (
     <section className="secondary">
