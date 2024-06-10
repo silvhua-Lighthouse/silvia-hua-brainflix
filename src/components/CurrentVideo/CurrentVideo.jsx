@@ -31,10 +31,11 @@ function CurrentVideo({videosArray, avatarSrc}) {
   const { title, description, comments, ...metadata } = currentVideoObject;
 
   return (
+    <>
+    <section className="current-video">
+      <video className="current-video__video" poster={image} controls></video>
+    </section>
     <section className="secondary">
-      <section className="current-video">
-        <video className="current-video__video" poster={image} controls></video>
-      </section>
       <section className="secondary">
         <section className="video-details">
           <article>
@@ -51,6 +52,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
         />
       </section>
     </section>
+    </>
   )
 }
 
