@@ -32,7 +32,7 @@ function Header(props) {
                 <div className="header__nav-container">
                     <FormField inputProps={searchProps}/>
                     <AvatarDiv avatar={avatarProps}/>
-                    <Link to="/upload" class="header__upload-link">
+                    <Link to="/upload" className="header__upload-link">
                         <Button buttonProps={buttonProps} />
                     </Link>
                 </div>

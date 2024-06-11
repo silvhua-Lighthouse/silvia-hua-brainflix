@@ -6,19 +6,31 @@
   @include flex-mixin--column(100%);
   @include set-section-margin();
   align-items: flex-start;
+  gap: $spacing--mobile;
 
   &__form {
     width: 100%;
-
   }
 
   &__thumbnail-container {
     @include zero-spacing;
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: $spacing--mobile;
   }
 
   &__preview {
     width: 100%;
+  }
+
+  &__buttons-container {
+    @include zero-spacing;
+    flex-direction: column;
+    gap: $spacing--mobile;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: $spacing--tablet;
+    }
   }
 }

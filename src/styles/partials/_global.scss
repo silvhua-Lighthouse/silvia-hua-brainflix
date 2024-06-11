@@ -70,3 +70,12 @@ article {
     @include set-section-margin();
     @include flex-mixin--column(100%);
 }
+
+form {
+    @include flex-mixin--column(100%);
+    gap: 1rem;
+
+    @include tablet {
+        gap: 1.125rem;
+    }
+}
