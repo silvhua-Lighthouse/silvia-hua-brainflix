@@ -3,7 +3,7 @@
 @use '../../styles/partials/fonts' as *;
 
 button {
-    @include flex-mixin--row(100%);
+    @include button-width;
     justify-content: center;
     box-sizing: border-box;
     color: white;
@@ -18,8 +18,6 @@ button {
     background-size: auto 40%;
     
     @include tablet {
-        width: auto;
-        max-width: 9.375rem;
         padding: 0 3.5rem;
     }
 

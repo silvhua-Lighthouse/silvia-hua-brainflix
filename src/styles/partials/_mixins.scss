@@ -123,3 +123,11 @@
         top: 4.5rem;
     }
 }
+
+@mixin button-width {
+    @include flex-mixin--row(100%);
+    @include tablet {
+        width: auto;
+        max-width: 9.375rem;
+    }
+}

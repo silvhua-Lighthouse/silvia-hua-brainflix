@@ -6,7 +6,6 @@ import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
-
 function CurrentVideo({videosArray, avatarSrc}) {
   const [currentVideoObject, setVideoObject] = useState(null);
   const videoId = useParams().videoId || videosArray[0].id;
@@ -14,7 +13,10 @@ function CurrentVideo({videosArray, avatarSrc}) {
   /* Video details */
   useEffect(() => {
     const fetchVideoObject = async (videoId) => {
-      const videoDetailsResponse = await apiInstance.getVideo(videoId);
+      let videoDetailsResponse = await apiInstance.getVideo(videoId);
+      if (videoDetailsResponse === false) { // In case videoId URL parameter is invalid
+        videoDetailsResponse = await apiInstance.getVideo(videosArray[0].id);
+      }
       setVideoObject(videoDetailsResponse);
     }
     fetchVideoObject(videoId);

@@ -30,7 +30,7 @@ export class BrainFlixApi {
       return itemsArray;
     } catch (error) {
       console.error(`GET request for "${endpoint}" endpoint failed: ${error}`)
-      return [];
+      return false;
     }
   }
   

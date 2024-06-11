@@ -52,12 +52,16 @@ header {
         }
     }
 
-    &__upload-button {
-        background-image: url('../../assets/images/upload.svg');
+    &__upload-link {
+        @include button-width;
         order: 3;
         @include tablet {
             order: 2;
         }
+    }
+
+    &__upload-button {
+        background-image: url('../../assets/images/upload.svg');
     }
 
     &__avatar {
@@ -67,4 +71,7 @@ header {
             order: 3;
         }
     }
+}
+
+a {
 }
