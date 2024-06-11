@@ -9,7 +9,9 @@ import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
 function CurrentVideo({videosArray, avatarSrc}) {
   const [currentVideoObject, setVideoObject] = useState(null);
-  const [videoId, setVideoId] = useState(useParams().videoId || videosArray[0].id);
+  // const [videoId, setVideoId] = useState(useParams().videoId || videosArray[0].id);
+  
+  const videoId = useParams().videoId || videosArray[0].id;
 
   /* Video details */
   useEffect(() => {
