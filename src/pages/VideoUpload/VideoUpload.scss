@@ -1,7 +1,7 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
-$desktop-thumbnail-width: 33%;
+$desktop-thumbnail-width: 25rem;
 
 .upload {
   @include flex-mixin--column(100%);
@@ -16,9 +16,11 @@ $desktop-thumbnail-width: 33%;
       padding: 2.25rem 0 $spacing--tablet;
       border-top: $divider;
       border-bottom: $divider;
+      align-items: flex-start;
     }
     @include desktop {
       flex-direction: row;
+      align-items: center;
     }
   }
 
@@ -33,6 +35,9 @@ $desktop-thumbnail-width: 33%;
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: $spacing--mobile;
+    @include tablet {
+      width: $desktop-thumbnail-width;
+    }
     @include desktop {
       width: $desktop-thumbnail-width;
     }
@@ -52,6 +57,23 @@ $desktop-thumbnail-width: 33%;
       justify-content: flex-end;
       gap: $spacing--tablet;
       margin: $spacing--tablet 0;
+    }
+  }
+
+  &__button--publish {
+    background-image: url('../../assets/images/publish.svg');
+    order: 1;
+    @include tablet {
+      order: 2;
+    }
+  }
+
+  &__button--cancel {
+    color: $brainflix-blue;
+    background-color: white;
+    order: 2;
+    @include tablet {
+      order: 1;
     }
   }
 }
