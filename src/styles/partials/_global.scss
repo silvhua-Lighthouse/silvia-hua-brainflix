@@ -19,7 +19,7 @@ section, nav, aside {
 
 #root, body {
     @include zero-spacing;
-    @include flex-mixin(100%);
+    @include flex-mixin--column(100%);
     font-size: 1rem;
     font-family: $font-family;
     position: relative;
@@ -33,11 +33,7 @@ main {
     // shift the page content down according to header height
     @include flex-mixin--column(100%);
     position: relative;
-    top: 10.4375rem;
-    
-    @include tablet {
-        top: 4.5rem;
-    }
+    @include header-spacing;
 }
 
 a {

@@ -4,13 +4,13 @@
 header {
     @include flex-mixin--row(100%);
     position: fixed;
+    border-bottom: $divider;
     width: 100%;
     top: 0;
     z-index: 3;
     background-color: white;
     @include tablet {
         padding: 1rem 0;
-
     }
 }
 
@@ -44,7 +44,7 @@ header {
         background-repeat: no-repeat;
         background-position: $form-padding--mobile center;
         padding-left: 2.5rem;
-        height: $button-height;
+        // height: $button-height;
         order: 1;
         @include tablet {
             background-position: $form-padding--tablet center;

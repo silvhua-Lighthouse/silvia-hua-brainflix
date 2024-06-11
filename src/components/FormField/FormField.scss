@@ -30,3 +30,27 @@ label {
     color: $silver;
     margin-bottom: .25rem;
 }
+
+.form-field {
+    &__container {
+        @include zero-spacing;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__input {
+        height: $button-height;
+
+        &--responsive {
+            height: auto;
+        }
+    }
+
+    &--error {
+        border-color: #D22D2D;
+    }
+
+    &::placeholder {
+        color: $brainflix-black;
+    }
+}
