@@ -1,15 +1,31 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
-// @use '../../styles/partials/global' as *;
+
+$desktop-thumbnail-width: 33%;
 
 .upload {
   @include flex-mixin--column(100%);
   @include set-section-margin();
   align-items: flex-start;
-  gap: $spacing--mobile;
+
+  &__body {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    @include tablet {
+      padding: 2.25rem 0 $spacing--tablet;
+      border-top: $divider;
+      border-bottom: $divider;
+    }
+    @include desktop {
+      flex-direction: row;
+    }
+  }
 
   &__form {
-    width: 100%;
+    @include desktop {
+      width: calc(100% - $desktop-thumbnail-width - $spacing--tablet);
+    }
   }
 
   &__thumbnail-container {
@@ -17,9 +33,12 @@
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: $spacing--mobile;
+    @include desktop {
+      width: $desktop-thumbnail-width;
+    }
   }
 
-  &__preview {
+  &__thumbnail-image {
     width: 100%;
   }
 
@@ -27,10 +46,12 @@
     @include zero-spacing;
     flex-direction: column;
     gap: $spacing--mobile;
+    margin: $spacing--mobile 0;
     @include tablet {
       flex-direction: row;
       justify-content: flex-end;
       gap: $spacing--tablet;
+      margin: $spacing--tablet 0;
     }
   }
 }
