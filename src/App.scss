@@ -19,3 +19,7 @@
         @include flex-mixin--column(100%);
     }
 }
+
+.loading {
+    height: 100vh; // this prevents the appearance of the header shifting when page rendering is pending API call
+}

@@ -24,8 +24,15 @@ function CurrentVideo({videosArray, avatarSrc}) {
   }, [videoId]);
 
   if (!currentVideoObject) {
-    return <main><p>Loading video...</p></main>;
+    return (
+      <main>
+        <section className="loading">
+          <p>Loading video...</p>
+        </section>
+      </main>
+    )
   }
+
   const { title, description, comments, image, ...metadata } = currentVideoObject;
 
   return (

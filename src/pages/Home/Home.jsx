@@ -20,7 +20,13 @@ function VideoDetails({avatarSrc}) {
   }, []);
 
   if (videosArray.length === 0) {
-    return <main><p>Loading video...</p></main>;
+    return (
+      <main>
+        <section className="loading">
+          <div>Loading video...</div>
+        </section>
+      </main>
+    )
   }
 
   return (
