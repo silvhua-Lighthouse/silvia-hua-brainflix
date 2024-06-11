@@ -1,11 +1,10 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './Home.scss'
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
-import { useEffect, useState } from 'react';
 import apiInstance from '../../brainflix-api.js';
 
-function VideoDetails(props) {
-  const {avatarSrc} =  props;
+function VideoDetails({avatarSrc}) {
   const [videosArray, setVideosArray] = useState([]);
   const [videoId, setVideoId] = useState(useParams().videoId);
 
@@ -18,23 +17,17 @@ function VideoDetails(props) {
       }
     }
     fetchVideos();
-
   }, []);
 
   if (videosArray.length === 0) {
-    return (
-      <main>Loading...</main>
-    );
+    return <main><p>Loading video...</p></main>;
   }
 
   return (
-    <main>
-      <CurrentVideo 
-      // videoId={videoId} 
+    <CurrentVideo 
       videosArray={videosArray} 
       avatarSrc={avatarSrc} 
-      />
-    </main>
+    />
   )
 }
 

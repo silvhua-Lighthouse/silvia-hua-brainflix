@@ -18,8 +18,7 @@ function App() {
           path="videos/:videoId" 
           element={<Home avatarSrc={avatarSrc}/>} 
         />
-        <Route path="upload" element={<VideoUpload />} 
-        />
+        <Route path="upload" element={<VideoUpload />} />
         <Route path="*" element={<Home avatarSrc={avatarSrc} />} />
       </Routes>
     </BrowserRouter>
