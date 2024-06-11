@@ -1,39 +1,27 @@
-import { useState } from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.scss'
 import Header from './components/Header/Header.jsx'
-import videosArray from './data/video-details.json';
-import CurrentVideo from './components/CurrentVideo/CurrentVideo.jsx';
-import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
-import NextVideos from './components/NextVideos/NextVideos.jsx';
+import Home from './pages/Home/Home.jsx';
+import VideoUpload from './pages/VideoUpload/VideoUpload.jsx';
 
 function App() {
-  const [currentVideoId, setVideoId] = useState(videosArray[0].id);
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
-
-  let currentVideoObject = videosArray[0];
-
-  const selectVideoObject = (videoId) => {
-    setVideoId(videoId)
-  }
-  currentVideoObject = videosArray.find(videoObject => videoObject.id === currentVideoId);
-
-
   return (
-    <>
+    <BrowserRouter>
       <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
-      <main>
-        <CurrentVideo currentVideoObject={currentVideoObject} />
-        <section className="secondary">
-          <VideoDetails 
-            currentVideoObject={currentVideoObject} avatarSrc={avatarSrc}
-          ></VideoDetails>
-          <NextVideos 
-            videosArray={videosArray} onSelectVideo={selectVideoObject} currentVideoId={currentVideoId}
-          />
-        </section>
-      </main>
-
-    </>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Home avatarSrc={avatarSrc} />} 
+        />
+        <Route 
+          path="videos/:videoId" 
+          element={<Home avatarSrc={avatarSrc}/>} 
+        />
+        <Route path="upload" element={<VideoUpload />} />
+        <Route path="*" element={<Home avatarSrc={avatarSrc} />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

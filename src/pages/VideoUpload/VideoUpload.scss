@@ -1,0 +1,79 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+$desktop-thumbnail-width: 25rem;
+
+.upload {
+  @include flex-mixin--column(100%);
+  @include set-section-margin();
+  align-items: flex-start;
+
+  &__body {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    @include tablet {
+      padding: 2.25rem 0 $spacing--tablet;
+      border-top: $divider;
+      border-bottom: $divider;
+      align-items: flex-start;
+    }
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    @include desktop {
+      width: calc(100% - $desktop-thumbnail-width - $spacing--tablet);
+    }
+  }
+
+  &__thumbnail-container {
+    @include zero-spacing;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: $spacing--mobile;
+    @include tablet {
+      width: $desktop-thumbnail-width;
+    }
+    @include desktop {
+      width: $desktop-thumbnail-width;
+    }
+  }
+
+  &__thumbnail-image {
+    width: 100%;
+  }
+
+  &__buttons-container {
+    @include zero-spacing;
+    flex-direction: column;
+    gap: $spacing--mobile;
+    margin: $spacing--mobile 0;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: $spacing--tablet;
+      margin: $spacing--tablet 0;
+    }
+  }
+
+  &__button--publish {
+    background-image: url('../../assets/images/publish.svg');
+    order: 1;
+    @include tablet {
+      order: 2;
+    }
+  }
+
+  &__button--cancel {
+    color: $brainflix-blue;
+    background-color: white;
+    order: 2;
+    @include tablet {
+      order: 1;
+    }
+  }
+}

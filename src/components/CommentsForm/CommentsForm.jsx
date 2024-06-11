@@ -7,13 +7,15 @@ const CommentsForm = (props) => {
     const formProps = {
         id: 'user-comment',
         name: 'userComment', 
-        className: 'comments-form__input-field',
+        // className: 'comments-form__input-field',
+        className: 'form-field__input--responsive comments-form__input-field',
         placeholder: 'Add a new comment',
         type: 'textarea',
         rows: '4',
         label: {
             labelText: 'Join the conversation',
-            inputContainerClassName: 'comments-form__input-container'
+            inputContainerClassName: 'form-field__container'
+            // inputContainerClassName: 'comments-form__input-container'
             },
         minlength: '2'
     }
