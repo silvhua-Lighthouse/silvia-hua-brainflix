@@ -1,17 +1,34 @@
-import './Home.scss';
-import VideoDetails from '../VideoDetails/VideoDetails';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import './Home.scss'
+import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
+import apiInstance from '../../brainflix-api.js';
 
-const Home = ({avatarSrc, videosArray, defaultId}) => {
-  
+function VideoDetails({avatarSrc}) {
+  const [videosArray, setVideosArray] = useState([]);
+  const [videoId, setVideoId] = useState(useParams().videoId);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const response = await apiInstance.getVideosArray();
+      setVideosArray(response);
+      if (!videoId) {
+        setVideoId(response[0].id);
+      }
+    }
+    fetchVideos();
+  }, []);
+
+  if (videosArray.length === 0) {
+    return <main><p>Loading video...</p></main>;
+  }
+
   return (
-    <>
-    <VideoDetails 
+    <CurrentVideo 
+      videosArray={videosArray} 
       avatarSrc={avatarSrc} 
-      // videosArray={videosArray} 
-      // defaultId={defaultId}
-      />
-    </>
+    />
   )
 }
 
-export default Home
+export default VideoDetails;

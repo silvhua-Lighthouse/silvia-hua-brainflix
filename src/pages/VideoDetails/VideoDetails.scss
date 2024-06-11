@@ -1,6 +1,0 @@
-@use '../../styles/partials/mixins' as *;
-
-.video-details {
-    @include zero-spacing();
-    @include flex-mixin--column(100%);
-}
