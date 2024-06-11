@@ -1,5 +1,6 @@
 @use './styles/partials/mixins' as *;
 @use './styles/partials/variables' as *;
+@use './styles/partials/global' as *;
 
 .secondary {
     @include zero-spacing;
@@ -11,5 +12,10 @@
         align-items: flex-start;
         margin: 0 auto;
         max-width: $max-content-width;
+    }
+
+    &__section {
+        @include zero-spacing();
+        @include flex-mixin--column(100%);
     }
 }

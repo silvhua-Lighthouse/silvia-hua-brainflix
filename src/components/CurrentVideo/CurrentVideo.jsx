@@ -33,7 +33,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
       </section>
       <section className="secondary">
         <section className="secondary">
-          <section className="video-details">
+          <section className="secondary__section">
             <article>
               <h1 className="current-video__title">{title}</h1>
               <Metadata metadata={metadata}/>
