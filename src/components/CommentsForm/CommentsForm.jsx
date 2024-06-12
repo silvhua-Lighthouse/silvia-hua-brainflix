@@ -12,13 +12,19 @@ const CommentsForm = ({avatar, videoId}) => {
         comment: ''
     }
 
-    const [commentObject, setCommentObject] = useState(defaultValues);
+    const [commentObject, setCommentObject] = useState(null);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(event.target);
-        // setComment(event.target.userComment.value);
-        // const postResponse = await apiInstance.postComment()
+        setCommentObject({
+            name: 'anonymous',
+            comment: event.target.userComment.value
+        })
+    }
+
+    if (commentObject) {
+        const postComment = apiInstance.postComment(commentObject, videoId);
+        console.log('postComment request sent')
     }
     
     const formProps = {
