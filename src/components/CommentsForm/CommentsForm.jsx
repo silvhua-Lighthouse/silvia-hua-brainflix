@@ -5,11 +5,10 @@ import Button from '../Button/Button';
 import './CommentsForm.scss'
 import apiInstance from '../../brainflix-api';
 
-const CommentsForm = ({avatar, videoId, videoCommentsArray}) => {
+const CommentsForm = ({avatar, videoId, videoCommentsArray, setApiResponse}) => {
 
     const [commentObject, setCommentObject] = useState(null);
     const [formErrorState, setFormErrorState] = useState(false);
-    const [apiResponse, setApiResponse] = useState(null);
     
     const formProps = {
         id: 'user-comment',
@@ -44,6 +43,7 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray}) => {
             })
             console.log('New comment object created')
             setFormErrorState(false);
+            setApiResponse(true);
         } else {
             setFormErrorState(true)
         }
@@ -51,6 +51,7 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray}) => {
     const postComment = async (commentObject) => {
         if (commentObject) {
             const postCommentResponse = await apiInstance.postComment(commentObject, videoId);
+            
             console.log('postComment request sent');
             // setApiResponse(postCommentResponse);
         }
