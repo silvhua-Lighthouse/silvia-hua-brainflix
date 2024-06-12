@@ -25,8 +25,16 @@ $desktop-thumbnail-width: 25rem;
   }
 
   &__form {
+    @include form-mixin;
+    padding-top: $form-spacing--mobile;
+    @include tablet {
+      padding-top: $form-spacing--tablet;
+    }
     @include desktop {
       width: calc(100% - $desktop-thumbnail-width - $spacing--tablet);
+      height: 100%;
+      gap: 2.05rem;
+      padding: 0;
     }
   }
 
@@ -34,10 +42,10 @@ $desktop-thumbnail-width: 25rem;
     @include zero-spacing;
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: $spacing--mobile;
     @include tablet {
       width: $desktop-thumbnail-width;
     }
+
     @include desktop {
       width: $desktop-thumbnail-width;
     }
@@ -50,13 +58,13 @@ $desktop-thumbnail-width: 25rem;
   &__buttons-container {
     @include zero-spacing;
     flex-direction: column;
-    gap: $spacing--mobile;
-    margin: $spacing--mobile 0;
+    gap: $form-spacing--mobile;
+    margin: $form-spacing--mobile 0;
     @include tablet {
       flex-direction: row;
       justify-content: flex-end;
-      gap: $spacing--tablet;
-      margin: $spacing--tablet 0;
+      gap: $form-spacing--tablet;
+      margin: $form-spacing--tablet 0;
     }
   }
 
@@ -72,6 +80,10 @@ $desktop-thumbnail-width: 25rem;
     color: $brainflix-blue;
     background-color: white;
     order: 2;
+
+    &:hover {
+      color: white;
+    }
     @include tablet {
       order: 1;
     }

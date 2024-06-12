@@ -8,6 +8,7 @@
     @include comment-card-layout();
 
     &__form {
+        @include form-mixin;
         @include flex-mixin--column(100%);
         @include component-spacing;
         width: $comments-content-width--mobile;

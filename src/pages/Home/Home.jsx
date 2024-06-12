@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import './Home.scss'
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
 import apiInstance from '../../brainflix-api.js';
 

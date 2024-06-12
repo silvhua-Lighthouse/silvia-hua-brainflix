@@ -10,7 +10,7 @@ export const formatDate = (dateObject, locale='en-US', options={}, removeCommas=
     - options (object)
     */
     options = options || { month: 'numeric', day: 'numeric', year: 'numeric' };
-    let formattedDate = dateObject.toLocaleDateString(locale, options) // format the date to string
+    let formattedDate = dateObject.toLocaleDateString(locale, options) 
     if (removeCommas) {
         formattedDate = formatDate.replace(/,/g, ''); // remove commas
     }

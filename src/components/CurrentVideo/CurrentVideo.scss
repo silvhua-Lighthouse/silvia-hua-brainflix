@@ -1,5 +1,6 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
 
 video::-webkit-media-controls {
   color: $brainflix-black;
@@ -19,6 +20,10 @@ video::-webkit-media-controls {
             max-width: $max-content-width;
             max-height: 85vh;
         }
+    }
+
+    &__article {
+        @extend article;
     }
 
     &__description {

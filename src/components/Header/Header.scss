@@ -1,7 +1,7 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
-header {
+.header-section {
     @include flex-mixin--row(100%);
     position: fixed;
     border-bottom: $divider;
@@ -66,12 +66,8 @@ header {
 
     &__avatar {
         order: 2;
-
         @include tablet {
             order: 3;
         }
     }
-}
-
-a {
 }

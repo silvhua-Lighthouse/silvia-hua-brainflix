@@ -6,6 +6,7 @@ import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
+
 function CurrentVideo({videosArray, avatarSrc}) {
   const [currentVideoObject, setVideoObject] = useState(null);
   const videoId = useParams().videoId || videosArray[0].id;
@@ -43,7 +44,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
       <section className="secondary">
         <section className="secondary">
           <section className="secondary__section">
-            <article>
+            <article className="current-video__article">
               <h1 className="current-video__title">{title}</h1>
               <Metadata metadata={metadata}/>
               <Description description={description}/>

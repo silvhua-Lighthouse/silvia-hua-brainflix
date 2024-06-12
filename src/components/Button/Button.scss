@@ -16,7 +16,6 @@ button {
     background-repeat: no-repeat;
     background-position: 0.75em center;
     background-size: auto 40%;
-    
     @include tablet {
         padding: 0 3.5rem;
     }

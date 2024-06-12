@@ -2,7 +2,7 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/global' as *;
 
-textarea, input {
+@mixin input-mixin {
     @extend p;
     resize: none;
     font-family: $font-family;
@@ -24,13 +24,6 @@ textarea, input {
     }
 }
 
-label {
-    @include set-font(.8125rem, 100%, .8125rem, 100%, 600); 
-    text-transform: uppercase;
-    color: $silver;
-    margin-bottom: .25rem;
-}
-
 .form-field {
     &__container {
         @include zero-spacing;
@@ -38,12 +31,25 @@ label {
         align-items: flex-start;
     }
 
+    &__label {
+        @include set-font(.8125rem, 100%, .8125rem, 100%, 600); 
+        text-transform: uppercase;
+        color: $silver;
+        margin-bottom: .25rem;
+    }
+
     &__input {
+        @include input-mixin();
         height: $button-height;
 
         &--responsive {
+            @include input-mixin();
             height: auto;
         }
+    }
+
+    &__textarea {
+        @include input-mixin();
     }
 
     &--error {
