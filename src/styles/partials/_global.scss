@@ -71,11 +71,11 @@ article {
     @include flex-mixin--column(100%);
 }
 
-form {
+.form {
     @include flex-mixin--column(100%);
-    gap: 1rem;
+    gap: $form-spacing--mobile;
 
     @include tablet {
-        gap: 1.125rem;
+        gap: $form-spacing--tablet;
     }
 }

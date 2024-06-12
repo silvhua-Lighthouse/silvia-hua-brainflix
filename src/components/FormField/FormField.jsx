@@ -9,7 +9,7 @@ function FormField(props) {
   const renderLabel = () => {
     if (labelText) {
       return (
-        <label htmlFor={id}>{labelText}</label>
+        <label className="form-field__label" htmlFor={id}>{labelText}</label>
       )
     }
   }
@@ -17,9 +17,27 @@ function FormField(props) {
   const renderInputElement = () => {
     switch(type) {
       case 'textarea':
-      return <textarea id={id} name={name} className={className} placeholder={placeholder} rows={rows} minLength={minlength}></textarea>;
+        return (
+          <textarea 
+            id={id} 
+            name={name} 
+            className={className} 
+            placeholder={placeholder} 
+            rows={rows} 
+            minLength={minlength}
+          ></textarea>
+      );
       default:
-      return <input id={id} name={name} className={className} placeholder={placeholder} rows={rows} minLength={minlength}></input>
+        return (
+          <input 
+            id={id} 
+            name={name} 
+            className={className} 
+            placeholder={placeholder} 
+            rows={rows} 
+            minLength={minlength}
+          ></input>
+        )
     }
   }
   

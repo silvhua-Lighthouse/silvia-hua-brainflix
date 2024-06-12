@@ -44,14 +44,14 @@ const VideoUpload = () => {
         <h1 className="upload__title">Upload Video</h1>
           <div className="upload__body">
           <div className="upload__thumbnail-container">
-            <label htmlFor="upload-thumbnail">Video Thumbnail</label>
+            <label className="form-field__label" htmlFor="upload-thumbnail">Video Thumbnail</label>
             <img 
               src={previewImage} 
               className="upload__thumbnail-image"  
               id="upload-thumbnail"
             />
           </div>
-          <form className="upload__form">
+          <form className="form upload__form">
             <FormField inputProps={inputPropsTitle} />
             <FormField inputProps={inputPropsDescription} />
           </form>
