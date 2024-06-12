@@ -8,13 +8,18 @@ function Comments(props) {
         classesArray: ['comments-form__user-avatar']
     }
     const { videoObject } = props;
-    const videoCommentsArray = videoObject.comments;
+    let videoCommentsArray = videoObject.comments;
+    videoCommentsArray = videoCommentsArray.sort((a, b) => b.timestamp - a.timestamp);
     const videoCommentCards = videoCommentsArray.map(commentObject => {
         return <CommentCard key={commentObject.id} comments={commentObject}/>
     })
     return (
         <div className="comments-section">
-            <CommentsForm avatar={avatarProps} videoId={videoObject.id}/>
+            <CommentsForm 
+                avatar={avatarProps} 
+                videoId={videoObject.id} 
+                videoCommentsArray={videoCommentsArray}
+            />
             {videoCommentCards}
         </div>
     )
