@@ -2,7 +2,7 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/global' as *;
 
-textarea, input {
+@mixin input-mixin {
     @extend p;
     resize: none;
     font-family: $font-family;
@@ -39,11 +39,17 @@ textarea, input {
     }
 
     &__input {
+        @include input-mixin();
         height: $button-height;
 
         &--responsive {
+            @include input-mixin();
             height: auto;
         }
+    }
+
+    &__textarea {
+        @include input-mixin();
     }
 
     &--error {

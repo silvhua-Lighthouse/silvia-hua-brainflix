@@ -26,7 +26,7 @@ const CommentsForm = (props) => {
         <>
         <div className="comments-form">
             <AvatarDiv avatar={props.avatar}/>
-            <form className="form comments-form__form">
+            <form className="comments-form__form">
                 <FormField inputProps={formProps} />
                 <Button buttonProps={buttonProps} />
             </form>

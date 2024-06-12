@@ -25,6 +25,7 @@ $desktop-thumbnail-width: 25rem;
   }
 
   &__form {
+    @include form-mixin;
     padding-top: $form-spacing--mobile;
     @include tablet {
       padding-top: $form-spacing--tablet;
@@ -57,13 +58,13 @@ $desktop-thumbnail-width: 25rem;
   &__buttons-container {
     @include zero-spacing;
     flex-direction: column;
-    gap: $spacing--mobile;
-    margin: $spacing--mobile 0;
+    gap: $form-spacing--mobile;
+    margin: $form-spacing--mobile 0;
     @include tablet {
       flex-direction: row;
       justify-content: flex-end;
-      gap: $spacing--tablet;
-      margin: $spacing--tablet 0;
+      gap: $form-spacing--tablet;
+      margin: $form-spacing--tablet 0;
     }
   }
 

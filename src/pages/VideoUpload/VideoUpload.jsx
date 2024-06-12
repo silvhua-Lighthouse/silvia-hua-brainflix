@@ -19,7 +19,7 @@ const VideoUpload = () => {
   }
   const inputPropsDescription = {id:"description",
     name:"description",
-    className:"",
+    className:"form-field__textarea",
     label: {
         labelText: 'Add a video description',
         inputContainerClassName: 'form-field__container'
@@ -51,7 +51,7 @@ const VideoUpload = () => {
               id="upload-thumbnail"
             />
           </div>
-          <form className="form upload__form">
+          <form className="upload__form">
             <FormField inputProps={inputPropsTitle} />
             <FormField inputProps={inputPropsDescription} />
           </form>

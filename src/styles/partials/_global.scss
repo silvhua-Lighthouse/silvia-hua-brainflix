@@ -59,23 +59,10 @@ p {
     color: $brainflix-black;
 }
 
-span {
-    @include flex-mixin--row(auto);
-    align-items: center;
-    gap: 0.5em;
-}
-
 article {
     position: relative;
     @include set-section-margin();
     @include flex-mixin--column(100%);
-}
-
-.form {
-    @include flex-mixin--column(100%);
-    gap: $form-spacing--mobile;
-
-    @include tablet {
-        gap: $form-spacing--tablet;
-    }
+    padding-top: 0;
+    padding-bottom: 0;
 }

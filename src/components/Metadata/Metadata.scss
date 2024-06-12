@@ -33,6 +33,12 @@
         justify-content: flex-end;
     }
 
+    &__item {
+        @include flex-mixin--row(auto);
+        align-items: center;
+        gap: 0.5em;
+    }
+
     &__channel, &__n-comments {
         font-weight: 700;
     }
