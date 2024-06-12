@@ -50,7 +50,10 @@ function CurrentVideo({videosArray, avatarSrc}) {
               <Description description={description}/>
               <p className="current-video__n-comments">{comments.length} Comments</p>
             </article>
-            <Comments avatarSrc={avatarSrc} videoObject={currentVideoObject}/>
+            <Comments 
+              avatarSrc={avatarSrc} 
+              videoObject={currentVideoObject}
+            />
           </section>
           <NextVideos videosArray={videosArray} />
         </section>

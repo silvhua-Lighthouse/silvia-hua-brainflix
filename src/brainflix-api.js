@@ -45,7 +45,7 @@ export class BrainFlixApi {
   }
   
   async postComment(commentObject, videoId) {
-    const requestUrl = this.createRequestUrl(`videos/${videoId}`);
+    const requestUrl = this.createRequestUrl(`videos/${videoId}/comments`);
     const headers = {'Content-Type': 'application/json'};
     try {
       const response = await axios.post(requestUrl, commentObject, headers)
@@ -53,7 +53,7 @@ export class BrainFlixApi {
       return response
     } catch (error) {
       console.error(`POST request failed: ${error}`)
-      return {}
+      return false
     }
   }
 }

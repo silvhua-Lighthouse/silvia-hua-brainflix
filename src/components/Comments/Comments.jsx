@@ -14,7 +14,7 @@ function Comments(props) {
     })
     return (
         <div className="comments-section">
-            <CommentsForm avatar={avatarProps}/>
+            <CommentsForm avatar={avatarProps} videoId={videoObject.id}/>
             {videoCommentCards}
         </div>
     )
