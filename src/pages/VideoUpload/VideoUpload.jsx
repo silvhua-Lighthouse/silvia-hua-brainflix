@@ -19,7 +19,7 @@ const VideoUpload = () => {
   }
   const inputPropsDescription = {id:"description",
     name:"description",
-    className:"",
+    className:"form-field__textarea",
     label: {
         labelText: 'Add a video description',
         inputContainerClassName: 'form-field__container'
@@ -42,18 +42,20 @@ const VideoUpload = () => {
     <main>
       <section className="upload">
         <h1 className="upload__title">Upload Video</h1>
-        <div className="upload__thumbnail-container">
-          <label htmlFor="upload-preview">Video Thumbnail</label>
-          <img 
-            src={previewImage} 
-            className="upload__preview"  
-            id="upload-preview"
-          />
+          <div className="upload__body">
+          <div className="upload__thumbnail-container">
+            <label className="form-field__label" htmlFor="upload-thumbnail">Video Thumbnail</label>
+            <img 
+              src={previewImage} 
+              className="upload__thumbnail-image"  
+              id="upload-thumbnail"
+            />
+          </div>
+          <form className="upload__form">
+            <FormField inputProps={inputPropsTitle} />
+            <FormField inputProps={inputPropsDescription} />
+          </form>
         </div>
-        <form className="upload__form">
-          <FormField inputProps={inputPropsTitle} />
-          <FormField inputProps={inputPropsDescription} />
-        </form>
         <div className="upload__buttons-container">
           <Button buttonProps={buttonPropsReset} />
           <Button buttonProps={buttonPropsSubmit} />

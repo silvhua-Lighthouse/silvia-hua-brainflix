@@ -1,7 +1,7 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
-header {
+.header-section {
     @include flex-mixin--row(100%);
     position: fixed;
     border-bottom: $divider;
@@ -52,17 +52,20 @@ header {
         }
     }
 
-    &__upload-button {
-        background-image: url('../../assets/images/upload.svg');
+    &__upload-link {
+        @include button-width;
         order: 3;
         @include tablet {
             order: 2;
         }
     }
 
+    &__upload-button {
+        background-image: url('../../assets/images/upload.svg');
+    }
+
     &__avatar {
         order: 2;
-
         @include tablet {
             order: 3;
         }

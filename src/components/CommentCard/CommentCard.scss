@@ -8,7 +8,6 @@
     align-items: flex-start;
     @include tablet {
         padding: $spacing--tablet 0;
-
     }
 
     @include desktop {
@@ -49,7 +48,7 @@
     }
 
     &__comment {
-        width: 100%; // necessary so that short comments are left-aligned;
+        width: 100%;
         &:last-of-type {
             padding: 0;
         }

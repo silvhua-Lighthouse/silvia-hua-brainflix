@@ -1,24 +1,91 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
-// @use '../../styles/partials/global' as *;
+
+$desktop-thumbnail-width: 25rem;
 
 .upload {
   @include flex-mixin--column(100%);
   @include set-section-margin();
   align-items: flex-start;
 
-  &__form {
-    width: 100%;
+  &__body {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    @include tablet {
+      padding: 2.25rem 0 $spacing--tablet;
+      border-top: $divider;
+      border-bottom: $divider;
+      align-items: flex-start;
+    }
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
 
+  &__form {
+    @include form-mixin;
+    padding-top: $form-spacing--mobile;
+    @include tablet {
+      padding-top: $form-spacing--tablet;
+    }
+    @include desktop {
+      width: calc(100% - $desktop-thumbnail-width - $spacing--tablet);
+      height: 100%;
+      gap: 2.05rem;
+      padding: 0;
+    }
   }
 
   &__thumbnail-container {
     @include zero-spacing;
     flex-direction: column;
     align-items: flex-start;
+    @include tablet {
+      width: $desktop-thumbnail-width;
+    }
+
+    @include desktop {
+      width: $desktop-thumbnail-width;
+    }
   }
 
-  &__preview {
+  &__thumbnail-image {
     width: 100%;
+  }
+
+  &__buttons-container {
+    @include zero-spacing;
+    flex-direction: column;
+    gap: $form-spacing--mobile;
+    margin: $form-spacing--mobile 0;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: $form-spacing--tablet;
+      margin: $form-spacing--tablet 0;
+    }
+  }
+
+  &__button--publish {
+    background-image: url('../../assets/images/publish.svg');
+    order: 1;
+    @include tablet {
+      order: 2;
+    }
+  }
+
+  &__button--cancel {
+    color: $brainflix-blue;
+    background-color: white;
+    order: 2;
+
+    &:hover {
+      color: white;
+    }
+    @include tablet {
+      order: 1;
+    }
   }
 }

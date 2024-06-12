@@ -7,6 +7,12 @@ $max-content-width: calc(1280px - 2 * $page-margin--tablet);
 $spacing--tablet: 1.5rem;
 $spacing--mobile: 1rem;
 
+$form-spacing--mobile: 1.5rem;
+$form-spacing--tablet: 1.5rem;
+
+$form-padding--mobile: 0.75rem;
+$form-padding--tablet: 1rem;
+
 $brainflix-black: #323232;
 $brainflix-blue: #0095FF;
 $silver: #AFAFAF;
@@ -17,9 +23,6 @@ $alabaster: #FAFAFA;
 $divider: .0625rem solid $mercury;
 
 $font-family:'Avenir Next', 'Courier New', Courier, monospace, Arial, Helvetica, sans-serif;
-
-$form-padding--mobile: 0.75rem;
-$form-padding--tablet: 1rem;
 
 $avatar-width--mobile: 2.25rem;
 $avatar-width--tablet: 2.5rem;

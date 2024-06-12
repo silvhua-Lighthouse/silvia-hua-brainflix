@@ -56,7 +56,7 @@
 
 @mixin set-section-margin() {
     margin: 0 auto;
-    padding: $spacing--mobile;
+    padding: 0 $spacing--mobile $spacing--mobile;
     box-sizing: border-box;
 
     @include tablet {
@@ -117,9 +117,26 @@
 
 @mixin header-spacing {
     position: relative;
-    top: 10.4375rem;
+    top: 9.5625rem;
     
     @include tablet {
         top: 4.5rem;
+    }
+}
+
+@mixin button-width {
+    @include flex-mixin--row(100%);
+    @include tablet {
+        width: auto;
+        max-width: 9.375rem;
+    }
+}
+
+@mixin form-mixin {
+    @include flex-mixin--column(100%);
+    gap: $form-spacing--mobile;
+    
+    @include tablet {
+        gap: $form-spacing--tablet;
     }
 }

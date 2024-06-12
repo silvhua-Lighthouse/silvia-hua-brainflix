@@ -14,7 +14,10 @@ function CurrentVideo({videosArray, avatarSrc}) {
   /* Video details */
   useEffect(() => {
     const fetchVideoObject = async (videoId) => {
-      const videoDetailsResponse = await apiInstance.getVideo(videoId);
+      let videoDetailsResponse = await apiInstance.getVideo(videoId);
+      if (videoDetailsResponse === false) { // In case videoId URL parameter is invalid
+        videoDetailsResponse = await apiInstance.getVideo(videosArray[0].id);
+      }
       setVideoObject(videoDetailsResponse);
     }
     fetchVideoObject(videoId);
@@ -22,8 +25,15 @@ function CurrentVideo({videosArray, avatarSrc}) {
   }, [videoId]);
 
   if (!currentVideoObject) {
-    return <main><p>Loading video...</p></main>;
+    return (
+      <main>
+        <section className="loading">
+          <p>Loading video...</p>
+        </section>
+      </main>
+    )
   }
+
   const { title, description, comments, image, ...metadata } = currentVideoObject;
 
   return (
@@ -34,7 +44,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
       <section className="secondary">
         <section className="secondary">
           <section className="secondary__section">
-            <article>
+            <article className="current-video__article">
               <h1 className="current-video__title">{title}</h1>
               <Metadata metadata={metadata}/>
               <Description description={description}/>

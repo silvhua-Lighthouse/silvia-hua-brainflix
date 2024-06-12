@@ -6,13 +6,9 @@
 .comments-form {
     @include set-section-margin;
     @include comment-card-layout();
-    gap: 1rem;
-
-    @include tablet {
-        gap: 1.125rem;
-    }
 
     &__form {
+        @include form-mixin;
         @include flex-mixin--column(100%);
         @include component-spacing;
         width: $comments-content-width--mobile;
@@ -40,12 +36,6 @@
         margin-top: 1.0625rem;
     }
 
-    // &__input-container {
-    //     @include zero-spacing;
-    //     flex-direction: column;
-    //     align-items: flex-start;
-    // }
-
     &__input-field {
         @include tablet {
             height: $button-height;
@@ -53,13 +43,5 @@
             line-height: $button-height;
             overflow: hidden;
         }
-
-        // &--error {
-        //     border-color: #D22D2D;
-        // }
-
-        // &::placeholder {
-        //     color: $brainflix-black;
-        // }
     }
 }
