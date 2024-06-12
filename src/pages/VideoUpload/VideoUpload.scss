@@ -80,6 +80,10 @@ $desktop-thumbnail-width: 25rem;
     color: $brainflix-blue;
     background-color: white;
     order: 2;
+
+    &:hover {
+      color: white;
+    }
     @include tablet {
       order: 1;
     }
