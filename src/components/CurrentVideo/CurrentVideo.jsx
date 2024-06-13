@@ -8,8 +8,7 @@ import Comments from '../../components/Comments/Comments.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
 function CurrentVideo({videosArray, avatarSrc}) {
-  const [apiToggle, setApiToggle] = useState(0);
-  console.log('apiToggle', apiToggle);
+  const [newCommentsCount, setNewCommentsCount] = useState(0);
   const [currentVideoObject, setVideoObject] = useState(null);
   const videoId = useParams().videoId || videosArray[0].id;
 
@@ -24,7 +23,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
     }
     fetchVideoObject(videoId);
     console.log('CurrentVideo: new videoId\n', videoId);
-  }, [videoId, apiToggle]);
+  }, [videoId, newCommentsCount]);
 
   if (!currentVideoObject) {
     return (
@@ -55,8 +54,8 @@ function CurrentVideo({videosArray, avatarSrc}) {
             <Comments 
               avatarSrc={avatarSrc} 
               videoObject={currentVideoObject}
-              apiToggle={apiToggle}
-              setApiToggle={setApiToggle}
+              newCommentsCount={newCommentsCount}
+              setNewCommentsCount={setNewCommentsCount}
             />
           </section>
           <NextVideos videosArray={videosArray} />
