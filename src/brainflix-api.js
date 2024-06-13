@@ -14,9 +14,9 @@ export class BrainFlixApi {
     return requestUrl;
   }
   
-  logResponse(response, endpoint) {
+  logResponse(response, endpoint, verb) {
     // Helper method to perform console.log() on API response objects.
-    console.log(`API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`)
+    console.log(`${verb} API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`)
   }
   
   async get(endpoint) {
@@ -25,7 +25,7 @@ export class BrainFlixApi {
     const requestUrl = this.createRequestUrl(endpoint);
     try {
       const response = await axios.get(requestUrl)
-      this.logResponse(response, endpoint);
+      this.logResponse(response, endpoint, 'GET');
       const itemsArray = response.data;
       return itemsArray;
     } catch (error) {
@@ -51,7 +51,7 @@ export class BrainFlixApi {
     const headers = {'Content-Type': 'application/json'};
     try {
       const response = await axios.post(requestUrl, commentObject, headers)
-      this.logResponse(response, endpoint);
+      this.logResponse(response, endpoint, 'POST');
       return response
     } catch (error) {
       console.error(`POST request failed: ${error}`)

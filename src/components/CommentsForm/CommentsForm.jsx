@@ -43,7 +43,6 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray, setApiResponse}) => 
             })
             console.log('New comment object created')
             setFormErrorState(false);
-            setApiResponse(true);
         } else {
             setFormErrorState(true)
         }
@@ -51,19 +50,16 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray, setApiResponse}) => 
     const postComment = async (commentObject) => {
         if (commentObject) {
             const postCommentResponse = await apiInstance.postComment(commentObject, videoId);
+            setApiResponse(true);
             
-            console.log('postComment request sent');
-            // setApiResponse(postCommentResponse);
+            console.log('\n**postComment request sent**\n');
         }
     }
-    const postCommentResponse = postComment(commentObject);
 
-    // useEffect(() => {
-    //     postComment();
-    // }, [comment]);
+    useEffect(() => {
+        const postCommentResponse = postComment(commentObject);
 
-    // if (postCommentResponse) {
-    // }
+    }, [commentObject])
 
     return (
         <>
