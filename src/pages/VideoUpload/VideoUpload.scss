@@ -82,7 +82,9 @@ $desktop-thumbnail-width: 25rem;
     order: 2;
 
     &:hover {
-      color: white;
+      color: $brainflix-darkblue;
+      background-color: white;
+      border: 2px solid $brainflix-darkblue;
     }
     @include tablet {
       order: 1;
