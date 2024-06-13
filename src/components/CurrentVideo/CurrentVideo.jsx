@@ -22,7 +22,6 @@ function CurrentVideo({videosArray, avatarSrc}) {
       setVideoObject(videoDetailsResponse);
     }
     fetchVideoObject(videoId);
-    console.log('CurrentVideo: new videoId\n', videoId);
   }, [videoId, newCommentsCount]);
 
   if (!currentVideoObject) {

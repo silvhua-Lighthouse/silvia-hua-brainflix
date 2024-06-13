@@ -6,9 +6,7 @@ import './CommentsForm.scss'
 import apiInstance from '../../brainflix-api';
 
 const CommentsForm = (props) => {
-    // console.log('commentsForm newCommentsCount', newCommentsCount);
     const {avatar, videoId, videoCommentsArray, newCommentsCount, setNewCommentsCount} = props;
-    console.log('comments form props', props);
     const [commentObject, setCommentObject] = useState(null);
     const [formErrorState, setFormErrorState] = useState(false);
     
@@ -48,19 +46,22 @@ const CommentsForm = (props) => {
             setFormErrorState(true)
         }
     }
+    
     const postComment = async (commentObject) => {
         if (commentObject) {
             const postCommentResponse = await apiInstance.postComment(commentObject, videoId);
             setNewCommentsCount(newCommentsCount + 1);
-            console.group('newCommentsCount', newCommentsCount)
-            console.log('\n**postComment request sent**\n');
+            if (postCommentResponse) {
+                const formElement = document.querySelector('.comments-form__form');
+                formElement.reset();
+            }
         }
     }
 
     useEffect(() => {
         postComment(commentObject);
-
     }, [commentObject])
+
 
     return (
         <>
