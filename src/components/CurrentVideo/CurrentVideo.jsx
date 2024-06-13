@@ -8,6 +8,7 @@ import Comments from '../../components/Comments/Comments.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
 function CurrentVideo({videosArray, avatarSrc}) {
+  const [apiResponse, setApiResponse] = useState(false);
   const [currentVideoObject, setVideoObject] = useState(null);
   const videoId = useParams().videoId || videosArray[0].id;
 
@@ -53,6 +54,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
             <Comments 
               avatarSrc={avatarSrc} 
               videoObject={currentVideoObject}
+              setApiResponse={setApiResponse}
             />
           </section>
           <NextVideos videosArray={videosArray} />

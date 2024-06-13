@@ -56,14 +56,14 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray, setApiResponse}) => 
             // setApiResponse(postCommentResponse);
         }
     }
-
-    useEffect(() => {
-        postComment();
-    }, []);
-
     const postCommentResponse = postComment(commentObject);
-    if (postCommentResponse) {
-    }
+
+    // useEffect(() => {
+    //     postComment();
+    // }, [comment]);
+
+    // if (postCommentResponse) {
+    // }
 
     return (
         <>

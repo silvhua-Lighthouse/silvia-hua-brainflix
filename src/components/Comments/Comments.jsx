@@ -1,22 +1,22 @@
 import './Comments.scss'
 import CommentsForm from '../CommentsForm/CommentsForm';
 import CommentCard from '../CommentCard/CommentCard';
-import {useEffect, useState} from 'react';
+// import {useEffect, useState} from 'react';
 
 function Comments(props) {
-    const [apiResponse, setApiResponse] = useState(false);
+    // const [apiResponse, setApiResponse] = useState(false);
 
     const avatarProps = {
         avatarSrc: props.avatarSrc,
         classesArray: ['comments-form__user-avatar']
     }
-    const { videoObject } = props;
+    const { videoObject, setApiResponse } = props;
     let videoCommentsArray = videoObject.comments;
     videoCommentsArray = videoCommentsArray.sort((a, b) => b.timestamp - a.timestamp);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [apiResponse])
+    // }, [apiResponse])
 
     const videoCommentCards = videoCommentsArray.map(commentObject => {
         return <CommentCard key={commentObject.id} comments={commentObject}/>
