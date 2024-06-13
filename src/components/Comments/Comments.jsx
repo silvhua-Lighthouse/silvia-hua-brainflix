@@ -19,7 +19,7 @@ function Comments(props) {
     return (
         <div className="comments-section">
             <CommentsForm 
-                avatar={avatarProps} 
+                avatarProps={avatarProps} 
                 videoId={videoObject.id} 
                 videoCommentsArray={videoCommentsArray} 
                 newCommentsCount={newCommentsCount}
