@@ -36,14 +36,17 @@ const CommentsForm = (props) => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         const newCommentValue = event.target.userComment.value;
-        if (newCommentValue.length > 1 && newCommentValue !== videoCommentsArray[0].comment) {
+        const newCommentUsername = 'anonymous';
+        const latestComment = videoCommentsArray[0];
+        if (newCommentValue === latestComment.comment && newCommentUsername === latestComment.name) {
+            setFormErrorState(true)
+            alert('Comment has already been submitted.')
+        } else {
             setCommentObject({
-                name: 'anonymous',
+                name: newCommentUsername,
                 comment: newCommentValue
             })
             setFormErrorState(false);
-        } else {
-            setFormErrorState(true)
         }
     }
     
