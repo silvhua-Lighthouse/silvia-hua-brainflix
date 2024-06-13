@@ -8,7 +8,7 @@ function Comments(props) {
         avatarSrc: props.avatarSrc,
         classesArray: ['comments-form__user-avatar']
     }
-    const { videoObject, setApiToggle } = props;
+    const { videoObject, setApiToggle, apiToggle } = props;
     let videoCommentsArray = videoObject.comments;
     videoCommentsArray = videoCommentsArray.sort((a, b) => b.timestamp - a.timestamp);
 
@@ -22,6 +22,7 @@ function Comments(props) {
                 avatar={avatarProps} 
                 videoId={videoObject.id} 
                 videoCommentsArray={videoCommentsArray} 
+                apiToggle={apiToggle}
                 setApiToggle={setApiToggle}
             />
             {videoCommentCards}

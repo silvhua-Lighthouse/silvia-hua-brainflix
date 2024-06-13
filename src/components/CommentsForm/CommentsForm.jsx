@@ -5,10 +5,13 @@ import Button from '../Button/Button';
 import './CommentsForm.scss'
 import apiInstance from '../../brainflix-api';
 
-const CommentsForm = ({avatar, videoId, videoCommentsArray, apiToggle, setApiToggle}) => {
-
+const CommentsForm = (props) => {
+    // console.log('commentsForm apiToggle', apiToggle);
+    const {avatar, videoId, videoCommentsArray, apiToggle, setApiToggle} = props;
+    console.log('comments form props', props);
     const [commentObject, setCommentObject] = useState(null);
     const [formErrorState, setFormErrorState] = useState(false);
+    const [newCommentsCount, setNewCommentsCount] = useState(0);
     
     const formProps = {
         id: 'user-comment',
@@ -41,7 +44,6 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray, apiToggle, setApiTog
                 name: 'anonymous',
                 comment: newCommentValue
             })
-            console.log('New comment object created')
             setFormErrorState(false);
         } else {
             setFormErrorState(true)
@@ -50,7 +52,8 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray, apiToggle, setApiTog
     const postComment = async (commentObject) => {
         if (commentObject) {
             const postCommentResponse = await apiInstance.postComment(commentObject, videoId);
-            setApiToggle(!apiToggle);            
+            setApiToggle(apiToggle + 1);
+            console.group('apiToggle', apiToggle)
             console.log('\n**postComment request sent**\n');
         }
     }

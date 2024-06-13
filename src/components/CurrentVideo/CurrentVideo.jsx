@@ -8,7 +8,7 @@ import Comments from '../../components/Comments/Comments.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
 function CurrentVideo({videosArray, avatarSrc}) {
-  const [apiToggle, setApiToggle] = useState(false);
+  const [apiToggle, setApiToggle] = useState(0);
   console.log('apiToggle', apiToggle);
   const [currentVideoObject, setVideoObject] = useState(null);
   const videoId = useParams().videoId || videosArray[0].id;
