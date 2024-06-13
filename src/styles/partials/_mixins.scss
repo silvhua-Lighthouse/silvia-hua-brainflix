@@ -56,7 +56,7 @@
 
 @mixin set-section-margin() {
     margin: 0 auto;
-    padding: 0 $spacing--mobile $spacing--mobile;
+    padding: $spacing--mobile;
     box-sizing: border-box;
 
     @include tablet {
@@ -118,6 +118,7 @@
 @mixin header-spacing {
     position: relative;
     top: 9.5625rem;
+    top: 10.5625rem;
     
     @include tablet {
         top: 4.5rem;
