@@ -5,7 +5,7 @@ import CommentCard from '../CommentCard/CommentCard';
 function Comments(props) {
 
     const avatarProps = {
-        avatarSrc: props.avatarSrc,
+        avatarSrc: props.userProps.avatarSrc,
         classesArray: ['comments-form__user-avatar']
     }
     const { videoObject, setNewCommentsCount, newCommentsCount } = props;

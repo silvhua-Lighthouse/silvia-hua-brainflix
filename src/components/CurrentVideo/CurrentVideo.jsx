@@ -7,7 +7,7 @@ import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
 import NextVideos from '../../components/NextVideos/NextVideos.jsx';
 
-function CurrentVideo({videosArray, avatarSrc}) {
+function CurrentVideo({videosArray, userProps}) {
   const [newCommentsCount, setNewCommentsCount] = useState(0);
   const [currentVideoObject, setVideoObject] = useState(null);
   const videoId = useParams().videoId || videosArray[0].id;
@@ -51,7 +51,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
               <p className="current-video__n-comments">{comments.length} Comments</p>
             </article>
             <Comments 
-              avatarSrc={avatarSrc} 
+              userProps={userProps} 
               videoObject={currentVideoObject}
               newCommentsCount={newCommentsCount}
               setNewCommentsCount={setNewCommentsCount}

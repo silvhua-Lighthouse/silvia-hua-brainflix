@@ -6,6 +6,7 @@ import './CommentsForm.scss'
 import apiInstance from '../../brainflix-api';
 
 const CommentsForm = (props) => {
+    console.log('commentsForm props', props)
     const {avatar, videoId, videoCommentsArray, newCommentsCount, setNewCommentsCount} = props;
     const [commentObject, setCommentObject] = useState(null);
     const [formErrorState, setFormErrorState] = useState(false);
@@ -69,7 +70,7 @@ const CommentsForm = (props) => {
     return (
         <>
         <div className="comments-form">
-            <AvatarDiv avatar={avatar}/>
+            <AvatarDiv avatar={avatar.avatarSrc} />
             <form onSubmit={handleFormSubmit} className="comments-form__form">
                 <FormField inputProps={formProps} />
                 <Button buttonProps={buttonProps} />

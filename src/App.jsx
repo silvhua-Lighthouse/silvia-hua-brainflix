@@ -6,20 +6,25 @@ import VideoUpload from './pages/VideoUpload/VideoUpload.jsx';
 
 function App() {
   const avatarSrc = '../../src/assets/images/Mohan-muruge.jpg';
+  const userName = 'Anonymous';
+  const userProps = {
+    avatarSrc: avatarSrc,
+    userName: userName
+  }
   return (
     <BrowserRouter>
-      <Header avatarSrc={avatarSrc} classesArray={['header__avatar']} />
+      <Header userProps={userProps} classesArray={['header__avatar']} />
       <Routes>
         <Route 
           path="/" 
-          element={<Home avatarSrc={avatarSrc} />} 
+          element={<Home userProps={userProps} />} 
         />
         <Route 
           path="videos/:videoId" 
-          element={<Home avatarSrc={avatarSrc}/>} 
+          element={<Home userProps={userProps}/>} 
         />
         <Route path="upload" element={<VideoUpload />} />
-        <Route path="*" element={<Home avatarSrc={avatarSrc} />} />
+        <Route path="*" element={<Home userProps={userProps} />} />
       </Routes>
     </BrowserRouter>
   )
