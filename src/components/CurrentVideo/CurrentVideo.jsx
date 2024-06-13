@@ -24,7 +24,7 @@ function CurrentVideo({videosArray, avatarSrc}) {
     }
     fetchVideoObject(videoId);
     console.log('CurrentVideo: new videoId\n', videoId);
-  }, [videoId]);
+  }, [videoId, apiResponse]);
 
   if (!currentVideoObject) {
     return (

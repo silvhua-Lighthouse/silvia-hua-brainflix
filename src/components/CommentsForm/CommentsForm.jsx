@@ -57,7 +57,7 @@ const CommentsForm = ({avatar, videoId, videoCommentsArray, setApiResponse}) => 
     }
 
     useEffect(() => {
-        const postCommentResponse = postComment(commentObject);
+        postComment(commentObject);
 
     }, [commentObject])
 
