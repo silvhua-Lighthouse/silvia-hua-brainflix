@@ -8,7 +8,6 @@ import apiInstance from '../../brainflix-api';
 const CommentsForm = (props) => {
     const {avatarProps, videoId, videoCommentsArray, newCommentsCount, setNewCommentsCount} = props;
     const {avatarSrc, classesArray} = avatarProps;
-    const [commentObject, setCommentObject] = useState(null);
     const [formErrorState, setFormErrorState] = useState(false);
     
     const formProps = {
@@ -33,23 +32,6 @@ const CommentsForm = (props) => {
         innerText: 'Comment',
         type: 'submit'
     }
-
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        const newCommentValue = event.target.userComment.value;
-        const newCommentUsername = 'anonymous';
-        const latestComment = videoCommentsArray[0];
-        if (newCommentValue === latestComment.comment && newCommentUsername === latestComment.name) {
-            setFormErrorState(true)
-            alert('Comment has already been submitted.')
-        } else {
-            setCommentObject({
-                name: newCommentUsername,
-                comment: newCommentValue
-            })
-            setFormErrorState(false);
-        }
-    }
     
     const postComment = async (commentObject) => {
         if (commentObject) {
@@ -62,10 +44,23 @@ const CommentsForm = (props) => {
         }
     }
 
-    useEffect(() => {
-        postComment(commentObject);
-    }, [commentObject])
-
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        const newCommentValue = event.target.userComment.value;
+        const newCommentUsername = 'anonymous';
+        const latestComment = videoCommentsArray[0];
+        if (newCommentValue === latestComment.comment && newCommentUsername === latestComment.name) {
+            setFormErrorState(true)
+            alert('Comment has already been submitted.')
+        } else {
+            const commentObject = {
+                name: newCommentUsername,
+                comment: newCommentValue
+            }
+            postComment(commentObject);
+            setFormErrorState(false);
+        }
+    }
 
     return (
         <>
