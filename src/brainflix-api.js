@@ -14,18 +14,17 @@ export class BrainFlixApi {
     return requestUrl;
   }
   
-  logResponse(response) {
+  logResponse(response, endpoint, verb) {
     // Helper method to perform console.log() on API response objects.
-    console.log(`API response status ${response.status}: ${response.statusText}.`)
+    console.log(`${verb} API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`)
   }
   
   async get(endpoint) {
     /* Helper method for making GET requests (following DRY principle). 
-    Called upon by the `.getComments()` and `.getShows()` methods. */
+    Called upon by the `.getVideo()` and `.getVideosArray()` methods. */
     const requestUrl = this.createRequestUrl(endpoint);
     try {
       const response = await axios.get(requestUrl)
-      this.logResponse(response);
       const itemsArray = response.data;
       return itemsArray;
     } catch (error) {
@@ -35,7 +34,8 @@ export class BrainFlixApi {
   }
   
   async getVideo(videoId) {
-    const videoObject = await this.get(`videos/${videoId}`);
+    const endpoint = `videos/${videoId}`
+    const videoObject = await this.get(endpoint);
     return videoObject;
   }
   
@@ -45,15 +45,15 @@ export class BrainFlixApi {
   }
   
   async postComment(commentObject, videoId) {
-    const requestUrl = this.createRequestUrl(`videos/${videoId}`);
+    const endpoint = `videos/${videoId}/comments`;
+    const requestUrl = this.createRequestUrl(endpoint);
     const headers = {'Content-Type': 'application/json'};
     try {
-      const response = await axios.post(requestUrl, commentObject, headers)
-      this.logResponse(response);
+      const response = await axios.post(requestUrl, commentObject, headers);
       return response
     } catch (error) {
-      console.error(`POST request failed: ${error}`)
-      return {}
+      console.error(`POST request failed: ${error}`);
+      return false;
     }
   }
 }

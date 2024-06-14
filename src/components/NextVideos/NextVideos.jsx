@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const NextVideos = ({videosArray}) => {
-  const currentVideoId = useParams().videoId;
+  const currentVideoId = useParams().videoId || videosArray[0].id;
   const nextVideosArray = videosArray.filter(video => video.id !== currentVideoId);
 
   return (

@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 
 function Header(props) {
-  const avatarProps = props;
+  const {userProps, classesArray} = props;
   
   const searchProps = {
     id: "search-input",
@@ -29,7 +29,7 @@ function Header(props) {
         </Link>
         <div className="header__nav-container">
           <FormField inputProps={searchProps}/>
-          <AvatarDiv avatar={avatarProps}/>
+          <AvatarDiv avatar={userProps.avatarSrc} classesArray={classesArray}/>
           <Link to="/upload" className="header__upload-link">
             <Button buttonProps={buttonProps} />
           </Link>

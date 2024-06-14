@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
 import apiInstance from '../../brainflix-api.js';
 
-function VideoDetails({avatarSrc}) {
+function VideoDetails({userProps}) {
   const [videosArray, setVideosArray] = useState([]);
   const [videoId, setVideoId] = useState(useParams().videoId);
 
@@ -31,7 +31,7 @@ function VideoDetails({avatarSrc}) {
   return (
     <CurrentVideo 
       videosArray={videosArray} 
-      avatarSrc={avatarSrc} 
+      userProps={userProps} 
     />
   )
 }
