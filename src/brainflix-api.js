@@ -21,11 +21,10 @@ export class BrainFlixApi {
   
   async get(endpoint) {
     /* Helper method for making GET requests (following DRY principle). 
-    Called upon by the `.getComments()` and `.getShows()` methods. */
+    Called upon by the `.getVideo()` and `.getVideosArray()` methods. */
     const requestUrl = this.createRequestUrl(endpoint);
     try {
       const response = await axios.get(requestUrl)
-      this.logResponse(response, endpoint, 'GET');
       const itemsArray = response.data;
       return itemsArray;
     } catch (error) {
@@ -50,12 +49,11 @@ export class BrainFlixApi {
     const requestUrl = this.createRequestUrl(endpoint);
     const headers = {'Content-Type': 'application/json'};
     try {
-      const response = await axios.post(requestUrl, commentObject, headers)
-      this.logResponse(response, endpoint, 'POST');
+      const response = await axios.post(requestUrl, commentObject, headers);
       return response
     } catch (error) {
-      console.error(`POST request failed: ${error}`)
-      return false
+      console.error(`POST request failed: ${error}`);
+      return false;
     }
   }
 }

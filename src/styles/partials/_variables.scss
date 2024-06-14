@@ -2,8 +2,7 @@ $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
 $page-margin--tablet: 2rem;
-$max-content-width: 1208px; // max content width is less that 1280px so there are margins
-$max-content-width: calc(1280px - 2 * $page-margin--tablet);
+$max-content-width: calc(1280px - 8 * $page-margin--tablet);
 $spacing--tablet: 1.5rem;
 $spacing--mobile: 1rem;
 

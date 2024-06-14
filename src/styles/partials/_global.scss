@@ -51,7 +51,7 @@ h1 {
 
 h2, h3, h4, h5 {
     @include heading-margin();
-    @include set-font(.75rem, 1.25rem, .75rem, 1.25rem, 700);
+    @include set-font(.6875rem, 1.25rem, .875rem, 1.25rem, 700);
 }
 
 p {
