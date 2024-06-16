@@ -23,7 +23,10 @@ function App() {
           path="videos/:videoId" 
           element={<Home userProps={userProps}/>} 
         />
-        <Route path="upload" element={<VideoUpload />} />
+        <Route
+          path="upload"
+          element={<VideoUpload userProps={userProps}/>}
+        />
         <Route path="*" element={<Home userProps={userProps} />} />
       </Routes>
     </BrowserRouter>

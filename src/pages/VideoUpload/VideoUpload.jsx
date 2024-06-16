@@ -3,7 +3,7 @@ import previewImage from '../../assets/images/Upload-video-preview.jpg';
 import FormField from '../../components/FormField/FormField';
 import Button from '../../components/Button/Button';
 
-const VideoUpload = () => {
+const VideoUpload = ({ userProps }) => {
 
   const postVideo = (videoObject) => {
     console.log('New video posted.');
@@ -12,8 +12,17 @@ const VideoUpload = () => {
   const handleFormSubmit = (event) => { 
     const newVideoObject = {
       title: event.target.title.value,
-      description: event.target.description.value
+      description: event.target.description.value,
+      channel: userProps.userName,
+      image: '',
+      views: '0',
+      likes: '0',
+      duration: '0:00',
+      video: '',
+      timestamp: Date.now(),
+      comments: []
     }
+    
   }
 
   const inputPropsTitle = {
