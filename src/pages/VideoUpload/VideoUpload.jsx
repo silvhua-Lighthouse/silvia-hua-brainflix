@@ -2,14 +2,13 @@ import './VideoUpload.scss';
 import previewImage from '../../assets/images/Upload-video-preview.jpg';
 import FormField from '../../components/FormField/FormField';
 import Button from '../../components/Button/Button';
+import apiInstance from '../../brainflix-api';
 
 const VideoUpload = ({ userProps }) => {
 
-  const postVideo = (videoObject) => {
-    console.log('New video posted.');
-  }
-
-  const handleFormSubmit = (event) => { 
+  const handleFormSubmit = async (event) => { 
+    event.preventDefault();
+    console.log('Form submitted.')
     const newVideoObject = {
       title: event.target.title.value,
       description: event.target.description.value,
@@ -22,7 +21,8 @@ const VideoUpload = ({ userProps }) => {
       timestamp: Date.now(),
       comments: []
     }
-    
+    const postVideoResponse = await apiInstance.postVideo(newVideoObject);
+
   }
 
   const inputPropsTitle = {
@@ -51,12 +51,14 @@ const VideoUpload = ({ userProps }) => {
   const buttonPropsReset = {
     className: "upload__button--cancel",
     innerText: "Cancel",
-    type: "reset" 
+    type: "reset",
+    form: "upload-form"
   }
   const buttonPropsSubmit = {
     className: "upload__button--publish",
     innerText: "Publish",
-    type: "submit"
+    type: "submit",
+    form: "upload-form"
   }
   return (
     <main>
@@ -71,7 +73,7 @@ const VideoUpload = ({ userProps }) => {
               id="upload-thumbnail"
             />
           </div>
-          <form className="upload__form">
+          <form onSubmit={handleFormSubmit} className="upload__form" id="upload-form">
             <FormField inputProps={inputPropsTitle} />
             <FormField inputProps={inputPropsDescription} />
           </form>

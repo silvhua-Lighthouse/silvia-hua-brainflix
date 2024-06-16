@@ -15,6 +15,7 @@ export class BrainFlixApi {
   logResponse(response, endpoint, verb) {
     // Helper method to perform console.log() on API response objects.
     console.log(`${verb} API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`);
+    console.log(response);
   }
   
   async get(endpoint) {
@@ -57,12 +58,14 @@ export class BrainFlixApi {
   
   async postVideo(videoObject) {
     const response = await this.post('videos', videoObject);
+    this.logResponse(response, 'videos', 'POST');
+    return response;
   }
   
   async postComment(commentObject, videoId) {
     const endpoint = `videos/${videoId}/comments`;
     const response = await this.post(endpoint, commentObject);
-    console.log('POST comment response:', response);
+    return response;
   }
   
   // async postVideo(videoObject) {
