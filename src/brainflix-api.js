@@ -5,18 +5,18 @@ import axios from "axios";
 export class BrainFlixApi {
   
   constructor(apiKey) {
-    this.apiKey = apiKey;
-    this.baseUrl = 'https://unit-3-project-api-0a5620414506.herokuapp.com/';
+    this.baseUrl = import.meta.env.VITE_API_URL;
   }
   
   createRequestUrl(endpoint) {
-    const requestUrl = `${this.baseUrl}${endpoint}?api_key=${this.apiKey}`;
+    const requestUrl = `${this.baseUrl}/${endpoint}`;
+    console.log('request URL:', requestUrl);
     return requestUrl;
   }
   
   logResponse(response, endpoint, verb) {
     // Helper method to perform console.log() on API response objects.
-    console.log(`${verb} API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`)
+    console.log(`${verb} API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`);
   }
   
   async get(endpoint) {
@@ -24,7 +24,7 @@ export class BrainFlixApi {
     Called upon by the `.getVideo()` and `.getVideosArray()` methods. */
     const requestUrl = this.createRequestUrl(endpoint);
     try {
-      const response = await axios.get(requestUrl)
+      const response = await axios.get(requestUrl);
       const itemsArray = response.data;
       return itemsArray;
     } catch (error) {

@@ -5,6 +5,17 @@ import Button from '../../components/Button/Button';
 
 const VideoUpload = () => {
 
+  const postVideo = (videoObject) => {
+    console.log('New video posted.');
+  }
+
+  const handleFormSubmit = (event) => { 
+    const newVideoObject = {
+      title: event.target.title.value,
+      description: event.target.description.value
+    }
+  }
+
   const inputPropsTitle = {
     id:"title",
     name:"title",
