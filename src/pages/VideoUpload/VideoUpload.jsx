@@ -1,11 +1,18 @@
+import { useState } from 'react';
 import './VideoUpload.scss';
 import FormField from '../../components/FormField/FormField';
 import Button from '../../components/Button/Button';
 import apiInstance from '../../brainflix-api';
 
 const VideoUpload = ({ userProps }) => {
+  function createImgSrc(filename) {
+    const imgSrc = `${import.meta.env.VITE_API_URL}/images/${filename}`;
+    return imgSrc
+  }
+
   const previewImage = 'Upload-video-preview.jpg';
-  const previewImageSrc = `${import.meta.env.VITE_API_URL}/images/${previewImage}`;
+
+  const [previewImageSrc, setPreviewImage] = useState(createImgSrc(previewImage));
 
   const handleFormSubmit = async (event) => { 
     event.preventDefault();
@@ -14,16 +21,17 @@ const VideoUpload = ({ userProps }) => {
       title: event.target.title.value,
       description: event.target.description.value,
       channel: userProps.userName,
-      image: '',
+      image: 'custom-upload.jpg',
       views: '0',
       likes: '0',
-      duration: '0:00',
+      duration: '1:00',
       video: '',
       timestamp: Date.now(),
       comments: []
     }
     const postVideoResponse = await apiInstance.postVideo(newVideoObject);
-
+    setPreviewImage(createImgSrc(newVideoObject.image));
+    event.target.reset();
   }
 
   const inputPropsTitle = {
