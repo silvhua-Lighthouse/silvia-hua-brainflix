@@ -1,10 +1,11 @@
 import './VideoUpload.scss';
-import previewImage from '../../assets/images/Upload-video-preview.jpg';
 import FormField from '../../components/FormField/FormField';
 import Button from '../../components/Button/Button';
 import apiInstance from '../../brainflix-api';
 
 const VideoUpload = ({ userProps }) => {
+  const previewImage = 'Upload-video-preview.jpg';
+  const previewImageSrc = `${import.meta.env.VITE_API_URL}/images/${previewImage}`;
 
   const handleFormSubmit = async (event) => { 
     event.preventDefault();
@@ -68,7 +69,7 @@ const VideoUpload = ({ userProps }) => {
           <div className="upload__thumbnail-container">
             <label className="form-field__label" htmlFor="upload-thumbnail">Video Thumbnail</label>
             <img 
-              src={previewImage} 
+              src={previewImageSrc} 
               className="upload__thumbnail-image"  
               id="upload-thumbnail"
             />

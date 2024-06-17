@@ -39,7 +39,7 @@ export class BrainFlixApi {
   }
   
   async getVideosArray() {
-    const videosArray = await this.get('videos')
+    const videosArray = await this.get('videos');
     return videosArray;
   }
 
@@ -58,7 +58,7 @@ export class BrainFlixApi {
   
   async postVideo(videoObject) {
     const response = await this.post('videos', videoObject);
-    this.logResponse(response, 'videos', 'POST');
+    // this.logResponse(response, 'videos', 'POST');
     return response;
   }
   

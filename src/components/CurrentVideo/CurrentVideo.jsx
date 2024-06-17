@@ -35,11 +35,12 @@ function CurrentVideo({videosArray, userProps}) {
   }
 
   const { title, description, comments, image, ...metadata } = currentVideoObject;
+  const imageSrc = `${import.meta.env.VITE_API_URL}/${image}`;
 
   return (
     <main>
       <section className="current-video">
-        <video className="current-video__video" poster={image} controls></video>
+        <video className="current-video__video" poster={imageSrc} controls></video>
       </section>
       <section className="secondary">
         <section className="secondary">
