@@ -60,7 +60,6 @@ const CommentsForm = (props) => {
             }
             postComment(commentObject);
             setFormErrorState(false);
-            console.log('comment submitted');
         }
     }
 
