@@ -30,7 +30,8 @@ const CommentsForm = (props) => {
     const buttonProps = {
         className: 'comments-form__button',
         innerText: 'Comment',
-        type: 'submit'
+        type: 'submit',
+        form: 'comments-form__form'
     }
     
     const postComment = async (commentObject) => {
@@ -66,7 +67,7 @@ const CommentsForm = (props) => {
         <>
         <div className="comments-form">
             <AvatarDiv avatar={avatarSrc} classesArray={classesArray}/>
-            <form onSubmit={handleFormSubmit} className="comments-form__form">
+            <form onSubmit={handleFormSubmit} className="comments-form__form" id="comments-form__form">
                 <FormField inputProps={formProps} />
                 <Button buttonProps={buttonProps} />
             </form>

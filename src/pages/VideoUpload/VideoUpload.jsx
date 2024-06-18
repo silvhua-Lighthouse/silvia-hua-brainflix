@@ -1,9 +1,37 @@
+import { useState } from 'react';
 import './VideoUpload.scss';
-import previewImage from '../../assets/images/Upload-video-preview.jpg';
 import FormField from '../../components/FormField/FormField';
 import Button from '../../components/Button/Button';
+import apiInstance from '../../brainflix-api';
+import { useNavigate } from 'react-router-dom';
 
-const VideoUpload = () => {
+const VideoUpload = ({ userProps }) => {
+  function createImgSrc(folder, filename) {
+    const imgSrc = `${import.meta.env.VITE_API_URL}/${folder}/${filename}`;
+    return imgSrc
+  }
+
+  const imageFolder = 'images'
+  const previewImage = 'Upload-video-preview.jpg';
+
+  const [previewImageSrc, setPreviewImage] = useState(createImgSrc(imageFolder, previewImage));
+  const navigate = useNavigate();
+
+  const handleFormSubmit = async (event) => { 
+    event.preventDefault();
+
+    const newVideoObject = {
+      title: event.target.title.value,
+      description: event.target.description.value,
+      channel: userProps.userName,
+      image: `${imageFolder}/custom-upload.jpg`,
+    }
+    const postVideoResponse = await apiInstance.postVideo(newVideoObject);
+    setPreviewImage(createImgSrc('', newVideoObject.image));
+    event.target.reset();
+    alert('Form submitted.')
+    navigate('/');
+  }
 
   const inputPropsTitle = {
     id:"title",
@@ -31,12 +59,14 @@ const VideoUpload = () => {
   const buttonPropsReset = {
     className: "upload__button--cancel",
     innerText: "Cancel",
-    type: "reset" 
+    type: "reset",
+    form: "upload-form"
   }
   const buttonPropsSubmit = {
     className: "upload__button--publish",
     innerText: "Publish",
-    type: "submit"
+    type: "submit",
+    form: "upload-form"
   }
   return (
     <main>
@@ -46,12 +76,12 @@ const VideoUpload = () => {
           <div className="upload__thumbnail-container">
             <label className="form-field__label" htmlFor="upload-thumbnail">Video Thumbnail</label>
             <img 
-              src={previewImage} 
+              src={previewImageSrc} 
               className="upload__thumbnail-image"  
               id="upload-thumbnail"
             />
           </div>
-          <form className="upload__form">
+          <form onSubmit={handleFormSubmit} className="upload__form" id="upload-form">
             <FormField inputProps={inputPropsTitle} />
             <FormField inputProps={inputPropsDescription} />
           </form>
