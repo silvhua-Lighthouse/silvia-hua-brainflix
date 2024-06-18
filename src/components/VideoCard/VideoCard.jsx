@@ -7,7 +7,9 @@ const VideoCard = (props) => {
 
   return (
     <div className="video-card">
-      <img src={imageSrc} className="video-card__image" alt={`'${title}' video thumbnail`}/>
+      <div className="video-card__image-div">
+        <img src={imageSrc} className="video-card__image" alt={`'${title}' video thumbnail`}/>
+      </div>
       <div className="video-card__text-container">
         <h3 className="video-card__title">{title}</h3>
         <p className="video-card__channel">{channel}</p>
