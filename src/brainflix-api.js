@@ -67,31 +67,6 @@ export class BrainFlixApi {
     const response = await this.post(endpoint, commentObject);
     return response;
   }
-  
-  // async postVideo(videoObject) {
-  //   const endpoint = `videos`;
-  //   const requestUrl = this.createRequestUrl('videos');
-  //   const headers = {'Content-Type': 'application/json'};
-  //   try {
-  //     const response = await axios.post(requestUrl, videoObject, headers);
-  //     return response
-  //   } catch (error) {
-  //     console.error(`POST request failed: ${error}`);
-  //     return false;
-  //   }
-  // }
-  
-  // async postComment(commentObject, videoId) {
-  //   const endpoint = `videos/${videoId}/comments`;
-  //   const requestUrl = this.createRequestUrl(endpoint);
-  //   const headers = {'Content-Type': 'application/json'};
-  //   try {
-  //     const response = await axios.post(requestUrl, commentObject, headers);
-  //     return response
-  //   } catch (error) {
-  //     console.error(`POST request failed: ${error}`);
-  //     return false;
-  //   }
 }
 
 const apiInstance = new BrainFlixApi();
