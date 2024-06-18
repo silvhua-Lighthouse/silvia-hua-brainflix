@@ -3,6 +3,7 @@ import './VideoUpload.scss';
 import FormField from '../../components/FormField/FormField';
 import Button from '../../components/Button/Button';
 import apiInstance from '../../brainflix-api';
+import { useNavigate } from 'react-router-dom';
 
 const VideoUpload = ({ userProps }) => {
   function createImgSrc(folder, filename) {
@@ -14,25 +15,22 @@ const VideoUpload = ({ userProps }) => {
   const previewImage = 'Upload-video-preview.jpg';
 
   const [previewImageSrc, setPreviewImage] = useState(createImgSrc(imageFolder, previewImage));
+  const navigate = useNavigate();
 
   const handleFormSubmit = async (event) => { 
     event.preventDefault();
+
     const newVideoObject = {
       title: event.target.title.value,
       description: event.target.description.value,
       channel: userProps.userName,
       image: `${imageFolder}/custom-upload.jpg`,
-      // views: '0',
-      // likes: '0',
-      // duration: '1:00',
-      // video: '',
-      // timestamp: Date.now(),
-      // comments: []
     }
     const postVideoResponse = await apiInstance.postVideo(newVideoObject);
     setPreviewImage(createImgSrc('', newVideoObject.image));
     event.target.reset();
-    console.log('Form submitted.')
+    alert('Form submitted.')
+    navigate('/');
   }
 
   const inputPropsTitle = {

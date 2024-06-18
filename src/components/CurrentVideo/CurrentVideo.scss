@@ -51,49 +51,56 @@
 // }
 
 
-video {
-    // width: 640px;
-    // height: 360px;
-    // display: block;
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-  }
 
   
 video {  
-  &-webkit-media-controls {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // background-color: #333;
-    padding: 10px;
-    background-color: transparent !important;
+    margin: 0 auto;
+    position: relative;
+    &::-webkit-media-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &::-webkit-media-controls-panel {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-end;
+        width: 100% !important;
+        background-color: transparent !important;
+        background-image: linear-gradient(transparent, transparent) !important; 
+    }
+  
+    &::-webkit-media-controls-play-button,
+    &::-webkit-media-controls-timeline,
+    &::-webkit-media-controls-volume-slider,
+    &::-webkit-media-controls-mute-button,
+    &::-webkit-media-controls-fullscreen-button {
+        margin: 0 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        order: 0;
 
-  }
-  
-  &-webkit-media-controls-panel {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    // align-items: center !important;
-    align-items: flex-end;
-    width: 100% !important;
-    background-color: transparent !important;
-  }
-  
-  &-webkit-media-controls-play-button,
-  &-webkit-media-controls-timeline,
-  &-webkit-media-controls-volume-slider,
-  &-webkit-media-controls-fullscreen-button {
-    margin: 0 5px;
-    background-color: transparent !important;
-  }
-  
-  &-webkit-media-controls-timeline {
-    flex: 1;
-    background-color: transparent !important;
-  }
+    }
+    &::-webkit-media-controls-play-button {
+        order: 1
+    }
+    &::-webkit-media-controls-timeline {
+        // flex: 2;
+        order: 2;
+    }
+
+    &::-webkit-media-controls-current-time-display, 
+    &::-webkit-media-controls-time-remaining-display {
+        order: 4
+    }
+
+    // &::-webkit-media-controls-enclosure {
+    //     order: 3;
+    //     display: none
+    // }
+    
 }  
 
 .current-video {
@@ -102,7 +109,7 @@ video {
 
     &__video {
         width: 100%;
-        @extend video;
+        // @extend video;
         @include set-element-margin(0);
         box-sizing: border-box;
         @include tablet {
