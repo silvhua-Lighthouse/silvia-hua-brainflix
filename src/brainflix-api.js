@@ -1,22 +1,21 @@
-import API_KEY from './data/secrets';
 import axios from "axios";
 
 
 export class BrainFlixApi {
   
-  constructor(apiKey) {
-    this.apiKey = apiKey;
-    this.baseUrl = 'https://unit-3-project-api-0a5620414506.herokuapp.com/';
+  constructor() {
+    this.baseUrl = import.meta.env.VITE_API_URL;
   }
   
   createRequestUrl(endpoint) {
-    const requestUrl = `${this.baseUrl}${endpoint}?api_key=${this.apiKey}`;
+    const requestUrl = `${this.baseUrl}/${endpoint}`;
     return requestUrl;
   }
   
   logResponse(response, endpoint, verb) {
     // Helper method to perform console.log() on API response objects.
-    console.log(`${verb} API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`)
+    console.log(`${verb} API response status for "${endpoint}" endpoint: \n${response.status} - ${response.statusText}.`);
+    console.log(response);
   }
   
   async get(endpoint) {
@@ -24,7 +23,7 @@ export class BrainFlixApi {
     Called upon by the `.getVideo()` and `.getVideosArray()` methods. */
     const requestUrl = this.createRequestUrl(endpoint);
     try {
-      const response = await axios.get(requestUrl)
+      const response = await axios.get(requestUrl);
       const itemsArray = response.data;
       return itemsArray;
     } catch (error) {
@@ -40,23 +39,35 @@ export class BrainFlixApi {
   }
   
   async getVideosArray() {
-    const videosArray = await this.get('videos')
+    const videosArray = await this.get('videos');
     return videosArray;
   }
+
   
-  async postComment(commentObject, videoId) {
-    const endpoint = `videos/${videoId}/comments`;
+  async post(endpoint, bodyObject) {
     const requestUrl = this.createRequestUrl(endpoint);
     const headers = {'Content-Type': 'application/json'};
     try {
-      const response = await axios.post(requestUrl, commentObject, headers);
+      const response = await axios.post(requestUrl, bodyObject, headers);
       return response
     } catch (error) {
       console.error(`POST request failed: ${error}`);
       return false;
     }
   }
+  
+  async postVideo(videoObject) {
+    const response = await this.post('videos', videoObject);
+    // this.logResponse(response, 'videos', 'POST');
+    return response;
+  }
+  
+  async postComment(commentObject, videoId) {
+    const endpoint = `videos/${videoId}/comments`;
+    const response = await this.post(endpoint, commentObject);
+    return response;
+  }
 }
 
-const apiInstance = new BrainFlixApi(API_KEY);
+const apiInstance = new BrainFlixApi();
 export default apiInstance;
