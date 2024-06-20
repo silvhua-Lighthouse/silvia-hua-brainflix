@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CurrentVideo from '../../components/CurrentVideo/CurrentVideo.jsx';
-import apiInstance from '../../brainflix-api.js';
+import apiInstance from '../../utils/brainflix-api.js';
 
 function VideoDetails({userProps}) {
   const [videosArray, setVideosArray] = useState([]);

@@ -3,7 +3,7 @@ import FormField from '../FormField/FormField';
 import AvatarDiv from '../Avatar/Avatar';
 import Button from '../Button/Button';
 import './CommentsForm.scss'
-import apiInstance from '../../brainflix-api';
+import apiInstance from '../../utils/brainflix-api';
 
 const CommentsForm = (props) => {
     const {avatarProps, videoId, videoCommentsArray, newCommentsCount, setNewCommentsCount} = props;

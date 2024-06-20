@@ -1,7 +1,7 @@
 import './CurrentVideo.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import apiInstance from '../../brainflix-api.js';
+import apiInstance from '../../utils/brainflix-api.js';
 import Description from '../../components/Description/Description.jsx';
 import Metadata from '../../components/Metadata/Metadata.jsx';
 import Comments from '../../components/Comments/Comments.jsx';
