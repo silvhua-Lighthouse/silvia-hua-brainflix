@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './VideoUpload.scss';
 import FormField from '../../components/FormField/FormField';
 import Button from '../../components/Button/Button';
-import apiInstance from '../../brainflix-api';
+import apiInstance from '../../utils/brainflix-api';
 import { useNavigate } from 'react-router-dom';
 
 const VideoUpload = ({ userProps }) => {
