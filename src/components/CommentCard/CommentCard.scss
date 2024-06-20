@@ -18,6 +18,9 @@
 .comment-card {
     @include comment-card-layout();
     align-items: flex-start;
+    &:last-of-type {
+        border: none;
+    }
 
     &__text-container {
         @include flex-mixin--column($comments-content-width--mobile);

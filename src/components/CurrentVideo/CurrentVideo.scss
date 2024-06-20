@@ -2,9 +2,19 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/global' as *;
 
+@mixin desktop-padding-right {
+    @include desktop {
+        padding-right: $spacing--tablet;
+    }
+}
+
 .current-video {
     background-color: black;
     width: 100%;
+
+    &__title {
+        @include desktop-padding-right();
+    }
 
     &__video {
         width: 100%;
@@ -37,10 +47,10 @@
         @include tablet {
             padding: $spacing--tablet 0;
         }
+        @include desktop-padding-right();
     }
 
     &__n-comments {
         font-weight: 600;
     }
-
 }
