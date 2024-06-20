@@ -1,6 +1,16 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+@mixin metadata-container {
+    @include zero-spacing;
+    flex-direction: column;
+    align-items: flex-start;
+    @include component-spacing;
+    @include tablet {
+        flex-direction: row;
+    }
+}
+
 .metadata {
     @include zero-spacing;
     @include component-spacing;
@@ -15,21 +25,13 @@
         flex-direction: row;
     }
 
-    &--left, &--right {
-        @include zero-spacing;
-        flex-direction: column;
-        align-items: flex-start;
-        @include component-spacing;
-        @include tablet {
-            flex-direction: row;
-        }
-    }
-
-    &--left {
+    &__left {
+        @include metadata-container();
         justify-content: flex-start;
     }
 
-    &--right {
+    &__right {
+        @include metadata-container();
         justify-content: flex-end;
     }
 
