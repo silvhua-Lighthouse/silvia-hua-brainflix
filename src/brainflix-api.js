@@ -58,7 +58,6 @@ export class BrainFlixApi {
   
   async postVideo(videoObject) {
     const response = await this.post('videos', videoObject);
-    // this.logResponse(response, 'videos', 'POST');
     return response;
   }
   
